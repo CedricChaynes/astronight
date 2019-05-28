@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-  # def update
-  #   current_user.update!(user_params)
-  #   redirect_back(fallback_location: my_profile_path)
-  # end
+   def update
+    current_user.update!(user_params)
+    redirect_back(fallback_location: update_path)
+   end
 
   private
 
