@@ -1,0 +1,14 @@
+<h1>Ici les résultats de recherche d'évenements </h1>
+<% @events.each do |event| %>
+<ul>
+  <li> Le <%= event.date.strftime("%d/%m/%Y") %> </li>
+  <li> A <%= event.site.address %></li>
+  <li> Score: <%= event.event_score %> </li>
+  <% if event.site.photo.nil? %>
+  <% else %>
+    <li>photo url du site: <%= event.site.photo %></li>
+  <% end %>
+
+</ul>
+<br>
+<% end %>
