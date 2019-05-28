@@ -5,9 +5,12 @@ puts "Destroying previous seeds..."
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
-Site.destroy_all
 puts "Previous seeds destroyed !"
 
+
+unless Site.any?
+  generate_astronomical_sites
+end
 
 puts "Creating users..."
 
@@ -24,37 +27,41 @@ end
 
 puts "Users created !"
 
-puts "Creating Sites and Events...."
-filepath = 'db/astronomical_sites_gresac.csv'
 
-CSV.foreach(filepath, headers: :first_row) do |row|
-  address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
-  site = Site.create!(
-    address: address,
-    lat: row["Latitude"].to_f,
-    lng: row["Longitude"].to_f,
-    description: row["Description"],
-    photo: row["Photo"],
-    light_pol_index: row["Indice PL"].to_i
-    )
-    rand(0..3).times do
-      Event.create!(
-        site_id: site.id,
-        status: ["pending", "created"].sample,
-        event_score: rand(5..10),
-        date: rand(Date.today..Date.civil(2019, 06, 10))
-        )
-    end
+def generate_astronomical_sites
+  filepath = 'db/astronomical_sites_gresac.csv'
+
+  CSV.foreach(filepath, headers: :first_row) do |row|
+    address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
+    site = Site.create!(
+      address: address,
+      lat: row["Latitude"].to_f,
+      lng: row["Longitude"].to_f,
+      description: row["Description"],
+      photo: row["Photo"],
+      light_pol_index: row["Indice PL"].to_i
+      )
+  end
 end
 
-puts "Sites and Events created"
+puts "Creating Events...."
+sites = Site.all
+rand(1..3).times do
+        Event.create!(
+          site_id: sites.sample.id,
+          status: ["pending", "created"].sample,
+          event_score: rand(5..10),
+          date: rand(Date.today..Date.civil(2019, 06, 10))
+          )
+end
+puts "Events created !"
 
 puts "Creating participations ...."
 
 users = User.all
 events = Event.all
 
-500.times do
+800.times do
   Participation.create!(
       event_id: events.sample.id,
       user_id: users.sample.id
