@@ -27,6 +27,7 @@ gem 'csv'
 gem 'pundit'
 gem 'awesome_print'
 gem 'geocoder'
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
