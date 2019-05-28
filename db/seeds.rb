@@ -65,9 +65,3 @@ events = Event.all
 end
 
 puts "Participations created"
-
-
-
-
-
-
