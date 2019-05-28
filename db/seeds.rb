@@ -5,15 +5,15 @@ puts "Destroying previous seeds..."
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
-Site.destroy_all
 puts "Previous seeds destroyed !"
 
 
-def generate_astronomical_sites
+unless Site.any?
   filepath = 'db/astronomical_sites_gresac.csv'
+
   CSV.foreach(filepath, headers: :first_row) do |row|
     address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
-    site = Site.create!(
+    Site.create!(
       address: address,
       lat: row["Latitude"].to_f,
       lng: row["Longitude"].to_f,
@@ -22,10 +22,6 @@ def generate_astronomical_sites
       light_pol_index: row["Indice PL"].to_i
       )
   end
-end
-
-unless Site.any?
-  generate_astronomical_sites
 end
 
 puts "Creating users..."
@@ -43,9 +39,10 @@ end
 
 puts "Users created !"
 
+
 puts "Creating Events...."
 sites = Site.all
-rand(1..3).times do
+200.times do
         Event.create!(
           site_id: sites.sample.id,
           status: ["pending", "created"].sample,
@@ -68,9 +65,3 @@ events = Event.all
 end
 
 puts "Participations created"
-
-
-
-
-
-
