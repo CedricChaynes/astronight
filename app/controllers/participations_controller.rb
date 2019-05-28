@@ -1,7 +1,7 @@
 class ParticipationsController < ApplicationController
   before_action :set_event, only: %i[create]
   before_action :set_participation, only: %i[destroy]
-  after_create logger.info("Your participation was saved for this event!")
+  after_save logger.info("Your participation was saved for this event!")
   after_destroy logger.info("Your participation was removed from this event!")
 
   def create
