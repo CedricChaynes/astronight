@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get 'events/update'
   get 'events/delete'
   get 'events/validated'
-  
+
   get 'participations/create'
   get 'participations/destroy'
-  
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
