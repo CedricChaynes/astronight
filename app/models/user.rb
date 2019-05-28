@@ -10,5 +10,5 @@ class User < ApplicationRecord
   validates :username, presence: true, allow_blank: false, uniqueness: true, length: { in: 4..15 }
   validates :password, presence: true, length: { in: 6..20 }
   validates :mobile, presence: true, format: { with: /\A((((\+33)|(\(\+33\)))(\s|-)*[1-9])|(0[1-9]))((\s|-)*\d{2}){4}\z/ }
-  validates :email, presence: true, format: { with: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-]+\.)+([a-zA-Z]{2,5})$/ }
+  validates :email, presence: true, format: { with: /\A([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-]+\.)+([a-zA-Z]{2,5})\z/ }
 end
