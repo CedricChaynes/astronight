@@ -1,0 +1,7 @@
+<%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
+    <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrer une adresse', size: 49} %>
+    <%= f.input :start_date, label: false, as: :date, html5: true, input_html: {min: Date.today, placeholder: 'Date de début', value: Date.today }  %>
+    <%= f.input :end_date, label: false, as: :date, html5: true, input_html: {min: Date.today, placeholder: 'Date de fin', value: (Date.today + 14) }  %>
+
+   <%= f.button :submit, 'Go!' %>
+<% end %>
