@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/update'
   get 'events/index'
   get 'events/show'
   get 'events/new'
