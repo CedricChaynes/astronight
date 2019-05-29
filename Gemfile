@@ -27,7 +27,6 @@ gem 'csv'
 gem 'pundit'
 gem 'awesome_print'
 gem 'geocoder'
-gem 'faker'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 

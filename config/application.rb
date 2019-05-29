@@ -23,6 +23,8 @@ module Astronight
 
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :fr
+
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
 
