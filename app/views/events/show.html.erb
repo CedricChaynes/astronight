@@ -1,0 +1,60 @@
+<div class="container form_console from_reserv" style="width: 1000px">
+  <h1 class="text-center" style="padding-top: 10px">Information sur l'événement</h1>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a href="#details" class="nav-link active" role="tab" data-toggle="tab">Détails</a>
+    </li>
+    <li class="nav-item">
+      <a href="#messages" class="nav-link" role="tab" data-toggle="tab">Messages</a>
+    </li>
+    <li class="nav-item">
+      <a href="#conditions" class="nav-link" role="tab" data-toggle="tab">Conditions d'observation</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in show active" id="details">
+      <div class="container border p-3">
+        <h4>Location: <span><%= @event.site.address %></span></h4>
+        <h5>Date: <span><%= I18n.localize(@event.date, format: :custom) %></span></h5>
+        <div class="row">
+          <div class="col-6">
+            <%= image_tag "#{@event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
+          </div>
+          <div class="col-6">
+            <h2>Score: <%=  %></h2>
+            <h3>Description du site</h3>
+            <p><%= @event.site.description %></p>
+            <h3>Participants (<%= @event.participations.count %>)</h3>
+            <%= render 'participations_table' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="messages">
+      <div class="container border p-3">
+
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="conditions">
+      <div class="container border p-3">
+        <div class="row">
+          <div class="col-6">
+            <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+            </iframe>
+          </div>
+          <div class="col-6">
+            <div class="col-12">
+              <h3>Conditions d'observation</h3>
+              <%= render 'obs_info_table' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

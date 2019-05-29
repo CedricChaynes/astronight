@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  margin-top: -25px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +8,64 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-connexion {
+  display: flex;
+}
+
+.navbar {
+  background-color: var(--mainColor);
+  color: var(--lightColor);
+  border-bottom: 2px solid var(--pushColor);
+  padding-top: 25px;
+  padding-bottom: 5px;
+  position: fixed;
+  width: 100%;
+  z-index: 1070;
+}
+
+.accroche {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 1px;
+  margin-top: 0px;
+}
+
+.brocraft_name {
+  font-size: 40px;
+  margin-bottom: -15px;
+  color: var(--lightColor);
+}
+
+.brocraft_name {
+  background:
+     linear-gradient(
+       to bottom, var(--pushColor) 0%,
+       var(--pushColor) 100%
+     );
+    background-position: 0 80%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+  text-decoration: none;
+  transition: background-size .4s;
+}
+
+.brocraft_name:hover {
+  background-size: 4px 56px;
+}
+
+.dropdown-item {
+  transition: 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--secondColor);
+  color: var(--lightColor)
 }

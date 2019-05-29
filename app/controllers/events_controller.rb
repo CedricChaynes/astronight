@@ -1,40 +1,42 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :set_event, only: %i[show update delete]
 
   def search
     @search = params[:searchform]
     @address = @search[:address]
-    @start_date = @search[:start_date]
-    @end_date = @search[:end_date]
-    search_params = { address: @address, start_date: @start_date, end_date: @end_date }
+    @date_range = @search[:date_range]
+    @radius = @search[:radius].tr("km", "").to_i
+    @start_date = Date.today
+    @end_date = case @date_range
+                when "Aujourd'hui" then Date.today
+                when "Les 7 prochains jours" then @start_date + 7
+                when "Les 14 prochains jours" then @start_date + 14
+                end
 
     if @address == ""
-      @events = Event.where(["date >= ? and date <= ?", @start_date, @end_date])
+      @events = Event.where(date: @start_date..@end_date)
     else
-      @near = Site.near(@address, 50).map { |site| site.id }
-      @events = Event.where(["date >= ? and date <= ?", @start_date, @end_date]).where(site_id: @near)
+      @near = Site.near(@address, @radius).map(&:id)
+      @events = Event.where(date: @start_date..@end_date).where(site_id: @near)
+    end
+
+    @markers = @events.map do |event|
+      {
+        lat: event.site.lat,
+        lng: event.site.lng,
+        infoWindow: render_to_string(partial: "infowindow", locals: { event: event }),
+        image_url: helpers.asset_url('solar-system.svg')
+      }
     end
   end
 
   def show
-    @event = Event(params[:id])
   end
 
-  def new
-  end
+  private
 
-  def create
-    @event = event.new
-    @event.save
+  def set_event
+    @event = Event.find(params[:id])
   end
-
-  def update
-  end
-
-  def delete
-  end
-
-  def validated
-  end
-
 end

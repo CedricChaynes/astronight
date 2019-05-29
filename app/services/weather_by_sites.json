@@ -1,0 +1,252 @@
+[
+  {
+    "N°": 1,
+    "Site": "Aerodrome de Belvezet",
+    "Dépt": "30",
+    "Région": "Languedoc-Roussillon",
+    "Commune": "Belvezet",
+    "Indice PL": 15,
+    "Alt": 260,
+    "Description": "Sud dégagé mais PL d'uzès devient génante, site privé mis à dispo du club, peu de turbu (venté)",
+    "Latitude": 44.0822222222222,
+    "Longitude": 4.3925,
+    "Weather_next_5_nights": [
+      {
+        "night": "29-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "30-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "31-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "01-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "02-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "03-06-2019",
+        "weathers": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "N°": 2,
+    "Site": "Aerodrome de Mende Brenoux",
+    "Dépt": "48",
+    "Région": "Languedoc-Roussillon",
+    "Commune": "Mende",
+    "Indice PL": 15,
+    "Alt": 1050,
+    "Description": "Pour une sortie « sur le pouce » près de Mende, dégagé, spot Disco au N-O et Mende au N",
+    "Latitude": 44.5125,
+    "Longitude": 3.52638888888889,
+    "Weather_next_5_nights": [
+      {
+        "night": "29-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "30-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "31-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "01-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "02-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "03-06-2019",
+        "weathers": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "N°": 3,
+    "Site": "Arcenant",
+    "Dépt": "21",
+    "Région": "Bourgogne",
+    "Commune": "Arcenant",
+    "Indice PL": 15,
+    "Alt": 470,
+    "Description": "",
+    "Latitude": 47.1252777777778,
+    "Longitude": 4.83972222222222,
+    "Weather_next_5_nights": [
+      {
+        "night": "29-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "30-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "31-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "01-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "02-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "03-06-2019",
+        "weathers": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "N°": 4,
+    "Site": "Bret",
+    "Dépt": "1",
+    "Région": "Rhône-Alpes",
+    "Commune": "Joyeux",
+    "Indice PL": 15,
+    "Alt": 290,
+    "Description": "Voie Lactée la plus proche de Lyon, chemin, humide++, pas de ½ tour possible ! Horizon Sud limité par le halo Lyonnais",
+    "Latitude": 45.9480555555556,
+    "Longitude": 5.12277777777778,
+    "Weather_next_5_nights": [
+      {
+        "night": "29-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "30-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "31-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "01-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "02-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "03-06-2019",
+        "weathers": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "N°": 5,
+    "Site": "Buno-Bonnevaux",
+    "Dépt": "91",
+    "Région": "Ile-de-France",
+    "Commune": "Buno-Bonnevaux",
+    "Indice PL": 10,
+    "Alt": 125,
+    "Description": "Pas de passage de voitures, mais humidité++",
+    "Latitude": 48.3580555555556,
+    "Longitude": 2.41166666666667,
+    "Weather_next_5_nights": [
+      {
+        "night": "29-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "30-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "31-05-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "01-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "02-06-2019",
+        "weathers": [
+
+        ]
+      },
+      {
+        "night": "03-06-2019",
+        "weathers": [
+
+        ]
+      }
+    ]
+  }
+]
