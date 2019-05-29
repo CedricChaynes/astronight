@@ -8,7 +8,7 @@ class WeatherCrawler
     baseUrl = "https://api.openweathermap.org/data/2.5/forecast?";
     api = "&appid=a446fe9e3cd285feac70ef567c436196";
 
-    json_from_file = File.read("gresac-astro-sites.json")
+    json_from_file = File.read("#{Rails.root}/app/services/gresac-astro-sites.json")
     data = JSON.parse(json_from_file)
 
     count = 0
@@ -44,22 +44,20 @@ class WeatherCrawler
       sleep(1.minutes) if count % 50 == 0
     end
 
-    if File.zero?('weather_by_sites.json') || !File.exist?('weather_by_sites.json')
-      File.open('weather_by_sites.json', "w") do |f|
+    if File.zero?("#{Rails.root}/app/services/weather_by_sites.json") || !File.exist?("#{Rails.root}/app/services/weather_by_sites.json")
+      File.open("#{Rails.root}/app/services/weather_by_sites.json", "w") do |f|
         f.write(JSON.pretty_generate(treated_data))
       end
     else
-      data_hash = JSON.parse(File.read("weather_by_sites.json"))
+      data_hash = JSON.parse(File.read("#{Rails.root}/app/services/weather_by_sites.json"))
       data_hash.uniq!
       treated_data.each { |elem| data_hash << elem }
-      File.open('weather_by_sites.json', "w") do |f|
+      File.open("#{Rails.root}/app/services/weather_by_sites.json", "w") do |f|
         f.write(JSON.pretty_generate(data_hash))
       end
     end
   end
 end
-
-
 
 
 

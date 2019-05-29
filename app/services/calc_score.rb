@@ -6,7 +6,7 @@ class CalcScore
 
   def call
     # TO DO algorithmie de calcul du score
-    return score
+    rand(0..10)
   end
 
   def self.call(site, date)
