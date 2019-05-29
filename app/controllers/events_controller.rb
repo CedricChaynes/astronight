@@ -23,10 +23,19 @@ class EventsController < ApplicationController
       @near = Site.near(@address, @radius).map { |site| site.id }
       @events = Event.where(["date >= ? and date <= ?", @start_date, @end_date]).where(site_id: @near)
     end
+
+    @markers = @events.map do |event|
+      {
+        lat: event.site.lat,
+        lng: event.site.lng,
+        infoWindow: render_to_string(partial: "infowindow", locals: { event: event }),
+        image_url: helpers.asset_url('solar-system.svg')
+      }
+    end
   end
 
   def show
-    @event = Event(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def new
