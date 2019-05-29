@@ -27,7 +27,7 @@ sites.each do |site|
   nights = next_five_nights()
   element["Weather_next_5_nights"] = nights.map do |night|
     { night: night,
-      weathers: site["Weather_next_5_days"].select do |elem|
+      weathers: site["Weather_next_5_nights"].select do |elem|
       (elem["date"] == night && %w[18 21].include?(elem["time"].split('h')[0])) ||
       (elem["date"] == next_date(night) && %w[00 03].include?(elem["time"].split('h')[0]))
       end

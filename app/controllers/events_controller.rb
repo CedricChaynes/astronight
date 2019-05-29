@@ -36,23 +36,6 @@ class EventsController < ApplicationController
     @messages = @event.messages
   end
 
-  def new
-  end
-
-  def create
-    @event = Event.new
-    @event.save
-  end
-
-  def update
-  end
-
-  def delete
-  end
-
-  def validated
-  end
-
   private
 
   def set_event
