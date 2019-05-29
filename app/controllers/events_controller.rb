@@ -34,23 +34,6 @@ class EventsController < ApplicationController
   def show
   end
 
-  def new
-  end
-
-  def create
-    @event = Event.new
-    @event.save
-  end
-
-  def update
-  end
-
-  def delete
-  end
-
-  def validated
-  end
-
   private
 
   def set_event

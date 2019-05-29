@@ -40,4 +40,3 @@ File.open('weather_by_night.json', "w") do |f|
   f.write(JSON.pretty_generate(array))
 end
 
-
