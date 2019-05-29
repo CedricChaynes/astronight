@@ -1,7 +1,11 @@
-<%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
+<div class="container p-3">
+  <h3>Vous cherchez une place pour votre soirée d'astronomie? </h3>
+  <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
     <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrez une adresse', size: 49, id: "address-input"} %>
-    <%= f.input :radius, label: 'Rayon kilométrique', collection: ['20km', '50km', '100km', '200km'], selected: '50km' %>
+    <%= f.input :radius, label: 'Rayon kilométrique', collection: %W[20\skm 50\skm 100\skm 200\skm], selected: '50 km' %>
 
-    <%= f.input :date_range, as: :radio_buttons, collection: ['Aujourd\'hui', 'Les 7 prochains jours', 'Les 14 prochains jours'], selected: 'Les 14 prochains jours' %>
-   <%= f.button :submit, 'Go!' %>
-<% end %>
+    <%= f.input :date_range, label: 'Période', as: :radio_buttons, collection: ['Aujourd\'hui', 'Les 7 prochains jours', 'Les 14 prochains jours'], selected: 'Les 14 prochains jours' %>
+     <%= f.button :submit, 'Go!', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
