@@ -1,0 +1,2 @@
+class AstroEvent < ApplicationRecord
+end

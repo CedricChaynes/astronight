@@ -15,6 +15,16 @@ ActiveRecord::Schema.define(version: 2019_05_29_161009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "astro_events", force: :cascade do |t|
+    t.datetime "date"
+    t.string "title"
+    t.text "description"
+    t.integer "score"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "status", default: "pending"
     t.datetime "date"
