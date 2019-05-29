@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :participations
   has_many :events, through: :participations
+  has_many :messages, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
