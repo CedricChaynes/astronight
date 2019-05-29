@@ -65,3 +65,10 @@ events = Event.all
 end
 
 puts "Participations created"
+
+puts "Creating Astro Events. . . ."
+  AstroEventsCreator.call
+
+puts " #{AstroEvent.count} Astro Events created"
+puts "yeah !"
+
