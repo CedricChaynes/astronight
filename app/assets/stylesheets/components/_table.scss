@@ -1,0 +1,27 @@
+table {
+  border: none;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 16px;
+  thead {
+    border: 1px solid #0f4471;
+    th {
+      border: 1px solid #0f4471;
+      height: 3em;
+      text-align:center;
+    }
+  }
+  tbody {
+    border: 1px solid #0f4471;
+    tr {
+      th {
+        border: 1px solid #0f4471;
+        text-align:center;
+      }
+      td {
+        border: 1px solid #0f4471;
+        text-align:center;
+      }
+    }
+  }
+}
