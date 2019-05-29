@@ -43,12 +43,12 @@ puts "Users created !"
 puts "Creating Events...."
 sites = Site.all
 200.times do
-        Event.create!(
-          site_id: sites.sample.id,
-          status: ["pending", "created"].sample,
-          event_score: rand(5..10),
-          date: rand(Date.today..Date.civil(2019, 06, 10))
-          )
+  Event.create!(
+    site_id: sites.sample.id,
+    status: ["pending", "created"].sample,
+    event_score: rand(5..10),
+    date: rand(Date.today..Date.civil(2019, 06, 10))
+    )
 end
 puts "Events created !"
 
