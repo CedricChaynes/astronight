@@ -1,4 +1,4 @@
-<h1>Ici les résultats de recherche d'évenements </h1>
+<h1> Liste </h1>
 <% @events.each do |event| %>
 <ul>
   <li> Le <%= event.date.strftime("%d/%m/%Y") %> </li>
@@ -12,3 +12,7 @@
 </ul>
 <br>
 <% end %>
+
+
+<%= render partial: 'mapbox' %>
+
