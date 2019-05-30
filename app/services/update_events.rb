@@ -4,6 +4,7 @@ class UpdateEvents
   end
 
   def call
+    begin
       destroy_old_events
       WeatherCrawler.call
       p " waiting"
