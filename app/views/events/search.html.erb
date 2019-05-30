@@ -9,11 +9,13 @@
 </div>
 
 <div class="content">
+
+<h1> Liste </h1>
+  <div style="margin-top: 80px"></div>
 <h1> Liste </h1>
 <% @events.each do |event| %>
 <ul>
-  <li> Le <%= event.date.strftime("%d/%m/%Y") %> </li>
-  <li> A <%= event.site.address %></li>
+  <li> <%= link_to "#{event.site.address} le #{event.date.strftime("%d/%m")}" , event_path(event) %></li>
   <li> Score: <%= event.event_score %> </li>
   <% if event.site.photo.nil? %>
   <% else %>

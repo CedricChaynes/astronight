@@ -3,7 +3,7 @@ import { CountUp } from 'countup.js'
 const loader = document.querySelector(".loader");
 
 const launchLoader = () => {
-  if (loader) {
+  if ((loader) && (localStorage.getItem("hasCodeRunBefore")) === null) {
   loader.style.display = "block";
   const countUpSite = new CountUp('countup-site', 587, {duration: 4, separator: ' ', suffix: ' sites d\'observation'});
   countUpSite.start()
@@ -13,10 +13,8 @@ const launchLoader = () => {
   countUpAstro.start()
   const countUpMeteo = new CountUp('countup-meteo', 11740, {duration: 6, separator: ' ', suffix: ' bulletins météo nocturne'});
   countUpMeteo.start(() => loader.classList.add("fade-out"))
+  localStorage.setItem("hasCodeRunBefore", true);
   }
 };
 
 export { launchLoader }
-
-
-

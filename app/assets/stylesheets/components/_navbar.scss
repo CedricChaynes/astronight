@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  margin-top: -80px;
+  // margin-top: -80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -81,6 +81,7 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
 
 
 body {
@@ -112,6 +113,7 @@ form {
   margin-top: 30px;
   position: relative;
 }
+
 form input {
   display: block;
   margin: 10px auto;
@@ -128,9 +130,11 @@ h4 a {
   text-decoration: none;
   transition: 200ms ease-in-out;
 }
+
 h4 a:hover {
   color: #000;
 }
+
 input[type='email'], input[type='password'] {
   width: 60%;
   outline: none;
@@ -143,7 +147,6 @@ input[type='email'], input[type='password'] {
   font-weight: 300;
   border-bottom: 1px solid #fa3380;
 }
-
 
 input[type='submit'] {
   color: #fff;
@@ -160,9 +163,11 @@ input[type='submit'] {
   background: -webkit-linear-gradient(to right, black, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, var(--pushColor), var(--pushColor)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 input[type='submit']:hover {
   transform: scale(1.05);
 }
+
 .fa-user {
   color: var(--mainColor);
   position: absolute;
@@ -182,6 +187,7 @@ input[type='submit']:hover {
   cursor: text;
   transition: .2s ease-out;
 }
+
 .fa-redo {
   color: var(--mainColor);
   position: absolute;
@@ -192,11 +198,11 @@ input[type='submit']:hover {
   transition: .2s ease-out;
 }
 
-
 [placeholder]::-webkit-input-placeholder  {
   color: var(--pushColor);
   padding-left: 10px;
 }
+
 [placeholder]:focus::-webkit-input-placeholder {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
@@ -206,9 +212,9 @@ input[type='submit']:hover {
   opacity: 0;
 }
 
-
 /*  FOLLOW*/
-.Follow {   background:url("https://pbs.twimg.com/profile_images/959092900708544512/v4Db9QRv_bigger.jpg")no-repeat center / contain;
+.Follow {
+  background:url("https://pbs.twimg.com/profile_images/959092900708544512/v4Db9QRv_bigger.jpg")no-repeat center / contain;
   width: 50px;
   height: 50px;
   bottom: 9px;
@@ -218,7 +224,7 @@ input[type='submit']:hover {
   border-radius:50%;
   z-index:999;
   animation:  rotation 10s infinite linear;
-  }
+}
 
 @-webkit-keyframes rotation {
     from {
