@@ -16,7 +16,7 @@ def next_date(date_string)
   (Date.new(dates[0], dates[1], dates[2]) + 1).strftime('%d-%m-%Y')
 end
 
-data = File.read('weather_by_sites.json')
+data = File.read('weather_by_site.json')
 sites = JSON.parse(data)
 array = []
 sites.each do |site|
@@ -27,7 +27,7 @@ sites.each do |site|
   nights = next_five_nights()
   element["Weather_next_5_nights"] = nights.map do |night|
     { night: night,
-      weathers: site["Weather_next_5_nights"].select do |elem|
+      weathers: site["Weather_next_5_days"].select do |elem|
       (elem["date"] == night && %w[18 21].include?(elem["time"].split('h')[0])) ||
       (elem["date"] == next_date(night) && %w[00 03].include?(elem["time"].split('h')[0]))
       end
@@ -36,7 +36,7 @@ sites.each do |site|
   array << element
 end
 
-File.open('weather_by_night.json', "w") do |f|
+File.open('weather_by_site_by_night.json', "w+") do |f|
   f.write(JSON.pretty_generate(array))
 end
 

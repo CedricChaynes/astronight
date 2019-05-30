@@ -39,24 +39,11 @@ data.each do |elem|
   p "Fetching weather for site #{elem["N°"]}..."
   p "-"*100
   count += 1
-  sleep(1.minutes) if count % 50 == 0
+  sleep(60) if count % 50 == 0
 end
 
-if File.zero?('weather_by_sites.json') || !File.exist?('weather_by_sites.json')
-  File.open('weather_by_sites.json', "w") do |f|
-    f.write(JSON.pretty_generate(treated_data))
-  end
-else
-  data_hash = JSON.parse(File.read("weather_by_sites.json"))
-  data_hash.uniq!
-  treated_data.each { |elem| data_hash << elem }
-  File.open('weather_by_sites.json', "w") do |f|
-    f.write(JSON.pretty_generate(data_hash))
-  end
+File.open('weather_by_site.json', "w+") do |f|
+  f.write(JSON.pretty_generate(treated_data))
 end
-
-
-
-
 
 

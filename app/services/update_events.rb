@@ -7,8 +7,7 @@ class UpdateEvents
     begin
       destroy_old_events
       WeatherCrawler.call
-      p " waiting"
-      WeatherByDateConverter.call
+      WeatherByNightConverter.call
       create_new_events
       update_score_events
     rescue e
@@ -30,19 +29,17 @@ class UpdateEvents
   def create_new_events
     Site.all.each do |site|
       score = CalcScore.call(site, Date.today)
-      if score >= @threshold
-        Event.create!(site: site, event_score: score, date: Date.today)
-      end
+      Event.create!(site: site, event_score: score, date: Date.today) if score >= @threshold
     end
   end
 
   def update_score_events
     Event.all.each do |event|
       score = CalcScore.call(event.site, Date.today)
-      if score < @threshold || event.participations.count.zero?
+      if score < @threshold || event.participations.empty?
         event.destroy
       else
-        event.event_score = score
+        event.event_score = skcore
         event.save
       end
     end
