@@ -1,0 +1,30 @@
+<div id="contain_moon" style="text-align:center;padding-bottom:5px;">
+  <div style="font-weight:bold"></div>
+  <div>.</div>
+  <div style="font-size:small">
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  eventDate = document.querySelector('#event').dataset.date
+  const month = Number.parseInt(eventDate.split('-')[1]);
+  const day = Number.parseInt(eventDate.split('-')[2]);
+  const year = Number.parseInt(eventDate.split('-')[0]);
+
+  (function(){
+    const d = Number.parseInt(eventDate.split('-')[2])
+    const m = document.querySelectorAll("#contain_moon div");
+    const a = new XMLHttpRequest();
+    const url = "http://www.icalendar37.net/lunar/api/?lang=fr&month="+ month + "&year=" + year + "&size=100&lightColor=rgb(255,255,255)&shadeColor=rgb(17,17,17)&LDZ="+ new Date(new Date().getFullYear(), month - 1,1)/1000 + "";
+    m[1].style.height="100px";
+      a.onreadystatechange=function(){
+        if(a.readyState == 4 && a.status == 200) {
+          var b = JSON.parse(a.responseText);
+          m[1].innerHTML = b.phase[d].svg;
+          if (typeof moon_widget_loaded=="function") moon_widget_loaded(b);
+          m[2].innerHTML = b.phase[d].npWidget
+        }
+        };
+          a.open("GET",url,true);a.send()})()
+</script>
