@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  margin-top: -25px;
+  margin-top: -80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,6 +9,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 60px;
+  margin-right: 0px;
+}
+
+.navbar-brand {
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .nav-item {
@@ -24,7 +31,7 @@
   background-color: var(--mainColor);
   color: var(--lightColor);
   border-bottom: 2px solid var(--pushColor);
-  padding-top: 25px;
+  padding-top: 5px;
   padding-bottom: 5px;
   position: fixed;
   width: 100%;
@@ -69,8 +76,156 @@
   background-color: var(--secondColor);
   color: var(--lightColor)
 }
+
 .img_profile {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+
+
+body {
+  background: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+  margin: auto;
+  position: relative;
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-animation: rotation 15s infinite linear;
+}
+
+.border {
+  border: none !important;
+}
+
+form {
+  // top: 100px;
+  margin-top: 30px;
+  position: relative;
+}
+form input {
+  display: block;
+  margin: 10px auto;
+}
+
+form h4 {
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+h4 a {
+  color: var(--mainColor);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+h4 a:hover {
+  color: #000;
+}
+input[type='email'], input[type='password'] {
+  width: 60%;
+  outline: none;
+  border-top: 0;
+  color: var(--mainColor);
+  border-left: 0;
+  border-right: 0;
+  font-size: 14px;
+  padding: 26px;
+  font-weight: 300;
+  border-bottom: 1px solid #fa3380;
+}
+
+
+input[type='submit'] {
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 50px;
+  border-radius: 4px;
+  transition: 200ms ease-out;
+  background: #f857a6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, black, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, var(--pushColor), var(--pushColor)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+input[type='submit']:hover {
+  transform: scale(1.05);
+}
+.fa-user {
+  color: var(--mainColor);
+  position: absolute;
+  top: 25px;
+  left: 56px;
+  font-size: 18px !important;
+  cursor: text;
+  transition: .2s ease-out;
+}
+
+.fa-lock {
+  color: var(--mainColor);
+  position: absolute;
+  top: 105px;
+  left: 56px;
+  font-size: 18px !important;
+  cursor: text;
+  transition: .2s ease-out;
+}
+.fa-redo {
+  color: var(--mainColor);
+  position: absolute;
+  top: 185px;
+  left: 56px;
+  font-size: 18px !important;
+  cursor: text;
+  transition: .2s ease-out;
+}
+
+
+[placeholder]::-webkit-input-placeholder  {
+  color: var(--pushColor);
+  padding-left: 10px;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: translate(10px, 0);
+          transform: translate(10px, 0);
+  opacity: 0;
+}
+
+
+/*  FOLLOW*/
+.Follow {   background:url("https://pbs.twimg.com/profile_images/959092900708544512/v4Db9QRv_bigger.jpg")no-repeat center / contain;
+  width: 50px;
+  height: 50px;
+  bottom: 9px;
+  right: 20px;
+  display:block;
+  position:fixed;
+  border-radius:50%;
+  z-index:999;
+  animation:  rotation 10s infinite linear;
+  }
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+
 }
