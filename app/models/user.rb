@@ -8,9 +8,19 @@ class User < ApplicationRecord
   has_many :events, through: :participations
   has_many :messages, dependent: :destroy
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true
   validates :password, presence: true
 
   validates :mobile, presence: true, format: { with: /\A((((\+33)|(\(\+33\)))(\s|-)*[1-9])|(0[1-9]))((\s|-)*\d{2}){4}\z/ }
   validates :email, presence: true, format: { with: /\A([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-]+\.)+([a-zA-Z]{2,5})\z/ }
+
+  mount_uploader :avatar, PhotoUploader
+
+  def avatar_url
+    if avatar.url.present?
+      avatar.url
+    else
+      'http://placehold.it/80x80'
+    end
+  end
 end

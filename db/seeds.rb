@@ -36,7 +36,8 @@ User.create(username: "user1", password: "123456", email: "user1@gmail.com", mob
     username: Faker::Name.first_name,
     password: "123456",
     email: Faker::Internet.email,
-    mobile: "#{%w[+33 (+33) 0].sample}#{rand(6..7)}#{rand.to_s[2..9]}"
+    mobile: "#{%w[+33 (+33) 0].sample}#{rand(6..7)}#{rand.to_s[2..9]}",
+    avatar: "https://res.cloudinary.com/dzphrxzjj/image/upload/v1558087038/sample.jpg"
     )
 end
 

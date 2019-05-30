@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
-  def update
-    current_user.update!(user_params)
-    redirect_back(fallback_location: edit_user_registration_path)
-  end
+
+def create
+  @user=User.new(user_params)
+  @user.save!
+end
+
+ def update
+  current_user.update!(user_params)
+  redirect_back(fallback_location: edit_user_registration_path)
+ end
 
   private
 
