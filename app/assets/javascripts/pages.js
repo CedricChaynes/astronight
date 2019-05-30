@@ -1,8 +1,9 @@
-$(document).ready(() => {
-  let messages = $('#chatbox');
-  const init = {
-    messages.scrollTop(messages[0].scrollHeight);
-  }
+ $(document).ready(() => {
+   let messages = $('#chatbox');
 
-  window.setTimeout(init, 50);
+   const init = {
+     messages.scrollTop(messages[0].scrollHeight);
+   }
+
+ window.setTimeout(init, 50);
 });
