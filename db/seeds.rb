@@ -1,8 +1,10 @@
-
-require 'faker'
 require 'csv'
+require 'date'
+require 'faker'
+require 'json'
 
 puts "Destroying previous seeds..."
+AstroEvent.destroy_all
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -29,7 +31,7 @@ puts "Creating users..."
 
 User.create(username: "user1", password: "123456", email: "user1@gmail.com", mobile: "0142054472")
 
-15.times do
+10.times do
   User.create!(
     username: Faker::Name.first_name,
     password: "123456",
@@ -41,10 +43,9 @@ end
 
 puts "Users created !"
 
-
 puts "Creating Events...."
 sites = Site.all
-200.times do
+10.times do
   Event.create!(
     site_id: sites.sample.id,
     status: ["pending", "created"].sample,
@@ -59,7 +60,7 @@ puts "Creating participations ...."
 users = User.all
 events = Event.all
 
-800.times do
+100.times do
   Participation.create!(
       event_id: events.sample.id,
       user_id: users.sample.id
@@ -69,8 +70,22 @@ end
 puts "Participations created"
 
 puts "Creating Astro Events. . . ."
-  AstroEventsCreator.call
+data = open('db/astronomical_events.json').read
+astroevents = JSON.parse(data)
+astroevents.each do |ev|
+  date = start_date = Date.strptime(ev["J-Avant"], '%d/%m/%Y')
+  end_date = Date.strptime(ev["J-Apres"], '%d/%m/%Y')
+  while date <= end_date
+    AstroEvent.create!(date: date,
+                       title: ev["Titre"],
+                       description: ev["Description"],
+                       score: ev["Note"].to_i,
+                       duration: (end_date - start_date).to_i + 1)
+    date += 1
+  end
+end
 
-puts " #{AstroEvent.count} Astro Events created"
+puts "#{AstroEvent.count} Astro Events created"
 puts "yeah !"
+
 
