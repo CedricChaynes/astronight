@@ -1,6 +1,16 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
+@font-face {
+  font-family: "Arkip";
+  src: font-url('Arkhip_font.eot');
+  src: font-url('Arkhip_font.eot?#iefix') format('embedded-opentype'),
+       font-url('Arkhip_font.otf') format('otf'),
+       font-url('Arkhip_font.ttf') format('truetype')
+}
+$my-font: "Arkhip";
+
+
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Arkhip", "Raleway", "Helvetica", "sans-serif";
@@ -15,8 +25,4 @@ $headers-font: "Arkhip", "Raleway", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 
-@font-face {
-  font-family: "Arkhip";
-  src: font-url('Arkhip_font.ttf') format('truetype')
-}
-$my-font: "Arkhip";
+
