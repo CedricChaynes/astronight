@@ -217,5 +217,5 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
       custom: "%A, %d %B %Y à %Hh%M"
-      message: "%d %B %Y à %Hh%M"
+      message: "%Hh%M"
     pm: pm

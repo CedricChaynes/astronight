@@ -7,16 +7,3 @@ import { launchLoader } from './launchLoader'
 placesAutocomplete();
 initMapbox();
 launchLoader()
-
-const chatbox = document.querySelector('#chatbox')
-
-const scrollToLastMessage = () => {
-
-  chatbox.scrollTop = chatbox.scrollHeight
-};
-
-chatbox.addEventListener('onchange', () => {
-  scrollToLastMessage;
-})
-
-window.setInterval(scrollToLastMessage, 50);
