@@ -3,10 +3,10 @@
 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#details" class="nav-link" role="tab" data-toggle="tab">Détails</a>
+      <a href="#details" class="nav-link active" role="tab" data-toggle="tab">Détails</a>
     </li>
     <li class="nav-item">
-      <a href="#messages" class="nav-link active" role="tab" data-toggle="tab">Messages</a>
+      <a href="#messages" class="nav-link " role="tab" data-toggle="tab">Messages</a>
     </li>
     <li class="nav-item">
       <a href="#conditions" class="nav-link" role="tab" data-toggle="tab">Conditions d'observation</a>
@@ -14,7 +14,7 @@
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade" id="details">
+    <div role="tabpanel" class="tab-pane fade in show active" id="details">
       <div class="container border p-3">
         <h4>Location: <span><%= @event.site.address %></span></h4>
         <h5>Date: <span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
@@ -28,12 +28,18 @@
             <p><%= @event.site.description %></p>
             <h3>Participants (<%= @event.participations.count %>)</h3>
             <%= render 'participations_table' %>
+
+          <%= simple_form_for [@event, @participation] do |f| %>
+            <% hidden_field_tag :event_id, @event.id %>
+            <% hidden_field_tag :user_id, current_user.id %>
+            <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary' %>
+          <% end %>
           </div>
         </div>
       </div>
     </div>
 
-    <div role="tabpanel" class="tab-pane fade in show active" id="messages">
+    <div role="tabpanel" class="tab-pane fade " id="messages">
       <div class="container border p-3">
         <h3 class="text-center">Canal de discussion</h3>
         <div class="jumbotron">

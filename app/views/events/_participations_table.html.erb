@@ -8,7 +8,12 @@
     <tbody>
       <% @event.participations.each do |participation| %>
       <tr>
-        <td><%= participation.user.avatar %></td>
+        <td>
+          <% if participation.user.photo.nil? %>
+          <% else %>
+            <%= cl_image_tag participation.user.photo, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        </td>
         <td><%= participation.user.username %></td>
         <td><%= distance_of_time_in_words(Time.now - participation.created_at) %></td>
       </tr>
@@ -17,4 +22,5 @@
   </table>
 </div>
 
-<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
+

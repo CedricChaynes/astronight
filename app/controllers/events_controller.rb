@@ -34,6 +34,7 @@ class EventsController < ApplicationController
   def show
     @message = Message.new
     @messages = @event.messages
+    @participation = Participation.new
   end
 
   private
