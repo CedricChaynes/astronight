@@ -14,3 +14,9 @@ $headers-font: "Arkhip", "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: "Arkhip";
+  src: font-url('Arkhip_font.ttf') format('truetype')
+}
+$my-font: "Arkhip";
