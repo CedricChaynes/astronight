@@ -10,8 +10,8 @@ class EventsController < ApplicationController
     @start_date = Date.today
     @end_date = case @date_range
                 when "Aujourd'hui" then Date.today
-                when "Les 7 prochains jours" then @start_date + 7
-                when "Les 14 prochains jours" then @start_date + 14
+                when "7 prochains jours" then @start_date + 7
+                when "14 prochains jours" then @start_date + 14
                 end
 
     if @address == ""
