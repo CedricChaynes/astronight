@@ -29,10 +29,12 @@
             <h3>Participants (<%= @event.participations.count %>)</h3>
             <%= render 'participations_table' %>
 
-          <%= simple_form_for [@event, @participation] do |f| %>
-            <% hidden_field_tag :event_id, @event.id %>
-            <% hidden_field_tag :user_id, current_user.id %>
-            <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary' %>
+          <% if user_signed_in? %>
+            <%= simple_form_for [@event, @participation] do |f| %>
+              <% hidden_field_tag :event_id, @event.id %>
+              <% hidden_field_tag :user_id, current_user.id %>
+              <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary' %>
+            <% end %>
           <% end %>
           </div>
         </div>
@@ -50,9 +52,9 @@
           </div>
           <%= form_with url: event_messages_path(@event),remote: true do |f| %>
           <div class="input-group mb-3">
-            <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
+              <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
             <div class="input-group-append">
-              <%= f.submit "Send", class: "btn btn-block btn-primary" %>
+              <%= f.submit "Send", class: "btn-primary btn-sm" %>
             </div>
           </div>
           <% end  %>

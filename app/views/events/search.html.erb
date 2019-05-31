@@ -24,7 +24,9 @@
         <% @events.each do |event| %>
         <tr>
           <td>
-            <%= image_tag "#{event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
+            <%= link_to event_path(event) do %>
+              <%= image_tag "#{event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
+            <% end %>
           </td>
           <td><%= event.date.strftime("%d/%m") %></td>
           <td><%= event.site.address %></td>
