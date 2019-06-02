@@ -1,0 +1,5 @@
+<% 1.upto(3) do |i| %>
+event_<%= i %>:
+  status: <%= %w[pending created].sample %>
+  date: <%= rand(Date.today..Date.civil(2019, 06, 10)) %>
+<% end %>
