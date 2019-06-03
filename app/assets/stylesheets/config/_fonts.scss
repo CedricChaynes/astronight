@@ -3,10 +3,8 @@
 
 @font-face {
   font-family: "Arkip";
-  src: font-url('Arkhip_font.eot');
-  src: font-url('Arkhip_font.eot?#iefix') format('embedded-opentype'),
-       font-url('Arkhip_font.otf') format('otf'),
-       font-url('Arkhip_font.ttf') format('truetype')
+  src: font-url('../../fonts/Arkhip_font.otf') format('otf'),
+       font-url('../../fonts/Arkhip_font.ttf') format('truetype')
 }
 $my-font: "Arkhip";
 
@@ -24,9 +22,3 @@ $headers-font: "Arkhip", "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-
-// @font-face {
-//   font-family: "Arkhip";
-//   src: font-url('Arkhip_font.ttf') format('truetype')
-// }
-// $my-font: "Arkhip";

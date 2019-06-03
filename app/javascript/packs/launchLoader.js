@@ -3,7 +3,7 @@ import { CountUp } from 'countup.js'
 const loader = document.querySelector(".loader");
 
 const launchLoader = () => {
-  if ((loader) {
+  if (loader) {
   loader.style.display = "block";
   const countUpSite = new CountUp('countup-site', 587, {duration: 4, separator: ' ', suffix: ' sites d\'observation'});
   countUpSite.start()
