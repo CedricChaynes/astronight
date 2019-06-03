@@ -34,18 +34,18 @@ class WeatherCrawler
       elem.entries.each do |entry|
         element[entry[0]] = entry[1] unless unwanted_list.include?(entry[0])
       end
+
       element["Weather_next_5_days"] = array
-      treated_data << element
+
+      site = Site.find_by(address: "#{element['Site']}, #{element['Commune']}, #{element['Région']}")
+      site.update(next_5_days_meteo: element['Weather_next_5_days'])
+
       sleep(1)
       p count
       p "Fetching weather for site #{elem['N°']}..."
       p "-" * 100
       count += 1
       sleep(60) if (count % 50).zero?
-    end
-
-    File.open("#{Rails.root}/app/services/weather_by_site.json", "w+") do |f|
-      f.write(JSON.pretty_generate(treated_data))
     end
   end
 end
