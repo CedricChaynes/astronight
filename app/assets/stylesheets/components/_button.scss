@@ -1,0 +1,23 @@
+.btn-bc-light {
+  text-decoration: none;
+  background-color: #f6f6f6;
+  color: #083358;
+  border: 1px solid #f6f6f6;
+  padding: 8px 24px;
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+.btn-bc-light:hover {
+  text-decoration: none;
+  color: #fc3c3c;
+  background-color: #f6f6f6;
+  border: 1px solid #fc3c3c;
+}
+
+.btn-inscr {
+  font-size: 16px;
+  width: 150px;
+  margin: 0 10px;
+  text-align: center;
+}

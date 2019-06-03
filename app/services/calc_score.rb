@@ -10,11 +10,8 @@ class CalcScore
     light_pol_score = @site.light_pol_index
 
     # calculate score based on cloudness
-    json_from_file = File.read("#{Rails.root}/app/services/weather_by_site_by_night.json")
-    sites = JSON.parse(json_from_file)
-    site_data = sites.find { |site| [@site.lat, @site.lng] == [site["Latitude"], site["Longitude"]] }
-    weather_that_night = site_data["Weather_next_5_nights"]
-                         .find { |weather| weather["night"] == @date.strftime('%d-%m-%Y') }
+    weather_that_night = @site.next_5_days_meteo
+                              .find { |hash| hash["night"] == @date.strftime('%d-%m-%Y') }
     if weather_that_night["weathers"].empty?
       cloudness_score = -100
     else

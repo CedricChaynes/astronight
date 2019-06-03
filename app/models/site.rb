@@ -7,4 +7,7 @@ class Site < ApplicationRecord
     # TODO
   end
 
+  def photo
+    read_attribute(:photo) || ActionController::Base.helpers.asset_path("pre.png")
+  end
 end

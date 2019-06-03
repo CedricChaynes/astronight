@@ -8,26 +8,22 @@ AstroEvent.destroy_all
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
+Site.destroy_all
 puts "Previous seeds destroyed !"
 
+unless Site.any?
+  filepath = 'db/astronomical_sites_gresac.csv'
 
-# unless Site.any?
-#   filepath = 'db/astronomical_sites_gresac.csv'
-
-#   CSV.foreach(filepath, headers: :first_row) do |row|
-#     address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
-#     Site.create!(
-#       address: address,
-#       lat: row["Latitude"].to_f,
-#       lng: row["Longitude"].to_f,
-#       description: row["Description"],
-#       photo: row["Photo"],
-#       light_pol_index: row["Indice PL"].to_i
-#       )
-#   end
-# end
-
-# u = User.create!(username: "AdeleSo", password: "123456", avatar: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1559582022/uzitogiesq6mxk0oamjo.png"), email: "adele.soullier@gmail.com", mobile: "0142054472")
+  CSV.foreach(filepath, headers: :first_row) do |row|
+    address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
+    Site.create!(
+      address: address,
+      lat: row["Latitude"].to_f,
+      lng: row["Longitude"].to_f,
+      description: row["Description"],
+      light_pol_index: row["Indice PL"].to_i
+      )
+end
 
 def phone_random
   "#{%w[+33 (+33) 0].sample}#{rand(6..7)}#{rand.to_s[2..9]}"

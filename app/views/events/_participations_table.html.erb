@@ -1,26 +1,12 @@
 <div style="height: 320px;">
-  <table style="overflow-y: scroll">
-    <thead>
-      <th>Photo de profil</th>
-      <th>Surnom</th>
-      <th>Inscrit depuis</th>
-    </thead>
-    <tbody>
-      <% @event.participations.each do |participation| %>
-      <tr>
-        <td>
-          <% if participation.user.avatar.url.nil? %>
-          <% else %>
-            <%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, background: "#f6f6f6" %>
-          <% end %>
-        </td>
-        <td><%= participation.user.username %></td>
-        <td><%= distance_of_time_in_words(Time.now - participation.created_at) %></td>
-      </tr>
-      <% end  %>
-    </tbody>
-  </table>
-</div>
+
+<% @event.participations.each do |participation| %>
+  <% if participation.user.photo.nil? %>
+  <% else %>
+    <%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, background: "#f6f6f6" %>
+<%= participation.user.username %>
+<%= distance_of_time_in_words(Time.now - participation.created_at) %>
+<% end  %>
 
 
 

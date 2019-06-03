@@ -14,8 +14,8 @@
 
 .navbar-brand {
   margin-right: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .nav-item {
@@ -39,20 +39,22 @@
   z-index: 1070;
 }
 
-.accroche {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 1px;
-  margin-top: 0px;
+.name_margin {
+  margin-left: 15px;
 }
 
-.brocraft_name {
+.bonjour {
+  margin: auto;
+  padding-right: 20px;
+}
+
+.astronight_name {
   font-size: 40px;
   margin-bottom: -15px;
   color: var(--lightColor);
 }
 
-.brocraft_name {
+.astronight_name {
   background:
      linear-gradient(
        to bottom, var(--pushColor) 0%,
