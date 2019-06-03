@@ -14,14 +14,22 @@
 
 body {
   background: #f2f2f2;
-  // background-image: asset-url("background_astronight_4.jpg");
-  // background-repeat: no-repeat;
-  // background-position: center center;
-  // background-size: cover;
-  // background-attachment: fixed;
-  // color: var(--lightColor);
+  background-image: asset-url("background_astronight_3bis.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 h2 {
   font-family: "Arkhip";
+}
+
+.container {
+  background-color: var(--lightColor);
+  border-radius: 8px;
+}
+
+.margin-form {
+  margin-top: 100px;
 }
