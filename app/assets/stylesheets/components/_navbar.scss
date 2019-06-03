@@ -110,7 +110,6 @@ body {
 
 form {
   // top: 100px;
-  margin-top: 30px;
   position: relative;
 }
 
@@ -136,7 +135,6 @@ h4 a:hover {
 }
 
 input[type='email'], input[type='password'] {
-  width: 60%;
   outline: none;
   border-top: 0;
   color: var(--mainColor);
@@ -151,12 +149,11 @@ input[type='email'], input[type='password'] {
 input[type='submit'] {
   color: #fff;
   width: 150px;
-  height: 50px;
+  height: 36px;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 50px;
   border-radius: 4px;
   transition: 200ms ease-out;
   background: #f857a6;  /* fallback for old browsers */

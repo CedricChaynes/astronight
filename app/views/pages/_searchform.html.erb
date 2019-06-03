@@ -1,17 +1,18 @@
 <div class="container p-3">
-  <h3 style="margin-top: 80px;">Vous cherchez une place pour votre soiree d'astronomie ? </h3>
+  <h3 style="margin-top: 80px;">Vous cherchez une place pour votre soirée d'astronomie ? </h3>
   <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
-    <div class="d-flex">
+    <div class="form-inline">
       <div>
-        <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrez une adresse', size: 49, id: "address-input"} %>
+        <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrez une adresse', size: 49} %>
       </div>
       <div>
         <%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %>
       </div>
     </div>
-
-    <%= f.input :date_range, label: 'Période', as: :radio_buttons, collection: ['Aujourd\'hui', 'Les 7 prochains jours', 'Les 14 prochains jours'], selected: 'Les 14 prochains jours' %>
-     <%= f.button :submit, 'Go!', class: 'btn btn-primary' %>
+    <div class="form-group p-3">
+      <%= f.input :date_range, label: "Choisissez la période:", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
+      <%= f.button :submit, 'Go!', class: 'btn btn-primary' %>
+    </div>
   <% end %>
 </div>
 

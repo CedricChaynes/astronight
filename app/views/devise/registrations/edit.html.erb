@@ -12,28 +12,28 @@
 
     <%= f.input :username,
                 required: false, label: "Identifiant",
-                input_html: { autocomplete: "Choose a username" }%>
+                input_html: { autocomplete: "Choisir un surnom" }%>
     <%= f.input :email, required: false %>
     <%= f.input :mobile,
                 required: false, label: "Téléphone",
-                input_html: { autocomplete: "Mobile Phone" }%>
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                input_html: { autocomplete: "Entrez votre numéro" }%>
+    <%= f.input :password, label: 'Mot de passe',
+                hint: "laissez le champ vide si vous ne voulez pas le changer",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+    <%= f.input :password_confirmation, label: 'Confirmer le mot de passe',
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+    <%= f.input :current_password, label: 'Mot de passe actuel',
+                hint: "nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :avatar %>
+    <%= f.input :avatar, label: 'Photo de profil' %>
     <%= f.input :avatar_cache, as: :hidden %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="form-actions text-right">
+    <%= f.button :submit, "Mettre à jour" %>
   </div>
 <% end %>
-<%= link_to "Back", :back %>
+<%= link_to "Retourner", :back %>
