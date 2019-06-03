@@ -29,6 +29,7 @@ gem 'awesome_print'
 gem 'geocoder'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem "sentry-raven"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
