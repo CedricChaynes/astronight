@@ -3,7 +3,15 @@ class UsersController < ApplicationController
 def create
   @user=User.new(user_params)
   @user.save!
-end
+
+   if @user.save
+      mail = userMailer.with(user: @user).create_confirmation
+      mail.deliver_now
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
+  end
 
  def update
   current_user.update!(user_params)
