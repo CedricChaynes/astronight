@@ -12,11 +12,16 @@
 @import "components/index";
 @import "pages/index";
 
-// body {
-//   background-image: asset-url("background_astronight_8.jpg");
-//   background-repeat: no-repeat;
-//   background-position: center center;
-//   background-size: cover;
-//   background-attachment: fixed;
-//   color: var(--lightColor);
-// }
+body {
+  background: #f2f2f2;
+  // background-image: asset-url("background_astronight_4.jpg");
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  // background-size: cover;
+  // background-attachment: fixed;
+  // color: var(--lightColor);
+}
+
+h2 {
+  font-family: "Arkhip";
+}
