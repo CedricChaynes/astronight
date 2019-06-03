@@ -7,33 +7,23 @@
 <h3 id="countup-astro-events"></h3>
 <h3 id="countup-light-pol"></h3>
 </div>
-
 <br>
+
 <div class="content">
   <div style="margin-top: 80px"></div>
   <div class="container">
     <h3> Astronight vous recommande ces <%= @events.count %> événements:  </h3>
-    <table>
-      <thead>
-        <th>Photo</th>
-        <th>Date</th>
-        <th>Lieu</th>
-        <th>Score</th>
-      </thead>
-      <tbody>
         <% @events.each do |event| %>
-        <tr>
-          <td>
+            <ul>
             <%= link_to event_path(event) do %>
               <%= image_tag "#{event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
-            <% end %>
-          </td>
-          <td><%= event.date.strftime("%d/%m") %></td>
-          <td><%= event.site.address %></td>
-          <td><%= event.event_score %></td>
-        </tr>
+          <li><%= event.date.strftime("%d/%m") %></li>
+          <li><%= event.site.address %></li>
+          <li><%= event.event_score %></li>
+          <% end %>
+          </ul>
         <% end %>
-      </tbody>
-    </table>
   </div>
 </div>
+
+<%= render 'mapbox' %>
