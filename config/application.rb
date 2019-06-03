@@ -28,4 +28,7 @@ module Astronight
   end
 end
 
+Raven.configure do |config|
+  config.dsn = 'https://0cef9081b9b54c30b1a8449f840a6506:12e18bc0fa2a48f2b678b5a8d5bd1c6e@sentry.io/1473436'
+end
 

@@ -12,7 +12,7 @@
 <div class="content">
   <div style="margin-top: 80px"></div>
   <div class="container">
-    <h3> Nous avons trouvé <%= @events.count %> événements selon vos critères de recherche </h3>
+    <h3> Astronight vous recommande ces <%= @events.count %> événements:  </h3>
     <table>
       <thead>
         <th>Photo</th>
@@ -21,7 +21,7 @@
         <th>Score</th>
       </thead>
       <tbody>
-        <% @events.order(event_score: :desc, date: :asc).each do |event| %>
+        <% @events.each do |event| %>
         <tr>
           <td>
             <%= link_to event_path(event) do %>

@@ -29,6 +29,7 @@ gem 'awesome_print'
 gem 'geocoder'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem "sentry-raven"
 gem 'postmark-rails'
 
 group :development do
