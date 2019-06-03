@@ -5,10 +5,10 @@
   <br>
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#messages" class="nav-link active" role="tab" data-toggle="tab">Participants</a>
+      <a href="#details" class="nav-link" role="tab" data-toggle="tab">Détails</a>
     </li>
     <li class="nav-item">
-      <a href="#details" class="nav-link" role="tab" data-toggle="tab">Détails</a>
+      <a href="#messages" class="nav-link active" role="tab" data-toggle="tab">Messages</a>
     </li>
     <li class="nav-item">
       <a href="#conditions" class="nav-link" role="tab" data-toggle="tab">Conditions d'observation</a>
@@ -18,38 +18,52 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade" id="details">
       <div class="container border p-3">
-        <h4>Location: <span><%= @event.site.address %></span></h4>
-        <h5>Date: <span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
-        <div class="row">
-          <div class="col-4">
-            <%= image_tag "#{@event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
-          </div>
-          <div class="col-8">
-            <h2>Score: <%=  %></h2>
-            <h3>Description du site</h3>
-            <p><%= @event.site.description %></p>
+        <h4><%= @event.site.address %></h4>
+        <h5><span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
+        <br>
+        <div>
+          <img class="pictos" src="/assets/planet.png"> <span>Evenements Astronomiques</span>
+          <img class="pictos" src="/assets/moon.png"> <span> Cycle de la lune</span>
+          <img class="pictos" src="/assets/city.png"><span> Pollution Lumineuse</span>
+          <img class="pictos" src="/assets/weather"><span> Méteo</span>
+        </div>
+        <br>
+        <div>
+        <div>
+          <%= image_tag @event.site.photo, class: 'sites' %>
+        </div>
 
-          </div>
+        <div class="description">
+           <h2>Score: <%=  %></h2>
+           <h3>Description du site<%= @event.site.description %></h3>
         </div>
       </div>
-    </div>
+
+         <div>
+          <% if user_signed_in? %>
+              <%= simple_form_for [@event, @participation] do |f| %>
+                <% hidden_field_tag :event_id, @event.id %>
+                <% hidden_field_tag :user_id, current_user.id %>
+                <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary ', style: "width:100%"%>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <section class="py-l u-separator-top">
+            <h3>Participants</h3>
+              <%=render 'participations_table' %>
+        </section>
+      </div>
+
+
 
     <div role="tabpanel" class="tab-pane fade in show active" id="messages">
       <div class="container border p-3">
         <div class="row">
+
           <div class="col-6">
-            <h3>Participants (<%= @event.participations.count %>)</h3>
-            <%= render 'participations_table' %>
-            <% if user_signed_in? %>
-              <%= simple_form_for [@event, @participation] do |f| %>
-                <% hidden_field_tag :event_id, @event.id %>
-                <% hidden_field_tag :user_id, current_user.id %>
-                <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary w-100' %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="col-6">
-            <h3 class="text-center">Canal de discussion</h3>
+            <h3 class="text-center">Discussion</h3>
             <div class="jumbotron" style="padding: 0">
               <div class="well p-3" id="chatbox" style="height:320px; border:solid 1px #222222; overflow-y: scroll">
                 <% @messages.each do |message|%>
@@ -74,21 +88,42 @@
     <div role="tabpanel" class="tab-pane fade" id="conditions">
       <div class="container border p-3">
         <div class="row">
-          <div class="col-6">
+          <div class="col-6"> <h3>
+          Pollution Lumineuse</h3>
             <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
             </iframe>
+            <div> La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</div>
           </div>
           <div class="col-6">
             <div class="col-12">
-              <h3>Conditions d'observation</h3>
-              <%= render 'obs_info_table' %>
+              <h3>Temps</h3>
+              <div> La météo est basée sur trois critères:
+                <ul>
+              <li> Humidité: Lorsque le temps est humide ,il est difficile d'avoir de bonnes conditions d'observation car l'eau présente opacifie l'air. Elle peut aussi avoir un impact sur la qualité des instruments d'observations.</li>
+              <li>  Vent : La présence de vents est souvent liée aux turbulences. De plus, il peut faire vibrer l'instrument et il sera donc impossible d'avoir une image stable</li>
+              <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation
+              </li>
+            </ul>
             </div>
-              <h3>Phase et Visibilité de la Lune</h3>
+              <br>
+              <br>
+            </div>
+            <div>
+              <h3>Cycle de la lune</h3>
               <%= render 'moonphase' %>
+              <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit noire ou non.</div>
+            </div>
+              <br>
+              <br>
+
+            <div>
+              <h3> Evènements Astronomiques </h3>
+              <div> Les observations astronomiques sont ponctués d'evènements à ne pas manquer pour rendre mémorable vos sorties</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script>document.querySelector('#chatbox').scrollTop = document.querySelector('#chatbox').scrollHeight</script>
+
