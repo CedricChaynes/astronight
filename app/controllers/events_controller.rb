@@ -2,6 +2,10 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_event, only: %i[show update delete]
 
+  def index
+    @my_events = current_user.events
+  end
+
   def search
     @search = params[:searchform]
     @address = @search[:address]
@@ -10,8 +14,8 @@ class EventsController < ApplicationController
     @start_date = Date.today
     @end_date = case @date_range
                 when "Aujourd'hui" then Date.today
-                when "Les 7 prochains jours" then @start_date + 7
-                when "Les 14 prochains jours" then @start_date + 14
+                when "7 prochains jours" then @start_date + 7
+                when "14 prochains jours" then @start_date + 14
                 end
 
     if @address == ""
@@ -34,6 +38,7 @@ class EventsController < ApplicationController
   def show
     @message = Message.new
     @messages = @event.messages
+    @participation = Participation.new
   end
 
   private

@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class AstronomicalEventsControllerTest < ActionDispatch::IntegrationTest
-  test "should get shiw" do
-    get astronomical_events_shiw_url
+  test "should get show" do
+    get astronomical_events_show_url
     assert_response :success
   end
 

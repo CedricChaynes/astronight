@@ -1,0 +1,7 @@
+# run rails db:test:prepare to convert password to devise ones
+# tai:
+#   username: "sirtaylor88"
+#   email: "nhattai.nguyen88@gmail.com"
+#   password: "123456"
+#   mobile: "0612506755"
+

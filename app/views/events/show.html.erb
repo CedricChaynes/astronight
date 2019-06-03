@@ -1,12 +1,14 @@
-<div class="container form_console from_reserv" style="width: 1000px">
-  <h1 class="text-center" style="padding-top: 10px">Informations sur l'événement</h1>
-
+<div class="container form_console from_reserv" style="width: 1200px">
+  <br>
+  <br>
+  <br>
+  <br>
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#details" class="nav-link" role="tab" data-toggle="tab">Détails</a>
+      <a href="#messages" class="nav-link active" role="tab" data-toggle="tab">Participants</a>
     </li>
     <li class="nav-item">
-      <a href="#messages" class="nav-link active" role="tab" data-toggle="tab">Messages</a>
+      <a href="#details" class="nav-link" role="tab" data-toggle="tab">Détails</a>
     </li>
     <li class="nav-item">
       <a href="#conditions" class="nav-link" role="tab" data-toggle="tab">Conditions d'observation</a>
@@ -19,15 +21,14 @@
         <h4>Location: <span><%= @event.site.address %></span></h4>
         <h5>Date: <span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
         <div class="row">
-          <div class="col-6">
+          <div class="col-4">
             <%= image_tag "#{@event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
           </div>
-          <div class="col-6">
+          <div class="col-8">
             <h2>Score: <%=  %></h2>
             <h3>Description du site</h3>
             <p><%= @event.site.description %></p>
-            <h3>Participants (<%= @event.participations.count %>)</h3>
-            <%= render 'participations_table' %>
+
           </div>
         </div>
       </div>
@@ -35,22 +36,38 @@
 
     <div role="tabpanel" class="tab-pane fade in show active" id="messages">
       <div class="container border p-3">
-        <h3 class="text-center">Canal de discussion</h3>
-        <div class="jumbotron">
-          <div class="well p-3" id="chatbox" style="height:250px; border:solid 1px #222222; overflow-y: scroll">
-            <% @messages.each do |message|%>
-              <%= render 'messages/message', message: message %>
-            <% end  %>
+        <div class="row">
+          <div class="col-6">
+            <h3>Participants (<%= @event.participations.count %>)</h3>
+            <%= render 'participations_table' %>
+            <% if user_signed_in? %>
+              <%= simple_form_for [@event, @participation] do |f| %>
+                <% hidden_field_tag :event_id, @event.id %>
+                <% hidden_field_tag :user_id, current_user.id %>
+                <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary w-100' %>
+              <% end %>
+            <% end %>
           </div>
-          <%= form_with url: event_messages_path(@event),remote: true do |f| %>
-          <div class="input-group mb-3">
-            <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
-            <div class="input-group-append">
-              <%= f.submit "Send", class: "btn btn-block btn-primary" %>
+          <div class="col-6">
+            <h3 class="text-center">Canal de discussion</h3>
+            <div class="jumbotron" style="padding: 0">
+              <div class="well p-3" id="chatbox" style="height:320px; border:solid 1px #222222; overflow-y: scroll">
+                <% @messages.each do |message|%>
+                  <%= render 'messages/message', message: message %>
+                <% end  %>
+              </div>
+              <%= form_with url: event_messages_path(@event),remote: true do |f| %>
+              <div class="input-group mb-3">
+                  <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
+                <div class="input-group-append">
+                  <%= f.submit "Envoyez", class: "btn-primary btn-sm" %>
+                </div>
+              </div>
+              <% end %>
             </div>
           </div>
-          <% end  %>
         </div>
+
       </div>
     </div>
 
@@ -66,7 +83,6 @@
               <h3>Conditions d'observation</h3>
               <%= render 'obs_info_table' %>
             </div>
-
               <h3>Phase et Visibilité de la Lune</h3>
               <%= render 'moonphase' %>
           </div>
@@ -74,5 +90,5 @@
       </div>
     </div>
   </div>
-
 </div>
+<script>document.querySelector('#chatbox').scrollTop = document.querySelector('#chatbox').scrollHeight</script>
