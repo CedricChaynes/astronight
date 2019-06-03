@@ -31,7 +31,7 @@ class WeatherCrawler
           array << h
         end
       end
-      elem.entries.each do |entry|
+        elem.entries.each do |entry|
         element[entry[0]] = entry[1] unless unwanted_list.include?(entry[0])
       end
 
@@ -39,7 +39,6 @@ class WeatherCrawler
 
       site = Site.find_by(address: "#{element['Site']}, #{element['Commune']}, #{element['Région']}")
       site.update(next_5_days_meteo: element['Weather_next_5_days'])
-
       sleep(1)
       p count
       p "Fetching weather for site #{elem['N°']}..."

@@ -1,19 +1,14 @@
 class UpdateEvents
   def initialize
-    @threshold = 5
+    @threshold = 14
   end
 
   def call
-    # begin
-      destroy_old_events
-      WeatherCrawler.call
-      WeatherByNightConverter.call
-      create_new_events
-      update_score_events
-    # rescue e
-    #   puts e.message
-    #   puts e.backtrace.inspect
-    # end
+    destroy_old_events
+    WeatherCrawler.call
+    WeatherByNightConverter.call
+    create_new_events
+    update_score_events
   end
 
   def self.call
@@ -39,7 +34,7 @@ class UpdateEvents
       if score < @threshold || event.participations.empty?
         event.destroy
       else
-        event.event_score = skcore
+        event.event_score = score
         event.save
       end
     end
