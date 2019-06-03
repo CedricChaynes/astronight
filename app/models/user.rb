@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /\A([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-]+\.)+([a-zA-Z]{2,5})\z/ }
 
   mount_uploader :avatar, PhotoUploader
+  after_create :send_welcome_email
 
   def avatar_url
     if avatar.url.present?
@@ -22,5 +23,9 @@ class User < ApplicationRecord
     else
       'http://placehold.it/80x80'
     end
+  end
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
   end
 end
