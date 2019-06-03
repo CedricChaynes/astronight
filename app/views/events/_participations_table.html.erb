@@ -9,9 +9,9 @@
       <% @event.participations.each do |participation| %>
       <tr>
         <td>
-          <% if participation.user.photo.nil? %>
+          <% if participation.user.avatar.url.nil? %>
           <% else %>
-            <%= cl_image_tag participation.user.photo, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, background: "#f6f6f6" %>
           <% end %>
         </td>
         <td><%= participation.user.username %></td>
