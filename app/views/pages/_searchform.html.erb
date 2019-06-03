@@ -9,7 +9,7 @@
         <%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %>
       </div>
     </div>
-    <div class="form-group p-3">
+    <div class="form-group">
       <%= f.input :date_range, label: "Choisissez la période:", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
       <%= f.button :submit, 'Go!', class: 'btn btn-primary' %>
     </div>
