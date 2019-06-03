@@ -19,11 +19,16 @@
               <%= image_tag "#{event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
           <li><%= event.date.strftime("%d/%m") %></li>
           <li><%= event.site.address %></li>
-          <li><%= event.event_score %></li>
-          <% end %>
+          <li id="event" data-score=<%= event.event_score %>><%= event.event_score %></li>
           </ul>
-        <% end %>
+      <% end %>
+        <!-- Gauge chart -->
+        <div id="mygauge" class="cpuSpeed gauge-container" data-score=<%= event.event_score %>></div>
+        <!-- End of gauge chart -->
+    <% end %>
   </div>
 </div>
 
+
 <%= render 'mapbox' %>
+
