@@ -4,16 +4,16 @@ class UpdateEvents
   end
 
   def call
-    begin
+    # begin
       destroy_old_events
       WeatherCrawler.call
       WeatherByNightConverter.call
       create_new_events
       update_score_events
-    rescue e
-      puts e.message
-      puts e.backtrace.inspect
-    end
+    # rescue e
+    #   puts e.message
+    #   puts e.backtrace.inspect
+    # end
   end
 
   def self.call
