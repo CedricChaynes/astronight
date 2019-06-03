@@ -14,8 +14,8 @@
 
 .navbar-brand {
   margin-right: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .nav-item {
@@ -84,24 +84,13 @@
 }
 
 
-body {
-  background: #f2f2f2;
-}
-
-* {
-  margin: 0;
-  font-weight: 100;
-  letter-spacing: 2px;
-  font-family: 'Roboto', sans-serif;
-}
-
 .logo {
   margin: auto;
   position: relative;
   -webkit-transition: 200ms ease-in-out;
   -o-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
-  -webkit-animation: rotation 15s infinite linear;
+  -webkit-animation: rotation 70s infinite linear;
 }
 
 .border {
@@ -220,7 +209,7 @@ input[type='submit']:hover {
   position:fixed;
   border-radius:50%;
   z-index:999;
-  animation:  rotation 10s infinite linear;
+  animation:  rotation 5s infinite linear;
 }
 
 @-webkit-keyframes rotation {
