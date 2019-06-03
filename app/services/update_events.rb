@@ -6,7 +6,6 @@ class UpdateEvents
   def call
     destroy_old_events
     WeatherCrawler.call
-    WeatherByNightConverter.call
     create_new_events
     update_score_events
   end

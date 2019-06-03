@@ -8,8 +8,8 @@ AstroEvent.destroy_all
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
+Site.destroy_all
 puts "Previous seeds destroyed !"
-
 
 unless Site.any?
   filepath = 'db/astronomical_sites_gresac.csv'
@@ -21,7 +21,6 @@ unless Site.any?
       lat: row["Latitude"].to_f,
       lng: row["Longitude"].to_f,
       description: row["Description"],
-      photo: row["Photo"],
       light_pol_index: row["Indice PL"].to_i
       )
   end
