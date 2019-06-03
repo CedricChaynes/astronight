@@ -11,9 +11,12 @@ User.destroy_all
 Site.destroy_all
 puts "Previous seeds destroyed !"
 
-unless Site.any?
-  filepath = 'db/astronomical_sites_gresac.csv'
 
+puts "Creating Sites..."
+
+filepath = 'db/astronomical_sites_gresac.csv'
+
+unless Site.any?
   CSV.foreach(filepath, headers: :first_row) do |row|
     address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
     Site.create!(
@@ -23,7 +26,10 @@ unless Site.any?
       description: row["Description"],
       light_pol_index: row["Indice PL"].to_i
       )
+  end
 end
+
+puts "Sites created !"
 
 def phone_random
   "#{%w[+33 (+33) 0].sample}#{rand(6..7)}#{rand.to_s[2..9]}"
@@ -70,14 +76,21 @@ puts "Events created !"
 
 puts "Creating participations ...."
 
-users = User.all
-events = Event.all
+def uniq?(array)
+  array.length == array.uniq.length
+end
 
+array = []
 60.times do
-  Participation.create!(
-      event_id: events.sample.id,
-      user_id: users.sample.id
-    )
+  event_id = Event.all.sample.id
+  user_id = User.all.sample.id
+  array << [event_id, user_id]
+  if uniq?(array)
+    Participation.create!(
+        event_id: event_id,
+        user_id: user_id
+      )
+  end
 end
 
 puts "Participations created"
@@ -100,5 +113,3 @@ end
 
 puts "#{AstroEvent.count} Astro Events created"
 puts "yeah !"
-
-

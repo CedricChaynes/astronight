@@ -1,12 +1,7 @@
-<div style="height: 320px;">
-
 <% @event.participations.each do |participation| %>
-  <% if participation.user.photo.nil? %>
-  <% else %>
-    <%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, background: "#f6f6f6" %>
-<%= participation.user.username %>
-<%= distance_of_time_in_words(Time.now - participation.created_at) %>
-<% end  %>
-
-
-
+  <ul>
+    <li><%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, height: 80, background: "#f6f6f6" %></li>
+    <li><%= participation.user.username %></li>
+    <li><%= distance_of_time_in_words(Time.now - participation.created_at) %></li>
+  </ul>
+<% end %>
