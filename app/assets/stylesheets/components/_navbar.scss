@@ -39,18 +39,22 @@
   z-index: 1070;
 }
 
+.name_margin {
+  margin-left: 15px;
+}
+
 .bonjour {
   margin: auto;
   padding-right: 20px;
 }
 
-.brocraft_name {
+.astronight_name {
   font-size: 40px;
   margin-bottom: -15px;
   color: var(--lightColor);
 }
 
-.brocraft_name {
+.astronight_name {
   background:
      linear-gradient(
        to bottom, var(--pushColor) 0%,
