@@ -2,6 +2,10 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_event, only: %i[show update delete]
 
+  def index
+    @my_events = current_user.events
+  end
+
   def search
     @search = params[:searchform]
     @address = @search[:address]

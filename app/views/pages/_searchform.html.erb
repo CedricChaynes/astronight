@@ -3,7 +3,7 @@
   <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
     <div class="form-inline">
       <div>
-        <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrez une adresse', size: 49, id: "address-input"} %>
+        <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrez une adresse', size: 49} %>
       </div>
       <div>
         <%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %>

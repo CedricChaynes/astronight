@@ -1,5 +1,4 @@
-<h2>Se connecter</h2>
-
+<h3 class="text-center p-3" style="margin-top: 24px">Connexion</h3>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
@@ -7,15 +6,16 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
+                label: 'Mot de passe',
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.input :remember_me, label: 'Rester connecté', as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions text-right">
     <%= f.button :submit, "Se connecter" %>
   </div>
+  <div>
+    <%= render "devise/shared/links" %>
+  </div>
 <% end %>
-<!--
-<%= render "devise/shared/links" %>
- -->

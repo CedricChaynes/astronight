@@ -21,7 +21,7 @@
         <th>Score</th>
       </thead>
       <tbody>
-        <% @events.each do |event| %>
+        <% @events.order(event_score: :desc, date: :asc).each do |event| %>
         <tr>
           <td>
             <%= link_to event_path(event) do %>
