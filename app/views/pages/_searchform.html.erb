@@ -1,5 +1,5 @@
 <div class="container p-3">
-  <h3>Vous cherchez une place pour votre soirée d'astronomie ? </h3>
+  <h3 class="h3_home">Vous cherchez une place pour votre soirée d'astronomie ? </h3>
   <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
     <div class="form-inline">
       <div>
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <%= f.input :date_range, label: "Choisissez la période:", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
-      <%= f.button :submit, 'Go!', class: 'btn btn-primary', id: "searchbtn" %>
+      <%= f.button :submit, 'Go!', class: 'btn-bc-light', id: "searchbtn" %>
     </div>
   <% end %>
 </div>

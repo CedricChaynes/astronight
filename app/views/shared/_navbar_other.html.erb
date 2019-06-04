@@ -1,0 +1,44 @@
+<div class="navbar_white navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div style="display: flex; align-items: center;">
+    <div>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo_astronight_blue.png" %>
+        <% end %>
+    </div>
+  <%= link_to root_path, class: "navbar-brand name_margin" do %>
+    <h2 class="astronight_name_blue">
+      <span>AstroNight</span>
+    </h2>
+    <% end %>
+  </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="display: flex; align-items: center;">
+      <% if user_signed_in? %>
+        <li>
+          <p class="bonjour_blue">Bonjour <%= current_user.username %> </p>
+        </li>
+        <li  class="nav-item dropdown">
+          <%= image_tag current_user.avatar_url, class: "avatar_blue", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Mon profil", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Mes évènements à venir", '#' , class: "dropdown-item" %>
+            <%= link_to "Mes sites préférés", '#', class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <span class="nav-connexion">
+          <%= link_to "Se connecter", new_user_session_path, class: 'btn-bc-light btn-inscr' %>
+          <%= link_to "S'inscrire", new_user_registration_path, class: 'btn-bc-light btn-inscr' %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

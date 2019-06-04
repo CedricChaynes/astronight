@@ -1,5 +1,7 @@
-<div class="container form_console from_reserv">
+
+<div class="container form_console from_reserv w-75">
 <br>
+
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a href="#details" class="nav-link active" role="tab" data-toggle="tab">Détails</a>
@@ -13,9 +15,15 @@
   </ul>
 
   <div class="tab-content">
-    <%= render 'details'%>
+    <div role="tabpanel" class="tab-pane fade in show active" id="details">
+      <%= render 'details'%>
+    </div>
+  <div role="tabpanel" class="tab-pane fade" id="messages">
     <%= render 'discussion'%>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="conditions">
     <%= render 'observation'%>
+  </div>
+
 </div>
-
-
+</div>

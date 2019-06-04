@@ -15,7 +15,11 @@
     <% end %>
   </head>
   <body>
+    <% unless current_page?(root_path) %>
+    <%= render 'shared/navbar_other' %>
+      <% else %>
     <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>

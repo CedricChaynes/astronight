@@ -1,10 +1,12 @@
   .btn-primary
   {
   align-self: flex-end;
+
   width: 200px;
-  background-color: red;
+  background-color: var(--lightColor);
   font-size: 16px;
   height: 36px;
   transition: 200ms ease-out;
+  color: var(--secondColor);
 
 }
