@@ -21,3 +21,22 @@
   margin: 0 10px;
   text-align: center;
 }
+
+.btn-bc-go {
+  text-decoration: none;
+  background-color: white;
+  color: #47A1D1;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+.btn-bc-go:hover {
+  text-decoration: none;
+  background-color: white;
+  color: #47A1D1;
+  border: 1px solid white;
+  transform: scale(1.2);
+}
+

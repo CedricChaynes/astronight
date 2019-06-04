@@ -11,18 +11,15 @@
 @import "gauge";
 @import "button";
 @import "form";
-
 @import "conteneur";
 @import "element";
 @import "btn-primary";
-
 @import "map";
 @import "container";
-
 @import "gauge-container";
-
 @import "img";
 @import "cards";
+@import "links_connexion";
 
 
 body {
@@ -43,4 +40,8 @@ a {
 
 h3 {
   color: #47A1D1;
+}
+
+.h3_white {
+  color: white;
 }
