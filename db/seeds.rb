@@ -16,17 +16,15 @@ puts "Creating Sites..."
 
 filepath = 'db/astronomical_sites_gresac.csv'
 
-unless Site.any?
-  CSV.foreach(filepath, headers: :first_row) do |row|
-    address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
-    Site.create!(
-      address: address,
-      lat: row["Latitude"].to_f,
-      lng: row["Longitude"].to_f,
-      description: row["Description"],
-      light_pol_index: row["Indice PL"].to_i
-      )
-  end
+CSV.foreach(filepath, headers: :first_row) do |row|
+  address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
+  Site.create!(
+    address: address,
+    lat: row["Latitude"].to_f,
+    lng: row["Longitude"].to_f,
+    description: row["Description"],
+    light_pol_index: row["Indice PL"].to_i
+    )
 end
 
 puts "Sites created !"
