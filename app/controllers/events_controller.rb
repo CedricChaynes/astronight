@@ -30,7 +30,7 @@ class EventsController < ApplicationController
         lat: event.site.lat,
         lng: event.site.lng,
         infoWindow: render_to_string(partial: "infowindow", locals: { event: event }),
-        image_url: helpers.asset_url('logo_astronight_map_red.png')
+        image_url: helpers.asset_url('map-marker.png')
       }
     end
   end
