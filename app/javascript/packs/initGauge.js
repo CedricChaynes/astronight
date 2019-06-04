@@ -19,7 +19,7 @@ const initGauge = () => {
     // Set gauge value
     cpuGauge.setValue(0);
     // Set value and animate (value, animation duration in seconds)
-    const score = document.querySelector('#event');
+    const score = document.querySelector('#mygauge');
     cpuGauge.setValueAnimated(score.dataset.score);
   })
 }
