@@ -18,7 +18,7 @@
         <% @events.each do |event| %>
           <ul>
             <%= link_to event_path(event) do %>
-              <%= image_tag "#{event.site.photo}", size: "247x247", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
+              <%= image_tag "#{event.site.photo}", size: "160x160", style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
               <li><%= event.date.strftime("%d/%m") %></li>
               <li><%= event.site.address %></li>
               <li id="event" data-score=<%= event.event_score %>><%= event.event_score %></li>

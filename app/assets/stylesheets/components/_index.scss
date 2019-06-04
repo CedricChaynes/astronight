@@ -18,8 +18,14 @@
 
 @import "map";
 @import "container";
+@import "gauge-container";
 
 body {
   margin-bottom: 50px;
 }
 
+.flexbox{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
