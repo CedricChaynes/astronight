@@ -1,0 +1,16 @@
+#map {
+  width: 100%;
+  height: 80vh;
+  position: sticky;
+  top: 80px;
+  border-radius: 8px;
+}
+
+.mapbox {
+  width: 400px;
+  margin-top: 16px;
+}
+
+.mapboxgl-control-container {
+  display: none;
+}
