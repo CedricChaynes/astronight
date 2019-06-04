@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: white;
+  background-color: black;
   z-index: 2;
   padding-top: 160px;
   visibility: visible;
@@ -28,4 +28,53 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s .5s, opacity .5s linear;
+}
+
+.star {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  z-index: 2;
+}
+
+.star-1 {
+  background: red;
+}
+
+.star-2 {
+ background: blue;
+}
+
+.star-3 {
+ background: black;
+}
+
+.star-4 {
+ background: orange;
+}
+
+.star-5 {
+ background: pink;
+}
+
+.star-6 {
+ background: #c9c9c9;
+}
+
+.star-7 {
+ background: #d4d4d4;
+}
+
+.star-8 {
+ background: #ddd;
+}
+
+.star-9 {
+ background: #e3e3e3;
+}
+
+.star-10 {
+ background: #fff;
+  width: 2px;
+  height: 1px;
 }

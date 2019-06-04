@@ -11,7 +11,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
     <%= javascript_tag do %>
-      window.animationDuration = <%= ENV["ANIMATION_DURATION"] || 6 %>;
+      window.animationDuration = <%= ENV["ANIMATION_DURATION"] || 0 %>;
     <% end %>
   </head>
   <body>
