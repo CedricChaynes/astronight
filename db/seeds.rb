@@ -81,7 +81,7 @@ def uniq?(array)
 end
 
 array = []
-60.times do
+100.times do
   event_id = Event.all.sample.id
   user_id = User.all.sample.id
   array << [event_id, user_id]
