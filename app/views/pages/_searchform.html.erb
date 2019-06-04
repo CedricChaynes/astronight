@@ -10,8 +10,12 @@
       </div>
     </div>
     <div class="form-group">
-      <%= f.input :date_range, label: "Choisissez la période:", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
-      <%= f.button :submit, 'Go!', class: 'btn-bc-light', id: "searchbtn" %>
+      <%= f.input :date_range, required: false, label: "Choisissez la période :", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
+      <div class="d-flex justify-content-center">
+        <%= f.button :submit, 'Go !', class: 'btn-bc-go', id: "searchbtn" %>
+      </div>
     </div>
   <% end %>
+
+
 </div>
