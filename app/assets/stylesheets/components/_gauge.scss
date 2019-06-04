@@ -5,13 +5,13 @@
   padding: 8px;
 }
 .gauge-container > .gauge > .dial {
-  // stroke: #eee;
-  // stroke-width: 2;
+  stroke: #eee;
+  stroke-width: 6;
   fill: rgba(0,0,0,0);
 }
 .gauge-container > .gauge > .value {
-  // stroke: #083358;
-  // stroke-width: 2;
+  stroke: #083358;
+  stroke-width: 6;
   fill: rgba(0,0,0,0);
 }
 .gauge-container > .gauge > .value-text {
