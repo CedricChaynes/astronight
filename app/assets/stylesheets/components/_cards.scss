@@ -40,6 +40,15 @@
   width: 40px;
 }
 
-.card-trip-infos {
+.h4-cards:hover {
+  text-decoration: none;
+}
 
+.ul-cards {
+  margin-bottom: 30px;
+}
+
+.ul-cards:hover {
+  transform: scale(1.02);
+  transition: .3s;
 }
