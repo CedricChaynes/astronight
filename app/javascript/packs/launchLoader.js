@@ -12,7 +12,7 @@ const launchLoader = (callback) => {
     countUpLightPol.start()
     const countUpAstro = new CountUp('countup-astro-events', 114, {duration: window.animationDuration, separator: ' ', suffix: ' événements astronomiques'});
     countUpAstro.start()
-    const countUpMeteo = new CountUp('countup-meteo', 11740, {duration: window.animationDuration + 2, separator: ' ', suffix: ' bulletins météo nocturne'});
+    const countUpMeteo = new CountUp('countup-meteo', 11740, {duration: window.animationDuration + 4, separator: ' ', suffix: ' bulletins météo nocturne'});
     countUpMeteo.start(() => {
         loader.classList.add("fade-out")
         callback()
