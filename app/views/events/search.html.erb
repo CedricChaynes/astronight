@@ -1,22 +1,26 @@
 <div style="background-color: white">
-  <div class="container w-75">
-    <div class="container p-3" style="color: #f6f6f6">
-      <h3 class= "text-center">
-        Astronight vous recommande ces <%= @events.count %> événements:
-      </h3>
+  <div class="container">
+    <div class="container p-3" style="color: white">
       <div class="loader">
         <h3>Analyse des conditions d'observation...</h3>
         <br>
         <br>
-        <h3 id="countup-site"></h3>
-        <h3 id="countup-meteo"></h3>
-        <h3 id="countup-astro-events"></h3>
-        <h3 id="countup-light-pol"></h3>
+        <h2 id="countup-site"></h2>
+        <h2 id="countup-meteo"></h2>
+        <h2 id="countup-astro-events"></h2>
+        <h2 id="countup-light-pol"></h2>
       </div>
       <br>
       <div class="flex-container">
+        <div>
+          <h3 class= "text-center search-title">
+            Astronight vous recommande ces <%= @events.count %> événements:
+          </h3>
           <%= render 'results_cards' %>
-      <div class="flex-item mapbox"><%= render 'mapbox' %></div>
+        </div>
+        <div class="flex-item mapbox">
+          <%= render 'mapbox' %>
+        </div>
       </div>
     </div>
   </div>

@@ -27,15 +27,20 @@ body {
 }
 
 
-.flexbox{
+.flexbox {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 a {
-  color: var(--secondColor);
+  color: #47A1D1;
   text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: #47A1D1;
 }
 
 h3 {
