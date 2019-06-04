@@ -21,7 +21,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
       click_button 'Go!'
     end
 
-    assert_selector "h3", text: "AstroNight analyse les conditions d'observation"
+    assert_selector "h3", text: "Analyse des conditions d'observation..."
   end
 
   # reset sessions and driver between tests
