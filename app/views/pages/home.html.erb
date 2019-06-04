@@ -1,3 +1,31 @@
 <div class="home_margin container border w-50">
   <%= render 'searchform' %>
 </div>
+
+
+<div class="container">
+  <button class="show-modal open-modal">Open Modal</button>
+
+  <div class="modal">
+    <a class="close-modal" href="#">X</a>
+    <h5>Votre présence est confirmée !</h5>
+    <hr>
+    <p>Pour assurer une soirée réussie, vous pouvez mettre à disposition certains éléments aux autres participants:</p>
+      <!-- checkboxes -->
+      <div class="block">
+      <div class="checkboxes">
+      <section class="light-bg">
+        <span>J'apporte mon téléscope</span>
+        <input class="toggle toggle__light" type="checkbox">
+      </section>
+      <section class="light-bg">
+        <span>Je partage ma voiture</span>
+        <input class="toggle toggle__light" type="checkbox">
+      </section>
+      </div>
+      <%= link_to "Valider", events_path, class: "btn btn-primary modal-button" %>
+      </div>
+      <!-- end of checkboxes -->
+  </div>
+
+</div>
