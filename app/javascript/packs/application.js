@@ -7,5 +7,5 @@ import { initGauge } from './initGauge'
 
 placesAutocomplete()
 initMapbox()
-launchLoader()
+// launchLoader()
 initGauge()
