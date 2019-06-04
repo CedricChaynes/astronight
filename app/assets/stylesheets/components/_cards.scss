@@ -2,6 +2,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 90%;
+  border-radius: 8px;
 }
 
 .card-trip > img {
@@ -27,7 +29,7 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
 }
 
@@ -36,4 +38,8 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-trip-infos {
+
 }
