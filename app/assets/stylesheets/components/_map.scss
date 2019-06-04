@@ -1,0 +1,15 @@
+#map {
+  width: 100%;
+  height: 70vh;
+  position: sticky;
+  top: 80px;
+  border-radius: 8px;
+}
+
+.mapbox {
+  width: 450px;
+}
+
+.mapboxgl-control-container {
+  display: none;
+}
