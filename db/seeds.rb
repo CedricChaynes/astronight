@@ -8,7 +8,7 @@ AstroEvent.destroy_all
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
-#Site.destroy_all
+Site.destroy_all
 puts "Previous seeds destroyed !"
 
 
