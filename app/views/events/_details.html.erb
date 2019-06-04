@@ -1,0 +1,46 @@
+<div role="tabpanel" class="tab-pane fade in show active" id="details">
+  <div class="container border p-3">
+    <h4><%= @event.site.address %></h4>
+    <h5><span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
+    <br>
+    <hr>
+    <div>
+      <img class="pictos" src="/assets/planet.png"> <span>Evenements Astronomiques</span>
+      <img class="pictos" src="/assets/moon.png"> <span> Cycle de la lune</span>
+      <img class="pictos" src="/assets/city.png"><span> Pollution Lumineuse</span>
+      <img class="pictos" src="/assets/weather"><span> Méteo</span>
+    </div>
+    <hr>
+    <br>
+    <div id="conteneur">
+      <div class="element col-4"><%= image_tag @event.site.photo, class: 'sites' %></div>
+      <div class="element">Map</div>
+      <div class="d-flex">
+         <%= link_to "Voir l'itinéraire", events_path, class: "btn btn-primary" %> </div>
+    </div>
+
+      <hr>
+
+      <div class="description">
+        <h7><i><%= @event.site.description %><i></h7>
+
+        <% if user_signed_in? %>
+        <%= simple_form_for [@event, @participation] do |f| %>
+        <% hidden_field_tag :event_id, @event.id %>
+        <% hidden_field_tag :user_id, current_user.id %>
+        <br>
+        <div class="d-flex">
+          <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary', style: "width:50%"%>
+        </div>
+      <% end %>
+    <% end %>
+     </div>
+   </div>
+ </div>
+ <hr>
+  <section class="py-l u-separator-top">
+    <h3>Participants</h3>
+    <%=render 'participations_table' %>
+  </section>
+</div>
+

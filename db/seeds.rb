@@ -8,16 +8,16 @@ AstroEvent.destroy_all
 Participation.destroy_all
 Event.destroy_all
 User.destroy_all
-#Site.destroy_all
+Site.destroy_all
 puts "Previous seeds destroyed !"
 
 
 puts "Creating Sites..."
 
-filepath = 'db/astronomical_sites_gresac.csv'
+filepath = 'db/gresac-astro-sites.csv'
 
 unless Site.any?
-  CSV.foreach(filepath, headers: :first_row) do |row|
+  CSV.foreach(filepath, headers: :first_row, encoding: "ISO-8859-1") do |row|
     address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
     Site.create!(
       address: address,
@@ -64,12 +64,12 @@ puts "Users created !"
 
 puts "Creating Events...."
 sites = Site.all
-10.times do
+50.times do
   Event.create!(
     site_id: sites.sample.id,
     status: ["pending", "created"].sample,
-    event_score: rand(5..20),
-    date: rand(Date.today..Date.civil(2019, 06, 15))
+    event_score: rand(66..100) / 100.0 ,
+    date: rand(Date.today..Date.civil(2019, 06, 21))
     )
 end
 puts "Events created !"

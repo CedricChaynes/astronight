@@ -13,7 +13,7 @@ class WeatherCrawler
       url = "#{baseurl}#{query}#{api}"
       response = open(url).read
       results = JSON.parse(response)
-      element["Weather_next_5_days"] = []
+      array = []
       results["list"].each do |result|
         if %w[18 21 00 03].include?(result["dt_txt"].split[1].split(':')[0])
           h = {}
@@ -22,13 +22,13 @@ class WeatherCrawler
           h["cloudiness"] = result["clouds"]["all"]
           h["humidity"] = result["main"]["humidity"]
           h["wind_speed_ms"] = result["wind"]["speed"]
-          element["Weather_next_5_days"] << h
+          array << h
         end
 
         nights = self.next_five_nights
         element["Weather_next_5_nights"] = nights.map do |night|
           { night: night,
-            weathers: element["Weather_next_5_days"].select do |elem|
+            weathers: array.select do |elem|
               (elem["date"] == night && %w[18 21].include?(elem["time"].split('h')[0])) ||
                 (elem["date"] == next_date(night) && %w[00 03].include?(elem["time"].split('h')[0]))
             end }
@@ -38,6 +38,8 @@ class WeatherCrawler
       sleep(1)
       p count
       p "Fetching weather for #{elem.address}..."
+      element["Weather_next_5_nights"].reject! { |elem| elem[:weathers].empty? }
+      p element["Weather_next_5_nights"]
       p "-" * 100
       site = Site.find_by(lat: elem.lat, lng: elem.lng)
       site.update(next_5_days_meteo: element["Weather_next_5_nights"])

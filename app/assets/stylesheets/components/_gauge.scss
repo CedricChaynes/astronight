@@ -1,20 +1,20 @@
 .gauge-container {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   display: block;
   padding: 8px;
 }
 .gauge-container > .gauge > .dial {
-  // stroke: #eee;
-  // stroke-width: 2;
+  stroke: #eee;
+  stroke-width: 8;
   fill: rgba(0,0,0,0);
 }
 .gauge-container > .gauge > .value {
-  // stroke: #083358;
-  // stroke-width: 2;
+  stroke: #083358;
+  stroke-width: 8;
   fill: rgba(0,0,0,0);
 }
 .gauge-container > .gauge > .value-text {
-  fill: #083358;
   font-weight: bold;
+  font-size: 1.8rem;
 }
