@@ -13,74 +13,9 @@
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade in show active" id="details">
-      <div class="container border p-3">
-        <h4><%= @event.site.address %></h4>
-        <h5><span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
-        <br>
-        <div>
-          <img class="pictos" src="/assets/planet.png"> <span>Evenements Astronomiques</span>
-          <img class="pictos" src="/assets/moon.png"> <span> Cycle de la lune</span>
-          <img class="pictos" src="/assets/city.png"><span> Pollution Lumineuse</span>
-          <img class="pictos" src="/assets/weather"><span> Méteo</span>
-        </div>
-        <br>
-        <div>
-        <div>
-          <%= image_tag @event.site.photo, class: 'sites' %>
-        </div>
-
-        <div class="description">
-           <h2>Score: <%=  %></h2>
-           <h3>Description du site<%= @event.site.description %></h3>
-        </div>
-      </div>
-
-         <div>
-          <% if user_signed_in? %>
-              <%= simple_form_for [@event, @participation] do |f| %>
-                <% hidden_field_tag :event_id, @event.id %>
-                <% hidden_field_tag :user_id, current_user.id %>
-                <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary ', style: "width:100%"%>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-
-        <section class="py-l u-separator-top">
-            <h3>Participants</h3>
-              <%=render 'participations_table' %>
-        </section>
-      </div>
+    <%= render 'details'%>
+    <%= render 'discussion'%>
+    <%= render 'observation'%>
+</div>
 
 
-
-    <div role="tabpanel" class="tab-pane fade" id="messages">
-      <div class="container border p-3">
-        <div class="row">
-
-          <div class="col-6">
-            <h3 class="text-center">Discussion</h3>
-            <div class="jumbotron" style="padding: 0">
-              <div class="well p-3" id="chatbox" style="height:320px; border:solid 1px #222222; overflow-y: scroll">
-                <% @messages.each do |message|%>
-                  <%= render 'messages/message', message: message %>
-                <% end  %>
-              </div>
-              <%= form_with url: event_messages_path(@event),remote: true do |f| %>
-              <div class="input-group mb-3">
-                  <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
-                <div class="input-group-append">
-                  <%= f.submit "Envoyez", class: "btn-primary btn-sm" %>
-                </div>
-              </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-<%=render 'observation'%>

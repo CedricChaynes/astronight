@@ -1,55 +1,50 @@
 <div role="tabpanel" class="tab-pane fade" id="conditions">
-      <div class="container border p-3">
-        <div class="row">
-          <div class="col-12 red-border">
-            <h3>Pollution Lumineuse</h3>
-            <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
-            </iframe>
-            <div class="text"> La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <hr>
-      <br>
-          <div class="col-12 second-border">
-
-              <h3>Temps</h3>
-              <div> La météo est basée sur trois critères:
-                <ul>
-              <li> Humidité: Lorsque le temps est humide ,il est difficile d'avoir de bonnes conditions d'observation car l'eau présente opacifie l'air. Elle peut aussi avoir un impact sur la qualité des instruments d'observations.</li>
-              <li>  Vent : La présence de vents est souvent liée aux turbulences. De plus, il peut faire vibrer l'instrument et il sera donc impossible d'avoir une image stable</li>
-              <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation
-              </li>
-            </ul>
-          </div>
-         </div>
-
-              <br>
-              <hr>
-              <br>
-
-            <div class="col-12 third-border">
-              <h3>Cycle de la lune</h3>
-               <%= render 'moonphase' %>
-                <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit    noire ou non.
-              </div>
-            </div>
-              <br>
-              <hr>
-              <br>
-
-            <div class="col-12 fourth-border">
-              <h3> Evènements Astronomiques </h3>
-              <div> Les observations astronomiques sont ponctués d'evènements à ne pas manquer pour rendre mémorable vos sorties</div>
-            </div>
-            <br>
-            <hr>
-            <br>
-          </div>
-        </div>
+  <div class="container border p-3">
+    <div class="row">
+      <div class="col-12 red-border">
+        <h3>Pollution Lumineuse</h3>
+        <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        </iframe>
+        <div class="text"> La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</div>
       </div>
     </div>
   </div>
+  <br>
+  <hr>
+  <br>
+  <div class="col-12 second-border">
+
+    <h3>Temps</h3>
+    <div> La météo est basée sur trois critères:
+      <ul>
+        <li> Humidité: Lorsque le temps est humide ,il est difficile d'avoir de bonnes conditions d'observation car l'eau présente opacifie l'air. Elle peut aussi avoir un impact sur la qualité des instruments d'observations.</li>
+        <li>  Vent : La présence de vents est souvent liée aux turbulences. De plus, il peut faire vibrer l'instrument et il sera donc impossible d'avoir une image stable</li>
+        <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="col-12 third-border">
+    <h3>Cycle de la lune</h3>
+    <%= render 'moonphase' %>
+    <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit    noire ou non.
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+
+  <div class="col-12 fourth-border">
+    <h3> Evènements Astronomiques </h3>
+    <div> Les observations astronomiques sont ponctués d'evènements à ne pas manquer pour rendre mémorable vos sorties</div>
+  </div>
+  <br>
+  <hr>
+  <br>
 </div>
 
