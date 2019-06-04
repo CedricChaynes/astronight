@@ -18,14 +18,25 @@
 
 @import "map";
 @import "container";
+
 @import "gauge-container";
+
+@import "img";
+@import "cards";
+
 
 body {
   margin-bottom: 50px;
 }
 
+
 .flexbox{
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+a {
+  color: var(--secondColor);
+  text-decoration: none;
+
 }
