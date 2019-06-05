@@ -1,7 +1,8 @@
-<div style="background-color: white">
+<div>
   <div class="container">
     <div class="container p-3" style="color: white">
       <div class="loader">
+        <div class="star star-1"></div>
         <h3>Analyse des conditions d'observation...</h3>
         <br>
         <br>
@@ -14,7 +15,7 @@
       <div class="flex-container">
         <div>
           <h3 class= "text-center search-title">
-            Astronight vous recommande ces <%= @events.count %> événements:
+            Astronight vous recommande <br> ces <%= @events.count %> événements :
           </h3>
           <%= render 'results_cards' %>
         </div>

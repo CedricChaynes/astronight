@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_095234) do
+ActiveRecord::Schema.define(version: 2019_06_05_085123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2019_06_04_095234) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "event_tools", force: :cascade do |t|
-    t.string "type"
+  create_table "event_materials", force: :cascade do |t|
+    t.jsonb "material_list", default: {}
     t.bigint "participation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["participation_id"], name: "index_event_tools_on_participation_id"
+    t.index ["participation_id"], name: "index_event_materials_on_participation_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_095234) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "event_tools", "participations"
+  add_foreign_key "event_materials", "participations"
   add_foreign_key "events", "sites"
   add_foreign_key "messages", "events"
   add_foreign_key "messages", "users"
