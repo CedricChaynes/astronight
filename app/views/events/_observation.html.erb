@@ -1,24 +1,24 @@
   <div class="container ">
     <div class="row">
-      <div class="col-12 red-border">
-        <h3>Pollution Lumineuse : @light_pol_score.site.date</h3>
+      <div class="first-border">
+        <h3><strong>Pollution Lumineuse</strong></h3>
+
+        <div class="text"> La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</div>
         <br>
         <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
         </iframe>
          </div>
            </div>
-        <div class="text"> La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</div>
 
   </div>
   <br>
   <hr>
   <br>
   <div class="second-border">
-    <h3>Temps</h3>
-    <div> La météo est basée sur ce critère:
+    <h3><strong>Temps</strong></h3>
+    <div>La météo est basée sur ce critère:
       <ul>
-        <li> Nebulosité : @cloudiness_score.site.date
-          La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation
+        <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation astronomique
         </li>
       </ul>
     </div>
@@ -29,18 +29,20 @@
   <hr>
   <br>
 
-  <div class="col-12 third-border">
-    <h3>Cycle de la lune : @moon_score.site.date</h3>
-    <%= render 'moonphase' %>
-    <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit    noire ou non.
+  <div class="third-border">
+    <h3><strong>Cycle de la lune : moon_score</strong></h3>
+     <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit    noire ou non.
     </div>
+    <br>
+    <%= render 'moonphase' %>
+
   </div>
   <br>
   <hr>
   <br>
 
-  <div class="col-12 fourth-border">
-    <h3> Evènements Astronomiques : @astro_event_score.site.date </h3>
+  <div class="fourth-border">
+    <h3> <strong>Evènements Astronomiques : astro_event_score</strong> </h3>
     <div> Les observations astronomiques sont ponctués d'evènements à ne pas manquer pour rendre mémorable vos sorties</div>
   </div>
   <br>
