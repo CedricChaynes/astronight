@@ -3,7 +3,9 @@
       <div class="col-12 red-border">
         <h3>Pollution Lumineuse : @light_pol_score.site.date</h3>
         <br>
-        <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        <!-- <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        </iframe> -->
+        <iframe src="<%= "https://darksitefinder.com/maps/world.html#9/#{@event.site.lat}/#{@event.site.lng}" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
         </iframe>
          </div>
            </div>
@@ -23,7 +25,6 @@
       </ul>
     </div>
   </div>
-  </iframe>
 
   <br>
   <hr>
