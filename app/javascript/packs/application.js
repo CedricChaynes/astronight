@@ -11,13 +11,9 @@ placesAutocomplete()
 initMapbox()
 
 if (document.querySelector(".loader")) {
-
+  window.onload = initStars()
   launchLoader(initGauge)
 } else {
   initGauge();
 }
-
-
-
-  initStars()
 
