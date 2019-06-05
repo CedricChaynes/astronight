@@ -9,7 +9,7 @@ import { modalFade } from './modalFade'
 
 placesAutocomplete()
 initMapbox()
-modalFade()
+// modalFade()
 
 if (document.querySelector(".loader")) {
   window.onload = initStars()

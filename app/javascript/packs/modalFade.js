@@ -1,14 +1,17 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const modalFade = () => {
-  const modal = $('.modal');
-  $('.show-modal').click(function() {
-   modal.fadeIn();
-  });
+  const modal = document.querySelector('.modal');
+  if (modal) {
+    const showModal = document.querySelector('.show-modal')
+    showModal.addEventListener('click', () => {
+    modal.style.display = "block";
+    });
 
-  $('.close-modal').click(function() {
-   modal.fadeOut();
-  });
+    document.querySelector('.close-modal').addEventListener('click', () => {
+      modal.classList.add("fade-out");
+    });
+  }
 }
 
 export { modalFade };
