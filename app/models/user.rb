@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /\A([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-]+\.)+([a-zA-Z]{2,5})\z/ }
 
   mount_uploader :avatar, AvatarUploader
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
   attr_writer :send_welcome
 
   def avatar_url
