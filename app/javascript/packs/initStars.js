@@ -21,7 +21,6 @@ const initStars = () => {
      document.body.appendChild( element );
 
      stars[i] = element;
-
    }
 
    var interval = setInterval(function(){

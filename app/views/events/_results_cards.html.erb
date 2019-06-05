@@ -1,21 +1,20 @@
 <div class="flex-item">
   <% @events.each do |event| %>
-    <ul>
+    <ul class="ul-cards">
       <%= link_to event_path(event) do %>
       <div class="card-trip">
         <%= image_tag "#{event.site.photo}", class: 'img-radius', style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
         <div class="card-trip-infos">
           <div>
-            <h4><%= I18n.localize(event.date, format: :custom) %></h4>
+            <h4 class="h4-cards"><%= I18n.localize(event.date, format: :custom) %></h4>
             <p><%= event.site.address %></p>
           </div>
+          <!-- Gauge chart -->
           <div id="mygauge" class="cpuSpeed gauge-container" data-score=<%= event.event_score %>></div>
+          <!-- End of gauge chart -->
         </div>
       </div>
       <% end %>
     </ul>
-    <!-- Gauge chart -->
-    <div id="mygauge" class="cpuSpeed gauge-container" data-score=<%= event.event_score %>></div>
-    <!-- End of gauge chart -->
   <% end %>
 </div>

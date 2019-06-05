@@ -28,7 +28,11 @@
 }
 
 .navbar {
-  background-color: transparent;
+  background-image: asset-url("astronight_background_sky2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--lightColor);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -70,8 +74,8 @@
 }
 
 .dropdown-item:hover {
-  background-color: var(--secondColor);
-  color: var(--lightColor)
+  background-color: #47A1D1;
+  color: white;
 }
 
 .img_profile {
@@ -82,4 +86,8 @@
 
 .navbar_white {
   background-color: white;
+}
+
+.no-margin-top {
+  padding-top: 0px;
 }
