@@ -1,4 +1,4 @@
-<div class="container border p-3">
+<div class="p-3">
   <div class="flexbox">
     <div>
       <h4><b><%= @event.site.address %></b></h4>
@@ -9,11 +9,6 @@
       <input class="btn-primary"type="submit" name="commit" value="Confirmer ma présence" class="btn btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:75%" data-disable-with="Confirmer ma présence">
     </div>
   </div>
-
-  <br>
-  <hr>
-  <br>
-
   <div class="flex-container">
     <div class="element">
       <div class="map"><%= image_tag @event.site.photo, class: 'sites' %></div>
