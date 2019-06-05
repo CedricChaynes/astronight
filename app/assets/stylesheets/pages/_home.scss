@@ -13,4 +13,17 @@
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  color: var(--lightColor);
+}
+
+.banner {
+  height: calc(80vh);
+  flex-direction: column;
+  text-align: center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
 }

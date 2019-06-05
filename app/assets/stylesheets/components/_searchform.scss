@@ -2,39 +2,8 @@
   color: grey;
 }
 
-.form-group {
-  color: white;
-}
-
-.radio-choices {
-  display: flex;
-  .collection_radio_buttons {
-    display: inline-block;
-    width: 140px;
-    color: #083358;
-    padding: 8px 0 8px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #0f4471;
-    border-left: none;
-    transition: all .15s;
-    &[for=searchform_date_range_aujourdhui] {
-      border-left: 1px solid;
-      border-radius: 3px 0 0 3px;
-    }
-    &[for=searchform_date_range_14_prochains_jours] {
-      border-radius: 0 3px 3px 0;
-    }
-  }
-  input {
-    display: none;
-    &:checked + .collection_radio_buttons {
-      background: #0f4471;
-      color: white;
-      cursor: default;
-    }
-  }
-}
+.ap-input-icon svg {
+  display: "none";
 
 .form-check {
   display: inline-table;
@@ -43,31 +12,32 @@
   justify-content: center;
 }
 
-.btn-group {
+.radio-choices {
   display: flex;
-  .btn {
+  .collection_radio_buttons {
     display: inline-block;
-    //float: left;
-    width: 140px;
-    color: #083358;
-    padding: 10px 0 8px;
+    width: 150px;
+    color: #495057;
+    background-color: white;
+    padding: 8px 2px 8px 2px;
     text-align: center;
     cursor: pointer;
-    border: 1px solid #0f4471;
-    border-left: none;
+    border: solid 1px white;
     transition: all .15s;
-    &.first {
-      border-left: 1px solid;
+    &[for=searchform_date_range_aujourdhui] {
+      border-right: 1px solid ;
       border-radius: 3px 0 0 3px;
     }
-    &.last {
+    &[for=searchform_date_range_14_prochains_jours] {
+      border-left: 1px solid ;
       border-radius: 0 3px 3px 0;
     }
   }
   input {
     display: none;
-    &:checked + .btn {
-      background: #0f4471;
+    &:checked + .collection_radio_buttons {
+      background-color: #47A1D1;
+      border: solid 1px white;
       color: white;
       cursor: default;
     }
