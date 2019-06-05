@@ -3,9 +3,10 @@
       <div class="col-6">
         <h3 class="text-center">Discussion</h3>
         <div class="jumbotron" style="padding: 0">
-          <div class="well p-3" id="chatbox" style="height:320px; border:solid 1px #222222; overflow-y: scroll">
+          <div class="well p-3" id="chatbox">
             <% @messages.each do |message|%>
               <%= render 'messages/message', message: message %>
+
             <% end  %>
           </div>
           <%= form_with url: event_messages_path(@event),remote: true do |f| %>
