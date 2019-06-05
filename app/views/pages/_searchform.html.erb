@@ -1,5 +1,5 @@
 <div class="container p-3">
-  <h3 text-align="center"> Vous cherchez où et quand aller observer les étoiles ? </h3>
+  <h3 text-align="center" style="color: white;"> Vous cherchez où et quand observer les étoiles ? </h3>
   <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
     <div class="form-inline">
       <div>
@@ -15,6 +15,5 @@
         <%= f.button :submit, 'Go !', class: 'btn-bc-go', id: "searchbtn" %>
       </div>
     </div>
-    <%= f.button :submit, 'Go!', class: 'btn btn-primary' %>
   <% end %>
 </div>
