@@ -1,3 +1,70 @@
 .ap-name {
   color: grey;
+
+.radio-choices {
+  display: flex;
+  .collection_radio_buttons {
+    display: inline-block;
+    width: 140px;
+    color: #083358;
+    padding: 8px 0 8px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #0f4471;
+    border-left: none;
+    transition: all .15s;
+    &[for=searchform_date_range_aujourdhui] {
+      border-left: 1px solid;
+      border-radius: 3px 0 0 3px;
+    }
+    &[for=searchform_date_range_14_prochains_jours] {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+  input {
+    display: none;
+    &:checked + .collection_radio_buttons {
+      background: #0f4471;
+      color: white;
+      cursor: default;
+    }
+  }
+}
+
+.form-check {
+  display: inline-table;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn-group {
+  display: flex;
+  .btn {
+    display: inline-block;
+    //float: left;
+    width: 140px;
+    color: #083358;
+    padding: 10px 0 8px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #0f4471;
+    border-left: none;
+    transition: all .15s;
+    &.first {
+      border-left: 1px solid;
+      border-radius: 3px 0 0 3px;
+    }
+    &.last {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+  input {
+    display: none;
+    &:checked + .btn {
+      background: #0f4471;
+      color: white;
+      cursor: default;
+    }
+  }
 }
