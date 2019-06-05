@@ -11,12 +11,14 @@ placesAutocomplete()
 initMapbox()
 // modalFade()
 
+const loaderCallback = () => {
+  document.querySelector('.navbar').style.display= "";
+  initGauge();
+}
+
 if (document.querySelector(".loader")) {
   window.onload = initStars()
-  launchLoader(() => {
-    document.querySelector('.navbar').style.display= "";
-    initGauge;
-  })
+  launchLoader(loaderCallback)
 } else {
   initGauge();
 }

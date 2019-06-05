@@ -4,7 +4,6 @@
 
 .ap-input-icon svg {
   display: "none";
-}
 
 .form-check {
   display: inline-table;
@@ -44,36 +43,3 @@
     }
   }
 }
-
-
-
-// .btn-group {
-//   display: flex;
-//   .btn {
-//     display: inline-block;
-//     //float: left;
-//     width: 140px;
-//     color: #083358;
-//     padding: 10px 0 8px;
-//     text-align: center;
-//     cursor: pointer;
-//     border: 1px solid white;
-//     border-left: none;
-//     transition: all .15s;
-//     &.first {
-//       border-left: 1px solid;
-//       border-radius: 3px 0 0 3px;
-//     }
-//     &.last {
-//       border-radius: 0 3px 3px 0;
-//     }
-//   }
-//   input {
-//     display: none;
-//     &:checked + .btn {
-//       background: red;
-//       color: white;
-//       cursor: default;
-//     }
-//   }
-// }

@@ -14,8 +14,8 @@
       window.animationDuration = <%= ENV["ANIMATION_DURATION"] || 0 %>;
     <% end %>
   </head>
-  <% unless current_page?(root_path) %>
-    <bodys>
+  <% unless current_page?(root_path) || current_page?(new_user_session_path) %>
+    <body>
   <% else %>
     <body class="homepage-body">
   <% end %>
