@@ -15,7 +15,7 @@ const initStars = () => {
 
      var element = document.createElement('div');
      element.className = "star star-" + rand_color;
-     element.style.right = rand_x + "px";
+     element.style.left = rand_x + "px";
      element.style.top = rand_y + "px";
      element.setAttribute("data-speed", speed);
      document.body.appendChild( element );
@@ -27,11 +27,11 @@ const initStars = () => {
 
      for ( i=1; i<stars.length; i++ ) {
 
-       var right = stars[i].style.right;
-       if ( right === "0px" ) {
-         stars[i].style.right = (width - 10) + "px";
+       var left = stars[i].style.left;
+       if ( left === "0px" ) {
+         stars[i].style.left = (width - 10) + "px";
        } else {
-         stars[i].style.right = parseInt( right ) - stars[i].getAttribute("data-speed") + "px";
+         stars[i].style.left = parseInt( left ) - stars[i].getAttribute("data-speed") + "px";
        }
      }
    },1000/60);
