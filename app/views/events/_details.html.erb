@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container border p-3">
   <div class="flexbox">
     <div>
@@ -7,7 +6,7 @@
     </div>
     <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.event_score %>"></div>
     <div class="d-flex">
-      <input class="btn-primary"type="submit" name="commit" value="Confirmer ma présence" class="btn btn btn-primary" style="width:75%" data-disable-with="Confirmer ma présence">
+      <input class="btn-primary"type="submit" name="commit" value="Confirmer ma présence" class="btn btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:75%" data-disable-with="Confirmer ma présence">
     </div>
   </div>
 
@@ -49,7 +48,7 @@
         <% hidden_field_tag :user_id, current_user.id %>
         <br>
         <div class="d-flex">
-          <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary w-25' %>
+          <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary w-25 show-modal modal' %>
           <div>
             <%= link_to "https://www.google.com/calendar/render?action=TEMPLATE&text=#{URI.encode("Soirée d'astronomie")}&dates=#{@event.date.strftime('%Y%m%dT180000')}/#{(@event.date + 1.days).strftime('%Y%m%dT030000')}&location=#{@event.site.address}&sprop=name:Name&sprop=website:EventWebite&details=#{@event.site.description}&sf=true&output=xml", class: 'btn btn-primary w-100' do %>
               Ajouter dans mon calendrier
@@ -67,29 +66,5 @@
     <%= render 'participations_table' %>
   </section>
 
-<!-- MODAL FOR TOOL CONFIRMATION -->
-  <div class="modal">
-    <a class="close-modal" href="#">X</a>
-    <h5>Votre présence est confirmée !</h5>
-    <hr>
-    <p>Pour assurer une soirée réussie, vous pouvez mettre à disposition certains éléments aux autres participants:</p>
-      <!-- checkboxes -->
-      <div class="block">
-      <div class="checkboxes">
-      <section class="light-bg">
-        <span>J'apporte mon téléscope</span>
-        <input class="toggle toggle__light" type="checkbox">
-      </section>
-      <section class="light-bg">
-        <span>Je partage ma voiture</span>
-        <input class="toggle toggle__light" type="checkbox">
-      </section>
-      </div>
-      <%= link_to "Valider", events_path, class: "btn btn-primary modal-button" %>
-      </div>
-      <!-- end of checkboxes -->
-  </div>
 </div>
-<!-- END OF MODAL FOR TOOL CONFIRMATION -->
-</div>
-
+<%= render 'toolmodal' %>

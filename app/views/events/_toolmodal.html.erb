@@ -1,0 +1,40 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Votre présence est confirmée !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Pour assurer une soirée réussie, vous pouvez mettre à disposition certains éléments aux autres participants:
+              <!-- checkboxes -->
+      <div class="block">
+      <div class="checkboxes">
+      <section class="light-bg">
+        <span>J'apporte mon téléscope</span>
+        <input class="toggle toggle__light" type="checkbox">
+      </section>
+      <section class="light-bg">
+        <span>Je partage ma voiture</span>
+        <input class="toggle toggle__light" type="checkbox">
+      </section>
+      </div>
+      <%= link_to "Valider", events_path, class: "btn btn-primary modal-button" %>
+      </div>
+      </div>
+      <!-- end of checkboxes -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
