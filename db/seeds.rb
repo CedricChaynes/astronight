@@ -65,10 +65,20 @@ puts "Users created !"
 puts "Creating Events...."
 sites = Site.all
 50.times do
+  light_pol_score = rand(0..20)
+  cloudiness_score = [-100, 5, 10, 15, 20].sample
+  astro_event_score = rand(0..20)
+  moon_score = rand(0..20)
+  total_score = ((light_pol_score + cloudiness_score + astro_event_score + moon_score) / 4).floor
+
   Event.create!(
     site_id: sites.sample.id,
     status: ["pending", "created"].sample,
-    event_score: rand(66..100) / 100.0 ,
+    score: { total_score: total_score,
+             light_pol_score: light_pol_score,
+             cloudiness_score: cloudiness_score,
+             astro_event_score: astro_event_score,
+             moon_score: moon_score },
     date: rand(Date.today..Date.civil(2019, 06, 21))
     )
 end

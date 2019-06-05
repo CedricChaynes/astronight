@@ -6,7 +6,7 @@
       <h5><span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
     </div>
 
-    <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.event_score %>">
+    <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.score["total_score"] %>">
     </div>
 
     <% if user_signed_in? %>
