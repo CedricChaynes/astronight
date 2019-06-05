@@ -1,6 +1,11 @@
 /* Absolute Center */
 .loader {
   display: none;
+  background-image: asset-url("astronight_background_sky2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -10,7 +15,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: white;
   z-index: 2;
   padding-top: 160px;
   visibility: visible;
@@ -19,7 +23,7 @@
 }
 
 .loader > h3 {
-  color: #47A1D1;
+  color: white;
   font-family: 'IBM Plex Mono';
   font-size: 32px;
   font-weight: bolder;
@@ -27,7 +31,7 @@
 }
 
 .loader > h2 {
-  color: #47A1D1;
+  color: white;
   font-family: 'IBM Plex Mono';
   font-size: 24px;
   padding: 12px;
@@ -37,4 +41,53 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s .5s, opacity .5s linear;
+}
+
+.star {
+  width: 1.5px;
+  height: 1.5px;
+  position: absolute;
+  z-index: 2;
+}
+
+.star-1 {
+  background: #FCF844;
+}
+
+.star-2 {
+ background: white;
+}
+
+.star-3 {
+ background: #627f8b;
+}
+
+.star-4 {
+ background: #BADEFC;
+}
+
+.star-5 {
+ background: #EFE9E7;
+}
+
+.star-6 {
+ background: #c9c9c9;
+}
+
+.star-7 {
+ background: #d4d4d4;
+}
+
+.star-8 {
+ background: #ddd;
+}
+
+.star-9 {
+ background: #e3e3e3;
+}
+
+.star-10 {
+ background: #fff;
+  width: 2px;
+  height: 1px;
 }
