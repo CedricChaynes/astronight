@@ -1,0 +1,19 @@
+.nav-link.active {
+  border: 1px solid transparent;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #47A1D1;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+}
+
+.nav-tabs:hover .nav-link:hover {
+  color: #00508A;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background-color: #47A1D1;
+    color: white;
+}
