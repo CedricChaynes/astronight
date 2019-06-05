@@ -38,7 +38,7 @@
 
 .div_haut {
  width:100%;
- height:150px;
+ height:100px;
  margin:10px auto;
  display: flex;
 }
@@ -72,7 +72,7 @@ align-items: center;
 .div_btn_confirmation {
  width:90%;
  height:50px;
- margin: auto;
+ margin: 10px;
    display: flex;
   justify-content: center;
 }
@@ -83,7 +83,6 @@ align-items: center;
 
 .div_bas {
  width:100%;
- height:600px;
  margin:10px auto;
  display: flex;
 }
@@ -96,7 +95,7 @@ align-items: center;
  flex-direction: column;
 }
 
-.carrew {
+.div_bas_droite {
  width:48%;
  height:90%;
  margin:10px auto;
@@ -111,15 +110,14 @@ align-items: center;
 }
 
 .div_description {
- margin:10px auto;
+ margin:10px;
  width:100%;
- height:90%;
 }
 
 .div_bas_btn {
- margin:10px auto;
+ margin:10px;
  width:100%;
- height:90%;
+ height:50px;
 display: flex;
 align-items: center;
 }
@@ -131,7 +129,7 @@ align-items: center;
   border-radius: 8px;
 }
 
-.carreo {
+.div_participants {
  margin:10px auto;
  width:100%;
  height:90%;
@@ -140,13 +138,14 @@ align-items: center;
   text-align: center;
 }
 
-.carreg {
+.div_score {
  margin:10px auto;
  width:100%;
  height:90%;
+   text-align: center;
 }
 
-.carrep {
+.div_map {
  margin:10px auto;
  width:100%;
  height:90%;
