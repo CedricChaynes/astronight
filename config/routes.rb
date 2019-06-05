@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :events, only: %i[index show] do
     resources :messages, only: :create
     resources :participations, only: :create
-    resources :event_materials, only: :create
+    resources :materials, only: :create
     collection do
       get 'search', to: 'events#search'
     end

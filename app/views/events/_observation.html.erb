@@ -1,9 +1,11 @@
   <div class="container ">
     <div class="row">
       <div class="col-12 red-border">
-        <h3>Pollution Lumineuse : @light_pol_score.site.date</h3>
+        <h3>Pollution Lumineuse : <%= @event.score["light_pol_score"] %></h3>
         <br>
-        <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        <!-- <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        </iframe> -->
+        <iframe src="<%= "https://darksitefinder.com/maps/world.html#9/#{@event.site.lat}/#{@event.site.lng}" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
         </iframe>
          </div>
            </div>
@@ -17,20 +19,19 @@
     <h3>Temps</h3>
     <div> La météo est basée sur ce critère:
       <ul>
-        <li> Nebulosité : @cloudiness_score.site.date
+        <li> Nebulosité : <%= @event.score["cloudiness_score"] %>
           La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation
         </li>
       </ul>
     </div>
   </div>
-  </iframe>
 
   <br>
   <hr>
   <br>
 
   <div class="col-12 third-border">
-    <h3>Cycle de la lune : @moon_score.site.date</h3>
+    <h3>Cycle de la lune : <%= @event.score["moon_score"] %></h3>
     <%= render 'moonphase' %>
     <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit    noire ou non.
     </div>
@@ -40,7 +41,7 @@
   <br>
 
   <div class="col-12 fourth-border">
-    <h3> Evènements Astronomiques : @astro_event_score.site.date </h3>
+    <h3> Evènements Astronomiques : <%= @event.score["astro_event_score"] %> </h3>
     <div> Les observations astronomiques sont ponctués d'evènements à ne pas manquer pour rendre mémorable vos sorties</div>
   </div>
   <br>
