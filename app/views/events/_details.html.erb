@@ -1,4 +1,4 @@
-  <div class="container border p-3">
+    <div class="container border p-3">
     <div class="flexbox">
       <div>
         <h4><b><%= @event.site.address %></b></h4>
@@ -9,26 +9,30 @@
           <input class="btn-primary"type="submit" name="commit" value="Confirmer ma présence" class="btn btn btn-primary" style="width:75%" data-disable-with="Confirmer ma présence">
         </div>
   </div>
-  </div>
     <br>
     <hr>
-    <div>
-      <img class="pictos" src="/assets/planet.png"> <span>Evenements Astronomiques</span>
-      <img class="pictos" src="/assets/moon.png"> <span> Cycle de la lune</span>
-      <img class="pictos" src="/assets/city.png"><span> Pollution Lumineuse</span>
-      <img class="pictos" src="/assets/weather"><span> Méteo</span>
-    </div>
-    <hr>
     <br>
-    <div id="conteneur">
-      <div class="element"><%= image_tag @event.site.photo, class: 'sites' %></div>
-      <div class="element">
+    <div class="flex-container">
+       <div class="element">
+        <div class="map"><%= image_tag @event.site.photo, class: 'sites' %>
+        </div>
+        <div class="affichage">
+          <lu>
+          <img class="pictos" src="/assets/planet.png"> <span>Evenements Astronomiques</span>
+          <img class="pictos" src="/assets/moon.png"> <span> Cycle de la lune</span>
+          <img class="pictos" src="/assets/city.png"><span> Pollution Lumineuse</span>
+          <img class="pictos" src="/assets/weather"><span> Méteo</span>
+        </lu>
+        </div>
+       </div>
+       <div class="map">
         <div id="future-map">Map</div>
         <div class="d-flex">
           <input class="btn-primary"type="submit" name="commit" value="Voir l'itinéraire" class="btn btn btn-primary" style="width:75%" data-disable-with="Confirmer ma présence">
         </div>
       </div>
     </div>
+
 
     <hr>
 
@@ -57,28 +61,4 @@
     <%= render 'participations_table' %>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
