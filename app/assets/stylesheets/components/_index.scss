@@ -23,11 +23,11 @@
 @import "links_connexion";
 @import "well";
 
-
 body {
   margin-bottom: 50px;
+  background-color: white;
+  color: var(--lightColor);
 }
-
 
 .flexbox {
   display: flex;

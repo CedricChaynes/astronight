@@ -12,16 +12,6 @@
 @import "components/index";
 @import "pages/index";
 
-body {
-  background: #f2f2f2;
-  background-image: asset-url("astronight_background_sky2.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  color: var(--lightColor);
-}
-
 h2 {
   font-family: "Arkhip";
 }

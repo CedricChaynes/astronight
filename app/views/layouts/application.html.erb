@@ -14,7 +14,11 @@
       window.animationDuration = <%= ENV["ANIMATION_DURATION"] || 6 %>;
     <% end %>
   </head>
-  <body>
+  <% unless current_page?(root_path) %>
+    <body>
+  <% else %>
+    <body class="homepage-body">
+  <% end %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
