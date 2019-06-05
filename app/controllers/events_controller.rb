@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  require 'uri'
   skip_before_action :authenticate_user!
   before_action :set_event, only: %i[show update delete]
 
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
         lat: event.site.lat,
         lng: event.site.lng,
         infoWindow: render_to_string(partial: "infowindow", locals: { event: event }),
-        image_url: helpers.asset_url('logo_astronight_map_red.png')
+        image_url: helpers.asset_url('map-marker.png')
       }
     end
   end
@@ -41,9 +42,26 @@ class EventsController < ApplicationController
     @participation = Participation.new
   end
 
+  def redirect
+    client = Signet::OAuth2::Client.new(client_options)
+
+    redirect_to client.authorization_uri.to_s
+  end
+
   private
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def client_options
+    {
+      client_id: ENV["GOOGLE_CLIENT_ID"],
+      client_secret: ENV["GOOGLE_CLIENT_SECRET"],
+      authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
+      token_credential_uri: 'https://accounts.google.com/o/oauth2/token',
+      scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
+      redirect_uri: callback_url
+    }
   end
 end

@@ -9,8 +9,11 @@
         <%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %>
       </div>
     </div>
-    <div class="radio-choices">
-      <%= f.input :date_range, label: "Choisissez la période:", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], placeholder: "14 prochains jours"  %>
+    <div class="form-group">
+      <%= f.input :date_range, required: false, label: "Choisissez la période :", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
+      <div class="d-flex justify-content-center">
+        <%= f.button :submit, 'Go !', class: 'btn-bc-go', id: "searchbtn" %>
+      </div>
     </div>
     <%= f.button :submit, 'Go!', class: 'btn btn-primary' %>
   <% end %>

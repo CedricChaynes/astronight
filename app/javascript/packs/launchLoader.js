@@ -10,6 +10,7 @@ const launchLoader = (callback) => {
     countUpSite.start()
     const countUpLightPol = new CountUp('countup-light-pol', 934, {duration: window.animationDuration + 1, separator: ' ', suffix: ' indices de pollution lumineuse'});
     countUpLightPol.start()
+    setTimeout(50000)
     const countUpAstro = new CountUp('countup-astro-events', 114, {duration: window.animationDuration, separator: ' ', suffix: ' événements astronomiques'});
     countUpAstro.start()
     const countUpMeteo = new CountUp('countup-meteo', 11740, {duration: window.animationDuration + 4, separator: ' ', suffix: ' bulletins météo nocturne'});

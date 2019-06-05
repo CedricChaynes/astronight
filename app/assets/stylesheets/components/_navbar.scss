@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 45px;
   margin-right: 0px;
 }
 
@@ -28,7 +28,11 @@
 }
 
 .navbar {
-  background-color: transparent;
+  background-image: asset-url("astronight_background_sky.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--lightColor);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -39,7 +43,7 @@
 }
 
 .name_margin {
-  margin-left: 15px;
+  margin-left: 8px;
 }
 
 .bonjour {
@@ -54,13 +58,13 @@
 }
 
 .astronight_name {
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: -15px;
   color: var(--lightColor);
 }
 
 .astronight_name_blue {
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: -15px;
   color: #47A1D1;
 }
@@ -70,8 +74,8 @@
 }
 
 .dropdown-item:hover {
-  background-color: var(--secondColor);
-  color: var(--lightColor)
+  background-color: #47A1D1;
+  color: white;
 }
 
 .img_profile {
@@ -82,4 +86,8 @@
 
 .navbar_white {
   background-color: white;
+}
+
+.no-margin-top {
+  padding-top: 0px;
 }

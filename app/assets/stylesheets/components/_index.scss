@@ -12,18 +12,15 @@
 @import "button";
 @import "form";
 @import "modal";
-
 @import "conteneur";
 @import "element";
 @import "btn-primary";
-
 @import "map";
 @import "container";
-
 @import "gauge-container";
-
 @import "img";
 @import "cards";
+@import "links_connexion";
 
 
 body {
@@ -31,17 +28,26 @@ body {
 }
 
 
-.flexbox{
+.flexbox {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 a {
-  color: var(--secondColor);
+  color: #47A1D1;
   text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: #47A1D1;
 }
 
 h3 {
   color: #47A1D1;
+}
+
+.h3_white {
+  color: white;
 }
