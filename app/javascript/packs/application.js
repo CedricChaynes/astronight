@@ -13,7 +13,10 @@ modalFade()
 
 if (document.querySelector(".loader")) {
   window.onload = initStars()
-  launchLoader(initGauge)
+  launchLoader(() => {
+    document.querySelector('.navbar').style.display= "";
+    initGauge;
+  })
 } else {
   initGauge();
 }
