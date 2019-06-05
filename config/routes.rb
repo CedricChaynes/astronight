@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'sites/update'
-
   devise_for :users
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
@@ -12,6 +10,7 @@ Rails.application.routes.draw do
   resources :events, only: %i[index show] do
     resources :messages, only: :create
     resources :participations, only: :create
+    resources :event_materials, only: :create
     collection do
       get 'search', to: 'events#search'
     end
