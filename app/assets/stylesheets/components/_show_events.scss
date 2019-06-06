@@ -17,3 +17,162 @@
     background-color: #47A1D1;
     color: white;
 }
+
+.affichage {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+// Specific CSS for your home-page
+.home_margin {
+  margin-top: 150px;
+}
+
+.h3_home {
+  color: white;
+}
+
+.homepage-body {
+  background-image: asset-url("astronight_background_sky2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--lightColor);
+}
+
+.banner {
+  height: calc(80vh);
+  flex-direction: column;
+  text-align: center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.div_generale {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.div_haut {
+ width:100%;
+ height:100px;
+ margin:10px auto;
+ display: flex;
+}
+
+.div_haut_gauche {
+ width:50%;
+ height:120px;
+ margin:10px auto;
+ display: flex;
+ flex-direction: column;
+}
+
+.div_haut_droite {
+ width:50%;
+ height:120px;
+ margin:10px auto;
+display: flex;
+align-items: center;
+}
+
+.div_lieu {
+ width:90%;
+ margin:10px auto;
+}
+
+.div_date {
+ width:90%;
+ margin:10px auto;
+}
+
+.div_btn_confirmation {
+ width:90%;
+ height:50px;
+ margin: 10px;
+   display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+.div_bas {
+ width:100%;
+ margin:10px auto;
+ display: flex;
+}
+
+.div_bas_gauche {
+ width:48%;
+ height:90%px;
+ margin:10px auto;
+ display: flex;
+ flex-direction: column;
+}
+
+.div_bas_droite {
+ width:48%;
+ height:90%;
+ margin:10px auto;
+ display: flex;
+ flex-direction: column;
+}
+
+.div_photo {
+ margin:10px auto;
+ width:100%;
+ height:100%;
+}
+
+.div_description {
+ margin:10px;
+ width:100%;
+}
+
+.div_bas_btn {
+ margin:10px;
+ width:100%;
+ height:50px;
+display: flex;
+align-items: center;
+}
+
+.show_photo {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.div_participants {
+ margin:10px auto;
+ width:100%;
+ height:90%;
+   display: flex;
+     flex-direction: column;
+  text-align: center;
+}
+
+.div_score {
+ margin:10px auto;
+ width:100%;
+ height:90%;
+   text-align: center;
+}
+
+.div_map {
+ margin:10px auto;
+ width:100%;
+ height:90%;
+}
