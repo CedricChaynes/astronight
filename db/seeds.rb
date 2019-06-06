@@ -106,8 +106,7 @@ def create_site
 
   Site.find_by(address: "La Buissoniere, Saint Romain, Auvergne").update(next_5_days_meteo: fake_meteo("good"))
   Site.find_by(address: "Cret de l oeillon, Doizieu, Rhône-Alpes").update(next_5_days_meteo: fake_meteo("good"))
-  Site.find_by(address: "Observatoire Pierre Joannard, Ramasse, Rhône-Alpes").update(next_5_days_meteo: fake_meteo("good"))
-
+  Site.find_by(address: "Observatoire Pierre Joannard, Ramasse, Rhône-Alpes").update(next_5_days_meteo: fake_meteo("extra-good"))
   Site.find_by(address: "Observatoire de Lyon, St Genis-Laval, Rhône-Alpes").update(next_5_days_meteo: fake_meteo("extra-good"))
   Site.find_by(address: "Observatoire de Jolimont, Toulouse, Midi-Pyrénées").update(next_5_days_meteo: fake_meteo("extra-good"))
 

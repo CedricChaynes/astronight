@@ -5,9 +5,11 @@ import { initMapbox, selectPin, cleanSelected } from './initMapbox'
 import { launchLoader } from './launchLoader'
 import { initGauge } from './initGauge'
 import { initStars } from './initStars'
+import { hideCalendarBtn } from './hideCalendarBtn'
 
 placesAutocomplete()
 initMapbox()
+hideCalendarBtn();
 
 
 
