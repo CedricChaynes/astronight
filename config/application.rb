@@ -28,6 +28,9 @@ module Astronight
   end
 end
 
+config.action_mailer.delivery_method = :postmark
+config.action_mailer.postmark_settings = { :api_token => "7a11d051-b1b7-4dec-97ec-25ac923d1813" }
+
 Raven.configure do |config|
   config.dsn = 'https://0cef9081b9b54c30b1a8449f840a6506:12e18bc0fa2a48f2b678b5a8d5bd1c6e@sentry.io/1473436'
 end
