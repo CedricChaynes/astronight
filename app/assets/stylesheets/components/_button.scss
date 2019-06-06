@@ -39,7 +39,7 @@
   text-decoration: none;
   color: white;
   background-color: #7FBE4B;
-  border: 1px solid white;
+  border: 1px solid #7FBE4B;
   padding: 8px 24px;
   border-radius: 8px;
   transition: all .3s;
@@ -49,6 +49,36 @@
   text-decoration: none;
   background-color: #7FBE4B;
   color: white;
-  border: 1px solid white;
+  border: 1px solid #7FBE4B;
   transform: scale(1.2);
+}
+
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px #7FBE4B;
+  }
+  100% {
+    box-shadow: 0 0 0 8px #7FBE4B11;
+  }
+}
+
+.je_participe
+{
+  animation: shadow-pulse 2s infinite;
+}
+
+@keyframes shadow-pulse-home
+{
+  0% {
+    box-shadow: 0 0 0 0px white;
+  }
+  100% {
+    box-shadow: 0 0 0 8px #FFFFFF11;
+  }
+}
+
+.je_participe_home
+{
+  animation: shadow-pulse-home 5s infinite;
 }
