@@ -1,11 +1,11 @@
   <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
       <p class="mb-0">Où ?</p>
     <div class="form-inline align-items-center">
-      <div><%= f.input :address, label: false, input_html: {placeholder: 'Entrez une adresse', size: 42} %></div>
+      <div><%= f.input :address, label: false, input_html: { placeholder: 'Entrez une adresse', size: 42 } %></div>
       <div><%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %></div>
     </div>
     <div class="radio-choices">
-      <%= f.input :date_range, label: "Quand ?", required: false,  as: :radio_buttons, collection: ["Aujourd'hui", "7 prochains jours", "14 prochains jours"] %>
+      <%= f.input :date_range, label: "Quand ?", required: false,  as: :radio_buttons, collection: ["Aujourd'hui", "7 prochains jours", "14 prochains jours"], checked: "Aujourd'hui"%>
     </div>
     <%= f.button :submit, 'Go !', class: 'btn-bc-go', id: "searchbtn" %>
   <% end %>
