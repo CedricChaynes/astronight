@@ -1,0 +1,14 @@
+<div class="d-flex flex-column bd-highlight my-3">
+
+  <div class="p-2 bd-highlight" name="Meteo">
+      <div class="d-flex justify-content-start align-self-center mb-3" name="MeteoTitle">
+        <div class="fas fa-star fa-2x ml-2"></div>
+        <h3 class="ml-3">Carte du ciel pour la soirée du <%= I18n.localize(@event.date, format: :custom) %></h3>
+      </div>
+    <p class="font-italic mb-3">Pour mieux préparer votre sortie, vous pouvez avoir un aperçu interactif des étoiles et objets célestes qui seront visibles cette nuit-là.</p>
+      <div class="outerstellarium">
+        <div class="black-square"><%= I18n.localize(@event.date, format: :custom) %></div>
+        <iframe id="innerstellarium" src="https://stellarium-web.org/" border="0"></iframe>
+      </div>
+  <hr>
+  </div>
