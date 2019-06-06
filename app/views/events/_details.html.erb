@@ -10,7 +10,12 @@
     </div>
     <div 5 class="div_haut_droite">
       <div 16 class="div_btn_confirmation">
-        <% user_events = current_user.participations.map {|part| part.event_id} %>
+        <% if current_user.nil? %>
+          <% user_events = [] %>
+        <% else %>
+          <% user_events = current_user.participations.map {|part| part.event_id} %>
+        <% end %>
+
         <% if user_events.include?(@event.id) %>
           <%= link_to "https://www.google.com/calendar/render?action=TEMPLATE&text=#{URI.encode("Soirée Astronomie")}&dates=#{@event.date.strftime('%Y%m%dT180000')}/#{(@event.date + 1.days).strftime('%Y%m%dT030000')}&location=#{@event.site.address}&sprop=name:Name&sprop=website:EventWebite&details=#{@event.site.description}&sf=true&output=xml", class: 'calendar_btn btn-show je_participe',target: "_blank" do %>
           Ajouter à mon calendrier
