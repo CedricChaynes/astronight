@@ -18,20 +18,18 @@
     <h3><strong>Temps</strong> <%= @event.score_cloud%> %</h3>
     <div>La météo est basée sur ce critère:
       <ul>
-        <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre la possibilité d'observation astronomique
+        <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre l'observation astronomique
         </li>
       </ul>
     </div>
   </div>
-  </iframe>
-
-  <br>
+   <br>
   <hr>
   <br>
 
   <div class="third-border">
     <h3><strong>Cycle de la lune </strong> <%= @event.score_lune%> %</h3>
-     <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par l'absence de nuit    noire ou non.
+     <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par la projection de la lumière de la lune.
     </div>
     <br>
     <%= render 'moonphase' %>
@@ -43,7 +41,10 @@
 
   <div class="fourth-border">
     <h3> <strong>Evènements Astronomiques </strong><%= @event.score_events%> %</h3>
-    <div> Les observations astronomiques sont ponctués d'evènements à ne pas manquer pour rendre mémorable vos sorties</div>
+
+    <div class="description">
+      <span id="event" data-date="2019-06-11" 00:00:00="" utc="">Mardi, 11 Juin 2019</span><ul><li>Opposition de Jupiter avec le Soleil: Cette configuration correspond aux conditions favorables d'observation de Jupiter. En effet, c'est au moment de l'opposition avec le Soleil que la distance entre Jupiter et la Terre est minimale. La planète se lève peu après le coucher du soleil.</li></ul></div>
+
   </div>
   <br>
   <hr>
