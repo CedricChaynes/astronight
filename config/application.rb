@@ -23,9 +23,9 @@ module Astronight
 
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :fr
-    config.action_mailer.delivery_method = :postmark
-    config.action_mailer.postmark_settings = { :api_token => "7a11d051-b1b7-4dec-97ec-25ac923d1813" }
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { :api_token => "7a11d051-b1b7-4dec-97ec-25ac923d1813" }
   end
 end
 
