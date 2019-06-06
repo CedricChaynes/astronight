@@ -5,9 +5,11 @@ import { initMapbox } from './initMapbox'
 import { launchLoader } from './launchLoader'
 import { initGauge } from './initGauge'
 import { initStars } from './initStars'
+import { hideCalendarBtn } from './hideCalendarBtn'
 
 placesAutocomplete()
 initMapbox()
+hideCalendarBtn();
 
 const loaderCallback = () => {
   document.querySelector('.navbar').style.display= "";
