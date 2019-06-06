@@ -9,19 +9,37 @@ let iconSelected
 
 
 const selectPin = (id) => {
-  cleanSelected()
+  // cleanSelected()
 
   const markerJs = markersJs[id]
   const element = markerJs.getElement()
   element.style.backgroundImage = `url('${iconSelected}')`;
+  element.style.zIndex = `${element.style.zIndex + 1}`;
+  markerJs.getElement().style.width = '80px';
+  markerJs.getElement().style.height = '80px';
+
+  // cleanSelected()
 }
 
-const cleanSelected  = () => {
-  Object.keys(markersJs).map(function(objectKey, index) {
-      const markerJs = markersJs[objectKey];
-      markerJs.getElement().style.backgroundImage = `url('${iconBase}')`;
-  });
+const cleanSelected  = (id) => {
+  const markerJs = markersJs[id]
+  const element = markerJs.getElement()
+  element.style.backgroundImage = `url('${iconBase}')`;
+  element.style.zIndex = '1';
+  markerJs.getElement().style.width = '50px';
+  markerJs.getElement().style.height = '50px';
+
 }
+
+// const cleanSelected  = () => {
+//   Object.keys(markersJs).map(function(objectKey, index) {
+//       const markerJs = markersJs[objectKey];
+//       markerJs.getElement().style.backgroundImage = `url('${iconBase}')`;
+//       markerJs.getElement().style.width = '50px';
+//       markerJs.getElement().style.height = '50px';
+//       element.style.zIndex = `${element.style.zIndex - 1}`;
+//   });
+// }
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -32,7 +50,7 @@ const buildMap = () => {
 };
 
 const addMarkersToMap = (map, markers) => {
-  console.log("coucous")
+  // console.log("coucous")
   markers.forEach((marker) => {
     console.log(marker)
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
@@ -40,9 +58,11 @@ const addMarkersToMap = (map, markers) => {
     element.className = 'marker';
     element.style.backgroundImage = `url('${iconBase}')`;
     element.style.backgroundSize = 'contain';
-    element.style.width = '40px';
-    element.style.height = '40px';
+    element.style.width = '50px';
+    element.style.height = '50px';
+    element.style.zIndex = '1';
     element.id = marker.unique_id;
+    element.style.transitionDuration = '0.5s';
 
     const markerJs = new mapboxgl.Marker(element)
 
