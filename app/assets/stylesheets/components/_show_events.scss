@@ -168,3 +168,11 @@ align-items: center;
  margin:10px auto;
  width:100%;
 }
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.element img {
+  border-radius: 50%;
+}
