@@ -5,18 +5,18 @@ const initGauge = () => {
   const gauges = document.querySelectorAll('.cpuSpeed');
   gauges.forEach((gauge) => {
     // Create a new Gauge
-    const score = Number(gauge.dataset.score) *100;
+    const score = Math.round(Number(gauge.dataset.score)/2);
     const cpuGauge = Gauge(gauge, {
         max: 100,
         dialStartAngle: -90,
         dialEndAngle: -90.001,
         showValue: true,
         label: function() {
-          return score + "%";
+          return score + "/10";
           },
         value: score,
         color: function(value) {
-          if(value < 90) {
+          if(value < 8) {
             return "#ffbf00"; // yellow
           } else {
             return "#238823"; // green
