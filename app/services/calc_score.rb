@@ -34,14 +34,18 @@ class CalcScore
     astro_event_score = AstroEvent.find_by(date: @date) ? 0 : AstroEvent.find(date: @date).score
     p "Astronomical event score #{astro_event_score}"
     # calculate score based on moon status
-    moon_score = ((1 - Lunartic.on_date(@date).percent_full) * 20).round(0)
+    moon_score = ((1 - Lunartic.on_date(@date).percent_full) * 20).floor
 
     # calculate total score from 4 criteria
-    total_score = (light_pol_score + cloudiness_score + astro_event_score + moon_score) / 4
+    total_score = ((light_pol_score + cloudiness_score + astro_event_score + moon_score) / 4).floor
     total_score = total_score.positive? ? total_score : 0
-    p "Total score #{total_score}"
+    p "Total score #{total_score}/20"
     p "-" * 100
-    return total_score
+    return { total_score: total_score,
+             light_pol_score: light_pol_score,
+             cloudiness_score: cloudiness_score,
+             astro_event_score: astro_event_score,
+             moon_score: moon_score }
   end
 
   def self.call(site, date)

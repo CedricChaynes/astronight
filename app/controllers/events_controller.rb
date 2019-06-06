@@ -20,10 +20,11 @@ class EventsController < ApplicationController
                 end
 
     if @address == ""
-      @events = Event.where(date: @start_date..@end_date).order(event_score: :desc).first(3)
+      @events = Event.where(date: @start_date..@end_date).order("score --> 'total_score' DESC")
     else
       @near = Site.near(@address, @radius).map(&:id)
-      @events = Event.where(date: @start_date..@end_date).where(site_id: @near).order(event_score: :desc).first(3)
+      @events = Event.where(date: @start_date..@end_date)
+                     .where(site_id: @near).order("score --> 'total_score' DESC")
     end
 
     @markers = @events.map do |event|
@@ -42,26 +43,9 @@ class EventsController < ApplicationController
     @participation = Participation.new
   end
 
-  def redirect
-    client = Signet::OAuth2::Client.new(client_options)
-
-    redirect_to client.authorization_uri.to_s
-  end
-
   private
 
   def set_event
     @event = Event.find(params[:id])
-  end
-
-  def client_options
-    {
-      client_id: ENV["GOOGLE_CLIENT_ID"],
-      client_secret: ENV["GOOGLE_CLIENT_SECRET"],
-      authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
-      token_credential_uri: 'https://accounts.google.com/o/oauth2/token',
-      scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
-      redirect_uri: callback_url
-    }
   end
 end

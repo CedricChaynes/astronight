@@ -1,11 +1,13 @@
   <div class="container ">
     <div class="row">
       <div class="first-border">
-        <h3><strong>Pollution Lumineuse</strong> <%= @event.score_pollution%> %</h3>
+        <h3><strong>Pollution Lumineuse</strong> <%= @event.score["light_pol_score"] %> %</h3>
 
         <div class="text"> La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</div>
         <br>
-        <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        <!-- <iframe src="<%= "https://www.lightpollutionmap.info/#zoom=9&lat=#{(@event.site.lat * 127934).floor}&lon=#{(@event.site.lng * 111475).floor}&layers=B0FFFFFTFFFF" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
+        </iframe> -->
+        <iframe src="<%= "https://darksitefinder.com/maps/world.html#9/#{@event.site.lat}/#{@event.site.lng}" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
         </iframe>
          </div>
            </div>
@@ -18,18 +20,25 @@
     <h3><strong>Temps</strong> <%= @event.score_cloud%> %</h3>
     <div>La météo est basée sur ce critère:
       <ul>
-        <li> Nebulosité : La presence d'une importante couverture nuageuse peut compromettre l'observation astronomique
+
+        <li> Nebulosité : <%= @event.score["cloudiness_score"] %>
+         Nebulosité : La presence d'une importante couverture nuageuse peut compromettre l'observation astronomique
         </li>
       </ul>
     </div>
   </div>
+
    <br>
   <hr>
   <br>
 
   <div class="third-border">
-    <h3><strong>Cycle de la lune </strong> <%= @event.score_lune%> %</h3>
+
+
+    <h3><strong>Cycle de la lune </strong> <%= @event.score["moon_score"] %> %</h3>
      <div>Les cycles de la lune ont une incidence sur la qualité des observations astronomique par la projection de la lumière de la lune.
+
+
     </div>
     <br>
     <%= render 'moonphase' %>
@@ -39,11 +48,14 @@
   <hr>
   <br>
 
-  <div class="fourth-border">
-    <h3> <strong>Evènements Astronomiques </strong><%= @event.score_events%> %</h3>
+
+
+     <h3> <strong>Evènements Astronomiques </strong><%= @event.score["astro_event_score"] %> %</h3>
 
     <div class="description">
       <span id="event" data-date="2019-06-11" 00:00:00="" utc="">Mardi, 11 Juin 2019</span><ul><li>Opposition de Jupiter avec le Soleil: Cette configuration correspond aux conditions favorables d'observation de Jupiter. En effet, c'est au moment de l'opposition avec le Soleil que la distance entre Jupiter et la Terre est minimale. La planète se lève peu après le coucher du soleil.</li></ul></div>
+
+
 
   </div>
   <br>

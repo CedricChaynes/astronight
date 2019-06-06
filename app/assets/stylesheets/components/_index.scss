@@ -21,9 +21,9 @@
 @import "img";
 @import "cards";
 @import "links_connexion";
-@import "dropdown";
 @import "second-border";
 @import "center-div";
+@import "show_events";
 
 body {
   margin-bottom: 50px;
@@ -40,12 +40,12 @@ body {
 
 a {
   color: #47A1D1;
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
-  color: #47A1D1;
+  // color: #47A1D1;
 }
 
 h3 {

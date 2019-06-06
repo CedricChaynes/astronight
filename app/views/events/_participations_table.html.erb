@@ -1,13 +1,30 @@
 <div id="conteneur">
-  <% @event.participations.each do |participation| %>
-    <ul>
+  <div class="row">
+    <% @event.participations.each do |participation| %>
+    <div class="col-3">
       <div class="element">
         <%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, height: 80, background: "#f6f6f6" %>
       </div>
-      <div class="element"><%= participation.user.username %></div>
+
       <div class="element">
-        <span style="font-size:smaller"> Inscrit il y a <%=distance_of_time_in_words(Time.now - participation.created_at) %></span>
+        <%= participation.user.username %>
       </div>
-    </ul>
-  <% end %>
+
+      <div class="element">
+        <span style="font-size:smaller">
+          Inscrit il y a <%=distance_of_time_in_words(Time.now - participation.created_at) %>
+        </span>
+      </div>
+
+      <div class="element">
+          <% if participation.material["vehicle"] %>
+            <i class="fas fa-car-alt"></i>
+          <% end %>
+          <% if participation.material["telescope"] %>
+            <i class="fas fa-binoculars"></i>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

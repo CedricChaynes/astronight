@@ -1,74 +1,63 @@
-<div class="container border p-3">
-  <div class="flexbox">
-    <div>
-      <h4><b><%= @event.site.address %></b></h4>
-      <h5><span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
-    </div>
-    <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.event_score %>"></div>
-    <div class="d-flex">
-      <input class="btn-primary"type="submit" name="commit" value="Confirmer ma présence" class="btn btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:75%" data-disable-with="Confirmer ma présence">
-    </div>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-
-  <div class="flex-container">
-    <div class="element">
-      <div class="map"><%= image_tag @event.site.photo, class: 'sites' %></div>
-      <div class="affichage">
-        <ul>
-          <img class="pictos" src="/assets/planet.png"> <span>Evenements Astronomiques</span>
-          <img class="pictos" src="/assets/moon.png"> <span> Cycle de la lune</span>
-          <img class="pictos" src="/assets/city.png"><span> Pollution Lumineuse</span>
-          <img class="pictos" src="/assets/weather"><span> Méteo</span>
-        </ul>
+<div 1 class="div_generale">
+  <div 2 class="div_haut">
+    <div 4 class="div_haut_gauche">
+      <div 6 class="div_lieu">
+        <h4><b><%= @event.site.address %></b></h4>
+      </div>
+      <div 7 class="div_date">
+        <h5><span id="event" data-date=<%= @event.date %>><%= I18n.localize(@event.date, format: :custom) %></span></h5>
       </div>
     </div>
-
-    <div class="map">
-      <div id="future-map">Map</div>
-      <div class="d-flex">
-        <input class="btn-primary"type="submit" name="commit" value="Voir l'itinéraire" class="btn btn btn-primary" style="width:75%" data-disable-with="Confirmer ma présence">
+    <div 5 class="div_haut_droite">
+      <div 16 class="div_btn_confirmation">
+        <% if user_signed_in? %>
+          <button class='btn-primary' id= 'modal-toggle' name='commit' data-toggle='modal' data-target='#confirmModal' data-disable-with="Confirmer ma présence">Confirmer ma présence</button>
+        <% end %>
       </div>
     </div>
   </div>
+  <div 3 class="div_bas">
+    <div 8 class="div_bas_gauche">
+      <div 10 class="div_photo">
+        <div class="show_photo"><%= image_tag @event.site.photo, class: 'show_photo' %></div>
+      </div>
+      <div 11 class="div_description">
+        <h7><i><%= @event.site.description %></i></h7>
+      </div>
+<!--       <div 5 bis class="div_bas_btn">
+        <div 16 class="div_btn_confirmation">
 
-
-
-  <hr>
-
-  <div class="description">
-    <h7><i><%= @event.site.description %></i></h7>
-
-    <% if user_signed_in? %>
-      <%= simple_form_for [@event, @participation] do |f| %>
-
-        <% hidden_field_tag :event_id, @event.id %>
-        <% hidden_field_tag :user_id, current_user.id %>
+      </div>
+      </div> -->
+    </div>
+    <div 9 class="div_bas_droite">
+      <div 12 class="div_participants">
+        <h3>Participants</h3>
         <br>
-        <div class="d-flex">
-          <%= f.button :submit, 'Confirmer ma présence', class: 'btn btn-primary w-25 show-modal modal' %>
-          <div>
-            <%= link_to "https://www.google.com/calendar/render?action=TEMPLATE&text=#{URI.encode("Soirée d'astronomie")}&dates=#{@event.date.strftime('%Y%m%dT180000')}/#{(@event.date + 1.days).strftime('%Y%m%dT030000')}&location=#{@event.site.address}&sprop=name:Name&sprop=website:EventWebite&details=#{@event.site.description}&sf=true&output=xml", class: 'btn btn-primary w-100' do %>
-              Ajouter dans mon calendrier
-            <% end %>
+        <%= render 'participations_table' %>
+      </div>
+      <div 13 class="div_score">
+        <h3>Analyse des conditions d'observation</h3>
+        <p>Qualité d'observation</p>
+        <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.score["total_score"] %>">
+        </div>
+        <div class="affichage">
+          <ul>
+            <i class="fas fa-eye fa-lg"></i>
+            <i class="fas fa-city fa-lg"></i>
+            <i class="fas fa-moon fa-lg"></i>
+            <i class="fas fa-cloud-sun fa-lg"></i>
+          </ul>
+        </div>
+      </div>
+<!--       <div 14 class="div_map">
+        <div class="map">
+          <div id="future-map">Map</div>
+          <div class="d-flex">
+
           </div>
         </div>
-        <% end %>
-      <% end %>
+      </div> -->
+    </div>
   </div>
-  <hr>
-
-  <section class="py-l u-separator-top">
-    <h3>Participants</h3>
-    <br>
-    <%= render 'participations_table' %>
-  </section>
-  <%= render 'toolmodal' %>
-
-
-</div>
-
-
+<%= render 'toolmodal' %>
