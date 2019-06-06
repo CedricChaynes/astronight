@@ -1,24 +1,22 @@
-<div class="container border p-3">
-  <div class="row">
-    <div class="center-div">
-      <h3 class="text-center">Discussion</h3>
-      <div class="jumbotron" style="padding: 0">
+<div class="messagerie">
+  <div class="center-div">
+    <h3 class="text-center">Discussion</h3>
+    <div class="jumbotron zone_messages" style="padding: 0">
 
-        <div class="well p-3 center" id="chatbox" style="height:320px; border:solid 1px #222222; overflow-y: scroll">
-          <% @messages.each do |message|%>
-            <%= render 'messages/message', message: message %>
+      <div class="well p-3 center" id="chatbox" style="height:320px; overflow-y: scroll">
+        <% @messages.each do |message|%>
+          <%= render 'messages/message', message: message %>
 
-          <% end  %>
-        </div>
-        <%= form_with url: event_messages_path(@event),remote: true do |f| %>
-          <div class="input-group mb-3">
-            <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
-            <div class="input-group-append">
-              <%= f.submit "Envoyez", class: "btn-primary btn-sm" %>
-            </div>
-          </div>
-        <% end %>
+        <% end  %>
       </div>
+      <%= form_with url: event_messages_path(@event),remote: true do |f| %>
+        <div class="input-group mb-3">
+          <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
+          <div class="input-group-append">
+            <%= f.submit "Envoyez", class: "btn-messagerie" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

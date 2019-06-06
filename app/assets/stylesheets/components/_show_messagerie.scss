@@ -1,0 +1,53 @@
+.messagerie {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.zone_messages {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.center-div {
+  width: 70%;
+}
+
+#chatbox {
+  border: solid 1px #47A1D155;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.form-control {
+  background-color: #F2F2F2;
+  height: 45px;
+  margin-top: 15px;
+  margin-right: 1px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.jumbotron {
+  background-color: transparent;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-group > .form-control {
+  width: 30px;
+}
+
+.btn-messagerie {
+  height: 80%;
+  margin-top: 15px;
+  text-decoration: none;
+  color: white;
+  background-color: #47A1D1;
+  border: solid 1px #47A1D1;
+  padding: 8px 24px;
+  border-radius: 0 8px 8px 0;
+  transition: all .3s;
+}
