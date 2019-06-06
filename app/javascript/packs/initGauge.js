@@ -5,7 +5,7 @@ const initGauge = () => {
   const gauges = document.querySelectorAll('.cpuSpeed');
   gauges.forEach((gauge) => {
     // Create a new Gauge
-    const score = Math.round(Number(gauge.dataset.score)/2);
+    const score = Math.round(Number(gauge.dataset.score));
     const cpuGauge = Gauge(gauge, {
         max: 100,
         dialStartAngle: -90,

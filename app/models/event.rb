@@ -4,7 +4,6 @@ class Event < ApplicationRecord
   has_many :users, through: :participations
   has_many :messages, dependent: :destroy
 
-
   def score_pollution
     rand(100)
   end
