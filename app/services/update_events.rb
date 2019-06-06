@@ -1,6 +1,6 @@
 class UpdateEvents
   def initialize
-    @threshold = 0.7
+    @threshold = 13
   end
 
   def call
