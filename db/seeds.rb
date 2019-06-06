@@ -66,30 +66,66 @@ puts "Users created !"
 
 puts "Creating Events...."
 sites = Site.all
-50.times do
-  light_pol_score = rand(0..5)
-  cloudiness_score = [-100, 5, 10].sample
-  astro_event_score = rand(0..5)
-  moon_score = rand(0..5)
-  total_score = ((light_pol_score + cloudiness_score + astro_event_score + moon_score) / 4).floor
+# 50.times do
+#   light_pol_score = rand(0..5)
+#   cloudiness_score = [-100, 5, 10].sample
+#   astro_event_score = rand(0..5)
+#   moon_score = rand(0..5)
+#   total_score = ((light_pol_score + cloudiness_score + astro_event_score + moon_score) / 4).floor
 
 
 
-  Event.create!(
-    site_id: sites.sample.id,
-    status: ["pending", "created"].sample,
-    score: { total_score: total_score,
-             light_pol_score: light_pol_score,
-             cloudiness_score: cloudiness_score,
-             astro_event_score: astro_event_score,
-             moon_score: moon_score },
-    date: rand(Date.today..Date.civil(2019, 06, 21))
-    )
-end
+
+newevent = Event.new(
+    site_id: Site.find_by(address: "Observatoire de Lyon, St Genis-Laval, Rhône-Alpes").id,
+    status: "created",
+    score: {},
+    date: 5.day.from_now.to_date
+)
+score_results = CalcScore.call(Site.find(newevent.site_id), 5.day.from_now.to_date)
+p newevent
+
+newevent.score = score_results
+newevent.update
+p newevent
 
 
 Event.create!(
-    site_id: Site.find_by(address: "Observatoire de Lyon, St Genis-Laval, Rhône-Alpes").id,
+    site_id: Site.find_by(address: "Tille de Grange-Sauvaget,Bracon, Franche-Comté").id,
+    status: "created",
+    score: { total_score: 90,
+             light_pol_score: 20,
+             cloudiness_score: 25,
+             astro_event_score: 25,
+             moon_score: 20 },
+    date: 3.day.from_now.to_date
+)
+
+Event.create!(
+    site_id: Site.find_by(address: "Chapelle de St Bonnet, Montmelas, Rhône-Alpes").id,
+    status: "created",
+    score: { total_score: 90,
+             light_pol_score: 20,
+             cloudiness_score: 25,
+             astro_event_score: 25,
+             moon_score: 20 },
+    date: 2.day.from_now.to_date
+)
+
+Cret Malherbe,42,Rhône-Alpes,Marcenod
+Event.create!(
+    site_id: Site.find_by(address: "Cret Malherbe, Marcenod, Rhône-Alpes").id,
+    status: "created",
+    score: { total_score: 90,
+             light_pol_score: 20,
+             cloudiness_score: 25,
+             astro_event_score: 25,
+             moon_score: 20 },
+    date: 3.day.from_now.to_date
+
+
+Event.create!(
+    site_id: Site.find_by(address: "Croix de Pars, Yzeron, Rhône-Alpes").id,
     status: "created",
     score: { total_score: 90,
              light_pol_score: 20,
@@ -98,6 +134,38 @@ Event.create!(
              moon_score: 20 },
     date: 1.day.from_now.to_date
 )
+
+
+Event.create!(
+    site_id: Site.find_by(address: "Cret d'Arjoux,St-Julien/Bibost,Rhône-Alpes").id,
+    status: "created",
+    score: { total_score: 90,
+             light_pol_score: 20,
+             cloudiness_score: 25,
+             astro_event_score: 25,
+             moon_score: 20 },
+    date: 6.day.from_now.to_date
+)
+
+Event.create!(
+    site_id: Site.find_by(address: "Col du Coq,St Pancrasse,Rhône-Alpes").id,
+    status: "created",
+    score: { total_score: 90,
+             light_pol_score: 20,
+             cloudiness_score: 25,
+             astro_event_score: 25,
+             moon_score: 20 },
+    date: 3.day.from_now.to_date
+)
+Event.create!(
+    site_id: Site.find_by(address: "Bret,Joyeux, Rhône-Alpes").id,
+    status: "created",
+    score: { Calc_Score.call },
+    date: 7.day.from_now.to_date
+end
+
+
+
 
 puts "Events created !"
 
