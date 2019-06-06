@@ -41,6 +41,14 @@ class EventsController < ApplicationController
     @message = Message.new
     @messages = @event.messages
     @participation = Participation.new
+
+    set_event
+    @markers = [
+      {
+        lat: @event.site.lat,
+        lng: @event.site.lng,
+        image_url: helpers.asset_url('map-marker.png')
+      }]
   end
 
   private

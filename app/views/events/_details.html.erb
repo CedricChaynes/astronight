@@ -24,6 +24,7 @@
       <div 11 class="div_description">
         <h7><i><%= @event.site.description %></i></h7>
       </div>
+      <%= render 'mapbox' %>
 <!--       <div 5 bis class="div_bas_btn">
         <div 16 class="div_btn_confirmation">
 
@@ -42,22 +43,21 @@
         <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.score["total_score"] %>">
         </div>
         <div class="affichage">
-          <ul>
-            <i class="fas fa-eye fa-lg"></i>
-            <i class="fas fa-city fa-lg"></i>
-            <i class="fas fa-moon fa-lg"></i>
-            <i class="fas fa-cloud-sun fa-lg"></i>
-          </ul>
+          <p class="cloud-sun"><i class="fas fa-cloud-sun cloud-sun fa-lg"></i>  Prévision météo - 10/10</p>
+          <p class="city"><i class="fas fa-city city fa-lg"></i>  Pollution lumineuse - 9/10</p>
+          <p class="eye"><i class="fas fa-eye eye fa-lg"></i>  Evènements astronomiques - 5/10</p>
+          <p class="moon"><i class="fas fa-moon moon fa-lg"></i>  Luminosité Lune - 3/10</p>
+
         </div>
       </div>
-<!--       <div 14 class="div_map">
+      <div 14 class="div_map">
         <div class="map">
           <div id="future-map">Map</div>
           <div class="d-flex">
-
+            <%= render 'mapbox' %>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 <%= render 'toolmodal' %>
