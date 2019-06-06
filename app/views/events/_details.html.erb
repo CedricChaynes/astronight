@@ -19,7 +19,8 @@
   <div 3 class="div_bas">
     <div 8 class="div_bas_gauche">
       <div 10 class="div_photo">
-        <div class="show_photo"><%= image_tag @event.site.photo, class: 'show_photo' %></div>
+        <div class="show_photo"><%= image_tag @event.site.photo, class: 'show_photo' %>
+        </div>
       </div>
       <div 11 class="div_description">
         <h7><i><%= @event.site.description %></i></h7>
@@ -30,7 +31,7 @@
 
       </div>
       </div> -->
-    </div>
+    </div> ok
     <div 9 class="div_bas_droite">
       <div 12 class="div_participants">
         <h3>Participants</h3>
@@ -49,10 +50,11 @@
           <p class="moon"><i class="fas fa-moon moon fa-lg"></i>  Luminosité Lune - 3/10</p>
 
         </div>
-      </div>
+      </div> ok
       <div 14 class="div_map">
         <div class="map">
-          <div id="future-map">Map</div>
+          <div id="future-map">Map
+          </div>
           <div class="d-flex">
             <%= render 'mapbox' %>
           </div>
@@ -60,4 +62,5 @@
       </div>
     </div>
   </div>
+</div>
 <%= render 'toolmodal' %>
