@@ -169,10 +169,10 @@ align-items: center;
  width:100%;
 }
 
-.element img {
-  border-radius: 50%;
+.nowrap {
+  flex-wrap: nowrap;
 }
 
-.non-align {
-  flex-wrap: nowrap;
+.element img {
+  border-radius: 50%;
 }
