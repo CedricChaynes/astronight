@@ -11,8 +11,6 @@ placesAutocomplete()
 initMapbox()
 hideCalendarBtn();
 
-
-
 const loaderCallback = () => {
   document.querySelector('.navbar').style.display= "";
   initGauge();
@@ -35,12 +33,13 @@ console.log(cards);
 cards.forEach(card => {
  card.addEventListener('mouseover', () => {
    const id = card.querySelector('[data-id]').dataset.id;
-   console.log(id);
+   // console.log(id);
    selectPin(id)
  });
 
- // card.addEventListener('mouseout', () => {
- //   const id = card.querySelector('[data-id]').dataset.id;
- //   console.log(id);
- // });
+ card.addEventListener('mouseout', () => {
+   const id = card.querySelector('[data-id]').dataset.id;
+   // console.log(id);
+   cleanSelected(id)
+ });
 });
