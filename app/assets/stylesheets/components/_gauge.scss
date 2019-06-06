@@ -4,6 +4,12 @@
   display: block;
   padding: 8px;
 }
+.gauge-container {
+  width: 80px;
+  height: 80px;
+  display: block;
+  padding: 8px;
+}
 .gauge-container > .gauge > .dial {
   stroke: #eee;
   stroke-width: 8;
