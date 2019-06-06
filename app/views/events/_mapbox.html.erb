@@ -1,5 +1,9 @@
+<% thisclass = nil %>
+<% thisclass = "map2" if @small_map %>
+
 <div
   id="map"
+  class="<%= thisclass %>"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
