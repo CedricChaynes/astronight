@@ -24,11 +24,11 @@
       <div 11 class="div_description">
         <h7><i><%= @event.site.description %></i></h7>
       </div>
-      <div 5 bis class="div_bas_btn">
+<!--       <div 5 bis class="div_bas_btn">
         <div 16 class="div_btn_confirmation">
 
       </div>
-      </div>
+      </div> -->
     </div>
     <div 9 class="div_bas_droite">
       <div 12 class="div_participants">
@@ -39,7 +39,8 @@
       <div 13 class="div_score">
         <h3>Analyse des conditions d'observation</h3>
         <p>Qualité d'observation</p>
-        <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.score["total_score"] %>"></div>
+        <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.score["total_score"] %>">
+        </div>
         <div class="affichage">
           <ul>
             <i class="fas fa-eye fa-lg"></i>
@@ -49,15 +50,14 @@
           </ul>
         </div>
       </div>
-      <div 14 class="div_map">
+<!--       <div 14 class="div_map">
         <div class="map">
           <div id="future-map">Map</div>
           <div class="d-flex">
 
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
-</div>
 <%= render 'toolmodal' %>
