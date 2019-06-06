@@ -32,9 +32,14 @@ class EventsController < ApplicationController
         lat: event.site.lat,
         lng: event.site.lng,
         infoWindow: render_to_string(partial: "infowindow", locals: { event: event }),
-        image_url: helpers.asset_url('map-marker.png')
+        unique_id: event.id
       }
     end
+
+    @icons = {
+      base: helpers.asset_url('pin_base.png'),
+      selected: helpers.asset_url('pin_selected.png')
+    }
   end
 
   def show
@@ -51,6 +56,10 @@ class EventsController < ApplicationController
         lng: @event.site.lng,
         image_url: helpers.asset_url('map-marker.png')
       }]
+    @icons = {
+      base: helpers.asset_url('pin_base.png'),
+      selected: helpers.asset_url('pin_selected.png')
+    }
   end
 
   private
