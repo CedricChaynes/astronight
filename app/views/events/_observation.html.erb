@@ -3,15 +3,26 @@
   <div class="p-2 bd-highlight" name="Meteo">
       <div class="d-flex justify-content-start align-self-center mb-3" name="MeteoTitle">
         <div class="fas fa-cloud-sun fa-2x ml-2"></div>
-        <h3 class="ml-3">Météo de la soirée</h3>
-        <h3 class="badge"><%= @event.score_cloud%> % </h3>
+        <% weather = @event.site.next_5_days_meteo.find {|weather_night| weather_night['night'] == @event.date.strftime('%d-%m-%Y')}  %>
+
+        <h3 class="ml-3">Météo de la soirée du <%= I18n.localize(@event.date, format: :custom) %></h3>
+        <h3 class="badge"><%= @event.score["cloudiness_score"] %> % </h3>
       </div>
-    <p class="font-italic">La météo est basée sur ce critère:</p>
-      <ul>
-        <li> Nebulosité : <%= @event.score["cloudiness_score"] %>
-         Nebulosité : La presence d'une importante couverture nuageuse peut compromettre l'observation astronomique
-        </li>
-      </ul>
+      <div class="row justify-content-center">
+        <% weather['weathers'].each do |weather_hour| %>
+        <div class="col-3 p-3 text-center">
+          <div class="col-12 border p-3">
+            <h4><strong><%= weather_hour['time'] %></strong></h4>
+          </div>
+          <div class="col-12 border p-3">
+            <br>
+            <pre><h4><%= image_tag image_url('cloud.svg'), size: '32x32' %> <%= weather_hour['cloudiness'] %>%</h4></pre>
+            <pre><h4><%= image_tag image_url('humidity.svg'), size: '32x32' %> <%= weather_hour['humidity'] %>%</h4></pre>
+            <pre><h4><%= image_tag image_url('wind.svg'), size: '32x32' %> <%= (weather_hour['wind_speed_ms'] * 3.6).floor %> km/h</h4></pre>
+          </div>
+        </div>
+        <% end  %>
+      </div>
   <hr>
   </div>
 
