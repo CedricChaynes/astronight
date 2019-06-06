@@ -18,8 +18,8 @@
   .collection_radio_buttons {
     display: inline-block;
     width: 150px;
-    color: #495057;
-    background-color: white;
+    color: white;
+    background-color: transparent;
     padding: 8px 2px 8px 2px;
     text-align: center;
     cursor: pointer;
@@ -37,9 +37,9 @@
   input {
     display: none;
     &:checked + .collection_radio_buttons {
-      background-color: #47A1D1;
+      background-color: white;
       border: solid 1px white;
-      color: white;
+      color: #47A1D1;
       cursor: default;
     }
   }
