@@ -1,5 +1,5 @@
 class Site < ApplicationRecord
-  has_many :events
+  has_many :events, dependent: :destroy
   geocoded_by :address, latitude: :lat, longitude: :lng
   before_create :geocode, if: :need_geocode?
 
