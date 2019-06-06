@@ -7,7 +7,7 @@ const initGauge = () => {
     // Create a new Gauge
     const score = Math.round(Number(gauge.dataset.score));
     const cpuGauge = Gauge(gauge, {
-        max: 100,
+        max: 10,
         dialStartAngle: -90,
         dialEndAngle: -90.001,
         showValue: true,
