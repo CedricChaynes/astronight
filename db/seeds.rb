@@ -14,6 +14,7 @@ puts "Previous seeds destroyed !"
 
 puts "Creating Sites..."
 
+
 filepath = 'db/gresac-astro-sites.csv'
 
 unless Site.any?
@@ -24,7 +25,8 @@ unless Site.any?
       lat: row["Latitude"].to_f,
       lng: row["Longitude"].to_f,
       description: row["Description"],
-      light_pol_index: row["Indice PL"].to_i
+      light_pol_index: row["Indice PL"].to_i,
+      photo: row["Photo"]
       )
   end
 end
@@ -65,11 +67,13 @@ puts "Users created !"
 puts "Creating Events...."
 sites = Site.all
 50.times do
-  light_pol_score = rand(0..20)
-  cloudiness_score = [-100, 5, 10, 15, 20].sample
-  astro_event_score = rand(0..20)
-  moon_score = rand(0..20)
+  light_pol_score = rand(0..5)
+  cloudiness_score = [-100, 5, 10].sample
+  astro_event_score = rand(0..5)
+  moon_score = rand(0..5)
   total_score = ((light_pol_score + cloudiness_score + astro_event_score + moon_score) / 4).floor
+
+
 
   Event.create!(
     site_id: sites.sample.id,
@@ -82,6 +86,19 @@ sites = Site.all
     date: rand(Date.today..Date.civil(2019, 06, 21))
     )
 end
+
+
+Event.create!(
+    site_id: Site.find_by(address: "Observatoire de Lyon, St Genis-Laval, Rhône-Alpes").id,
+    status: "created",
+    score: { total_score: 90,
+             light_pol_score: 20,
+             cloudiness_score: 25,
+             astro_event_score: 25,
+             moon_score: 20 },
+    date: 1.day.from_now.to_date
+)
+
 puts "Events created !"
 
 puts "Creating participations ...."
