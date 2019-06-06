@@ -1,7 +1,7 @@
 <div id="conteneur">
   <div class="row nowrap">
     <% @event.participations.each do |participation| %>
-    <div class="">
+    <div class="wrap">
       <div class="element">
         <%= cl_image_tag participation.user.avatar, gravity: :face, crop: :thumb, radius: :max, width: 80, height: 80, background: "#f6f6f6" %>
       </div>

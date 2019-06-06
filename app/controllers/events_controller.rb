@@ -42,6 +42,8 @@ class EventsController < ApplicationController
     @messages = @event.messages
     @participation = Participation.new
 
+    @small_map = true
+
     set_event
     @markers = [
       {
