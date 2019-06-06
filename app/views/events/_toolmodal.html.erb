@@ -26,10 +26,7 @@
       <!-- end of checkboxes -->
 
       <div class="modal-footer">
-        <%= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
-        <%= link_to "https://www.google.com/calendar/render?action=TEMPLATE&text=#{URI.encode("Soirée d'astronomie")}&dates=#{@event.date.strftime('%Y%m%dT180000')}/#{(@event.date + 1.days).strftime('%Y%m%dT030000')}&location=#{@event.site.address}&sprop=name:Name&sprop=website:EventWebite&details=#{@event.site.description}&sf=true&output=xml", class: 'btn btn-primary w-100' do %>
-          Ajouter dans mon calendrier
-        <% end %>
+        <%= f.button :submit, "Enregistrer", class: "btn btn-show" %>
       </div>
       <% end %>
     </div>
