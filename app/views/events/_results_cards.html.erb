@@ -1,5 +1,5 @@
 <div class="flex-item">
-  <% @events.each do |event| %>
+  <% @events.take(10).each do |event| %>
     <ul class="ul-cards">
       <%= link_to event_path(event) do %>
       <div class="card-trip">

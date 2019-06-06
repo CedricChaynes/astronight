@@ -1,4 +1,7 @@
 .sites {
-   size: "50x50";
-   style: "background-image: url(#{image_url('image-placeholder-225x225.png')})";
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  size: "50x50";
+  style: "background-image: url(#{image_url('image-placeholder-225x225.png')})";
 }

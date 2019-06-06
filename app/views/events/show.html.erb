@@ -1,18 +1,18 @@
-<div class="container form_console from_reserv w-75">
+<div class="container show-no-margin from_reserv">
   <br>
-
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a href="#details" class="nav-link active" role="tab" data-toggle="tab">Détails</a>
-    </li>
-    <li class="nav-item">
-      <a href="#messages" class="nav-link" role="tab" data-toggle="tab">Messages</a>
-    </li>
-    <li class="nav-item">
-      <a href="#conditions" class="nav-link" role="tab" data-toggle="tab">Conditions d'observation</a>
-    </li>
-  </ul>
-
+  <div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="#details" class="nav-link active" role="tab" data-toggle="tab">Détails</a>
+      </li>
+      <li class="nav-item">
+        <a href="#messages" class="nav-link" role="tab" data-toggle="tab">Messages</a>
+      </li>
+      <li class="nav-item">
+        <a href="#conditions" class="nav-link" role="tab" data-toggle="tab">Conditions d'observation</a>
+      </li>
+    </ul>
+  </div>
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in show active" id="details">
       <%= render 'details'%>
@@ -25,3 +25,4 @@
     </div>
   </div>
 </div>
+

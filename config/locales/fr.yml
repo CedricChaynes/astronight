@@ -216,6 +216,6 @@ fr:
       default: "%d %B %Y %Hh %Mmin %Ss"
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
-      custom: "%A, %d %B %Y à %Hh%M"
+      custom: "%A, %d %B %Y"
       message: "%Hh%M"
     pm: pm

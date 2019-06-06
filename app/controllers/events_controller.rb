@@ -20,14 +20,11 @@ class EventsController < ApplicationController
                 end
 
     if @address == ""
-      @events = Event.where(date: @start_date..@end_date)
-                     .order("score --> 'total_score' DESC")
-                     .first(3)
+      @events = Event.where(date: @start_date..@end_date).order("score --> 'total_score' DESC")
     else
       @near = Site.near(@address, @radius).map(&:id)
       @events = Event.where(date: @start_date..@end_date)
                      .where(site_id: @near).order("score --> 'total_score' DESC")
-                     .first(3)
     end
 
     @markers = @events.map do |event|

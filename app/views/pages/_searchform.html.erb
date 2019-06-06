@@ -1,19 +1,11 @@
-<div class="container p-3">
-  <h3 text-align="center" style="color: white;"> Vous cherchez où et quand observer les étoiles ? </h3>
   <%= simple_form_for :searchform, url: search_events_path, method: "GET" do |f| %>
-    <div class="form-inline">
-      <div>
-        <%= f.input :address, label: false, required: true, input_html: {placeholder: 'Entrez une adresse', size: 49} %>
-      </div>
-      <div>
-        <%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %>
-      </div>
+      <p class="mb-0">Où ?</p>
+    <div class="form-inline align-items-center">
+      <div><%= f.input :address, label: false, input_html: {placeholder: 'Entrez une adresse', size: 42} %></div>
+      <div><%= f.input :radius, label: false, collection: %W[50\skm 100\skm 200\skm], selected: '100 km' %></div>
     </div>
-    <div class="form-group">
-      <%= f.input :date_range, required: false, label: "Choisissez la période :", as: :radio_buttons, collection: %W[Aujourd\'hui 7\sprochains\sjours 14\sprochains\sjours], checked: '14 prochains jours' %>
-      <div class="d-flex justify-content-center">
-        <%= f.button :submit, 'Go !', class: 'btn-bc-go', id: "searchbtn" %>
-      </div>
+    <div class="radio-choices">
+      <%= f.input :date_range, label: "Quand ?", required: false,  as: :radio_buttons, collection: ["Aujourd'hui", "7 prochains jours", "14 prochains jours"] %>
     </div>
+    <%= f.button :submit, 'Go !', class: 'btn-bc-go', id: "searchbtn" %>
   <% end %>
-</div>
