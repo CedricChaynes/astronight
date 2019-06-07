@@ -56,7 +56,7 @@
       <h3 class="badge"><%= @event.score["astro_event_score"] %> %</h3>
     </div>
      <p class="font-italic mb-2">Les observations astronomiques sont ponctuées d'evènements et phénomènes qui se produisent à fréquence variable et rendent mémorables vos sorties.</p>
-     <span id="event" data-date="2019-06-11" 00:00:00="" utc="">Mardi, 11 Juin 2019</span><ul><li>Opposition de Jupiter avec le Soleil: Cette configuration correspond aux conditions favorables d'observation de Jupiter. En effet, c'est au moment de l'opposition avec le Soleil que la distance entre Jupiter et la Terre est minimale. La planète se lève peu après le coucher du soleil.</li></ul>
+     <span id="event" data-date="2019-06-11" 00:00:00="" utc=""><%= I18n.localize(@event.date, format: :custom) %></span><ul><li>Opposition de Jupiter avec le Soleil: Cette configuration correspond aux conditions favorables d'observation de Jupiter. En effet, c'est au moment de l'opposition avec le Soleil que la distance entre Jupiter et la Terre est minimale. La planète se lève peu après le coucher du soleil.</li></ul>
   <hr>
   </div>
 </div>
