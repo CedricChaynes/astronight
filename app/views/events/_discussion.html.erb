@@ -11,7 +11,7 @@
       </div>
       <%= form_with url: event_messages_path(@event),remote: true do |f| %>
         <div class="input-group mb-3">
-          <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control' %>
+          <%= f.text_field :body, label: false, placeholder: 'Postez votre message ici...', class: 'form-control input-messagerie' %>
           <div class="input-group-append">
             <%= f.submit "Envoyez", class: "btn-messagerie" %>
           </div>
