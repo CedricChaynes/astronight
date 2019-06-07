@@ -13,29 +13,30 @@
     <%= javascript_tag do %>
       window.animationDuration = <%= ENV["ANIMATION_DURATION"] || 0 %>;
     <% end %>
-<title><%= meta_title %></title>
-<meta name="description" content="<%= meta_description %>">
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
 
-<!-- Facebook Open Graph data -->
-<meta property="og:title" content="<%= meta_title %>" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="<%= request.original_url %>" />
-<meta property="og:image" content="<%= meta_image %>" />
-<meta property="og:description" content="<%= meta_description %>" />
-<meta property="og:site_name" content="<%= meta_title %>" />
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
-<meta name="twitter:title" content="<%= meta_title %>">
-<meta name="twitter:description" content="<%= meta_description %>">
-<meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
-<meta name="twitter:image:src" content="<%= meta_image %>">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
+
   <% unless current_page?(root_path) || current_page?(new_user_session_path) %>
-    <body>
+    <body class="<%= yield(:body_class) %>">
   <% else %>
-    <body class="homepage-body">
+    <body class="homepage-body <%= yield(:body_class) %>">
   <% end %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
