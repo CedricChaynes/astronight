@@ -91,7 +91,7 @@ def create_site
   ap "Creating Sites..."
   filepath = 'db/gresac-astro-sites.csv'
 
-  CSV.foreach(filepath, headers: :first_row, encoding: "ISO-8859-1") do |row|
+  CSV.foreach(filepath, headers: :first_row, encoding: "utf-8") do |row|
     address = "#{row["Site"]}, #{row["Commune"]}, #{row["Région"]}"
     Site.create!(
       address: address,
