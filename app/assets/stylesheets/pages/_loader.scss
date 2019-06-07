@@ -5,7 +5,7 @@ body.has-loader {
 .countup-counter {
   text-align: right;
   display: inline-block;
-  width: 80px;
+  width: 120px;
 }
 
 /* Absolute Center */
@@ -23,7 +23,7 @@ body.has-loader {
   right: 0;
   bottom: 0;
   z-index: 1071;
-  padding-top: 160px;
+  padding-top: 140px;
   visibility: visible;
   opacity: 1;
   transition: opacity .5s linear;
@@ -31,7 +31,6 @@ body.has-loader {
 
 .loader > h3 {
   color: white;
-  // font-family: 'IBM Plex Mono';
   font-size: 32px;
   font-weight: bolder;
   padding: 12px;
@@ -39,7 +38,6 @@ body.has-loader {
 
 .loader > h2 {
   color: white;
-  // font-family: 'IBM Plex Mono';
   font-size: 24px;
   padding: 12px;
 }
@@ -47,7 +45,7 @@ body.has-loader {
 .fade-out {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s .5s, opacity .5s linear;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 
 .star {

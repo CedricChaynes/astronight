@@ -29,7 +29,7 @@ const initStars = () => {
 
        var left = stars[i].style.left;
        if ( left === "0px" ) {
-         stars[i].style.left = (width - 10) + "px";
+         stars[i].style.left = (width) + "px";
        } else {
          stars[i].style.left = parseInt( left ) - stars[i].getAttribute("data-speed") + "px";
        }
@@ -42,7 +42,7 @@ const initStars = () => {
     allstars.forEach((element) => {
     element.style.visibility = "hidden";
 });
-   }, 6000)
+   }, 15000)
 }
 
 export { initStars }

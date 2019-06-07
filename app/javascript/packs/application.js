@@ -8,12 +8,13 @@ import { initStars } from './initStars'
 import { hideCalendarBtn } from './hideCalendarBtn'
 
 placesAutocomplete()
-initMapbox()
+
 hideCalendarBtn();
 
 const loaderCallback = () => {
   document.querySelector('.navbar').style.display= "";
   initGauge();
+  initMapbox()
 }
 
 if (document.querySelector(".loader")) {
@@ -21,9 +22,8 @@ if (document.querySelector(".loader")) {
   launchLoader(loaderCallback)
 } else {
   initGauge();
+  initMapbox();
 }
-
-// let parag = document.querySelectorAll
 
 let markers = document.querySelectorAll('mapboxgl-popup-content')
 
