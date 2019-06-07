@@ -152,7 +152,14 @@ def create_participations
   puts "Creating participations ...."
   Participation.destroy_all
   observatoir_lyon = Site.find_by(address: "Observatoire de Lyon, St Genis-Laval, Rhône-Alpes")
-  event1 = Event.find_by(site: observatoir_lyon, date: Date.tomorrow)
+  event1 = Event.find_by(site: observatoir_lyon)
+  event1.date = Date.tomorrow
+  event1.score = { total_score: 9,
+             light_pol_score: 7,
+             cloudiness_score: 10,
+             astro_event_score: 10,
+             moon_score: 6 }
+  event1.save!
   Participation.create!(user: User.find_by(username: 'ThomasP'), event: event1, material: {telescope: true} )
   Participation.create!(user: User.find_by(username: 'Vicouille'), event: event1, material: {vehicle: true})
 
