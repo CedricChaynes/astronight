@@ -2,6 +2,12 @@ body.has-loader {
   overflow: hidden;
 }
 
+.countup-counter {
+  text-align: right;
+  display: inline-block;
+  width: 80px;
+}
+
 /* Absolute Center */
 .loader {
   background-image: asset-url("astronight_background_sky2.jpg");
