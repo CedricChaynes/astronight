@@ -40,8 +40,12 @@ class CalcScore
     # calculate total score from 4 criteria
     total_score = ((light_pol_score + cloudiness_score + astro_event_score + moon_score) / 8).floor
     total_score = total_score.positive? ? total_score : 0
-    p "Total score #{total_score}/20"
-    p "-" * 100
+    light_pol_score /= 2
+    cloudiness_score /= 2
+    astro_event_score /= 2
+    moon_score /= 2
+
+    p "Total score #{total_score}/10"
     return { total_score: total_score,
              light_pol_score: light_pol_score,
              cloudiness_score: cloudiness_score,
