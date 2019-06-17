@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :participations, only: %i[index destroy]
+  resources :participations, only: :destroy
   resources :sites, only: :update
 end
