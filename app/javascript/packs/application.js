@@ -6,19 +6,19 @@ import { launchLoader } from './launchLoader'
 import { initGauge } from './initGauge'
 import { initStars } from './initStars'
 import { hideCalendarBtn } from './hideCalendarBtn'
-import { colorScores } from './colorScores'
 
 placesAutocomplete()
+
 hideCalendarBtn();
 colorScores();
 initGauge();
 initMapbox();
 
 
-
 let markers = document.querySelectorAll('mapboxgl-popup-content')
 
 let cards = document.querySelectorAll('.ul-cards');
+console.log(cards);
 
 cards.forEach(card => {
  card.addEventListener('mouseover', () => {
