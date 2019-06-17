@@ -11,20 +11,8 @@ import { colorScores } from './colorScores'
 placesAutocomplete()
 hideCalendarBtn();
 colorScores();
-
-const loaderCallback = () => {
-  document.querySelector('.navbar').style.display= "";
-  initGauge();
-  initMapbox()
-}
-
-if (document.querySelector(".loader")) {
-  window.onload = initStars()
-  launchLoader(loaderCallback)
-} else {
-  initGauge();
-  initMapbox();
-}
+initGauge();
+initMapbox();
 
 
 

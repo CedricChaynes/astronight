@@ -6,7 +6,7 @@
         <% weather = @event.site.next_5_days_meteo.find {|weather_night| weather_night['night'] == @event.date.strftime('%d-%m-%Y')}  %>
 
         <h3 class="ml-3">Météo de la soirée du <%= I18n.localize(@event.date, format: :custom) %></h3>
-        <h3 class="badge black-score"><%= @event.score["cloudiness_score"] %>/10 </h3>
+        <h3 class="badge"><%= @event.score["cloudiness_score"] %>/10 </h3>
       </div>
       <div class="row justify-content-center">
         <% weather['weathers'].each do |weather_hour| %>
@@ -30,7 +30,7 @@
     <div class="d-flex justify-content-start align-self-center mb-3" name="PollTitle">
       <div class="fas fa-city fa-2x ml-2"></div>
       <h3 class="ml-3">Pollution Lumineuse</h3>
-      <h3 class="badge black-score"><%= @event.score["light_pol_score"] %>/10</h3>
+      <h3 class="badge"><%= @event.score["light_pol_score"] %>/10</h3>
     </div>
     <p class="font-italic">La pollution lumineuse est la conséquence de l'éclairage artificiel nocturne des villes. Elle nuit à l'observation astronomique en créant un brouillard lumineux quasi-permanent.</p>
     <iframe src="<%= "https://darksitefinder.com/maps/world.html#9/#{@event.site.lat}/#{@event.site.lng}" %>" name="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" style="width: 100%;height: 70vh" >
@@ -42,7 +42,7 @@
     <div class="d-flex justify-content-start align-self-center mb-3" name="MoonTitle">
       <div class="fas fa-moon fa-2x ml-2"></div>
       <h3 class="ml-3">Phase lunaire</h3>
-      <h3 class="badge black-score"><%= @event.score["moon_score"] %>/10</h3>
+      <h3 class="badge"><%= @event.score["moon_score"] %>/10</h3>
     </div>
      <p class="font-italic mb-3">Les cycles de la lune ont une incidence sur la qualité des observations astronomique. La lune reflète intensément la lumière du Soleil et si sa phase dépasse le croissant, elle peut devenir une source d'éclairage du ciel aussi gênante que la pollution lumineuse urbaine.</p>
     <%= render 'moonphase' %>
@@ -53,7 +53,7 @@
     <div class="d-flex justify-content-start align-self-center mb-3" name="AstroTitle">
       <div class="fas fa-eye fa-2x ml-2"></div>
       <h3 class="ml-3">Evénements Astronomiques</h3>
-      <h3 class="badge black-score"><%= @event.score["astro_event_score"] %>/10</h3>
+      <h3 class="badge"><%= @event.score["astro_event_score"] %>/10</h3>
     </div>
      <p class="font-italic mb-2">Les observations astronomiques sont ponctuées d'evènements et phénomènes qui se produisent à fréquence variable et rendent mémorables vos sorties.</p>
      <span id="event" data-date="2019-06-11" 00:00:00="" utc=""><%= I18n.localize(@event.date, format: :custom) %></span><ul><li>Opposition de Jupiter avec le Soleil: Cette configuration correspond aux conditions favorables d'observation de Jupiter. En effet, c'est au moment de l'opposition avec le Soleil que la distance entre Jupiter et la Terre est minimale. La planète se lève peu après le coucher du soleil.</li></ul>
