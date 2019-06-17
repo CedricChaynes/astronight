@@ -1,4 +1,4 @@
 meta_product_name: "AstroNight"
 meta_title: "AstroNight - Passez vos nuits dehors"
 meta_description: "Astronight vous recommande les meilleurs lieux et dates pour aller observer les plus beaux ciels étoilés"
-meta_image: "logo_astronight.png" # should exist in `app/assets/images/`
+meta_image: "image_meta.jpg" # should exist in `app/assets/images/`
