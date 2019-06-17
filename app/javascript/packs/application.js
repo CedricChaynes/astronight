@@ -3,16 +3,17 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { placesAutocomplete } from './placesAutocomplete'
 import { initMapbox, selectPin, cleanSelected } from './initMapbox'
 import { launchLoader } from './launchLoader'
+import { colorScores } from './colorScores'
 import { initGauge } from './initGauge'
 import { initStars } from './initStars'
 import { hideCalendarBtn } from './hideCalendarBtn'
 
 placesAutocomplete()
-
+initMapbox();
 hideCalendarBtn();
 colorScores();
 initGauge();
-initMapbox();
+
 
 
 let markers = document.querySelectorAll('mapboxgl-popup-content')

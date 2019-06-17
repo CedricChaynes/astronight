@@ -33,10 +33,13 @@
       <div id="mygauge" style="text-align:right; margin:0px auto 0px auto;" class="cpuSpeed gauge-container" data-score="<%= @event.score["total_score"] %>">
       </div>
       <div class="affichage">
-        <div id="cloud-score" data-score=<%= @event.score["cloudiness_score"]%> style="text-align: center;"><p><i class="fas fa-cloud-sun cloud-sun fa-lg"></i> <%= @event.score["cloudiness_score"] %>/10 <br>  Prévision météo</p></div>
-        <div id="pol-score" data-score=<%= @event.score["light_pol_score"] %> style="text-align: center;"><p><i class="fas fa-city city fa-lg"></i> <%= @event.score["light_pol_score"] %>/10 <br> Pollution lumineuse</p></div>
+        <div id="cloud-score" data-score=<%= @event.score["cloudiness_score"]%> style="text-align: center;"><p><i class="fas fa-cloud-sun cloud-sun fa-lg"></i> <%= @event.score["cloudiness_score"] %>/10 <br>  Prévision météo</p>
+        </div>
+        <div id="pol-score" data-score=<%= @event.score["light_pol_score"] %> style="text-align: center;"><p><i class="fas fa-city city fa-lg"></i> <%= @event.score["light_pol_score"] %>/10 <br> Pollution lumineuse</p>
+        </div>
         <div id="astro-score" data-score=<%= @event.score["astro_event_score"] %> style="text-align: center;"><p><i class="fas fa-eye eye fa-lg"></i> <%= @event.score["astro_event_score"] %>/10 <br> Evènements astronomiques</p></div>
-        <div id="moon-score" data-score=<%= @event.score["moon_score"] %> style="text-align: center;"><p><i class="fas fa-moon moon fa-lg"></i> <%= @event.score["moon_score"] %>/10 <br> Luminosité Lune</p></div>
+        <div id="moon-score" data-score=<%= @event.score["moon_score"] %> style="text-align: center;"><p><i class="fas fa-moon moon fa-lg"></i> <%= @event.score["moon_score"] %>/10 <br> Luminosité Lune</p>
+        </div>
       </div>
     </div>
   </div>
