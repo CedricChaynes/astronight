@@ -2,10 +2,6 @@ class ParticipationsController < ApplicationController
   before_action :set_event, only: %i[create]
   before_action :set_participation, only: %i[destroy]
 
-  def index
-    @participations = current_user.participations
-  end
-
   def create
     @participation = Participation.new(participation_params)
     @participation.user = current_user
@@ -16,7 +12,6 @@ class ParticipationsController < ApplicationController
 
   def destroy
     @participation.destroy!
-    redirect_to participations_path
   end
 
   private
