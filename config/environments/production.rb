@@ -31,7 +31,12 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # config.assets.compile = false
+
+  config.serve_static_assets = true
+  config.assets.compress = true
+  config.assets.compile = true
+  config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -101,4 +106,8 @@ Rails.application.configure do
     'Cache-Control' => 'public, s-maxage=31536000, max-age=86400',
     'Expires' => "#{1.day.from_now.httpdate}"
 }
+
+  # precompiling assets prior to deploying to Heroku to ensure that assets compile properly
+  # (if not, Heroku will enable runtime compilation which will slow your app down tremendously).
+  RAILS_ENV=production rake assets:precompile
 end
