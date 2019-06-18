@@ -95,4 +95,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Add expires header to Rails assets
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, s-maxage=31536000, max-age=86400',
+    'Expires' => "#{1.day.from_now.httpdate}"
+}
 end
