@@ -10,7 +10,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-   config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
   config.action_mailer.default_url_options = { host: "astronight.space" }
 
@@ -106,8 +106,4 @@ Rails.application.configure do
     'Cache-Control' => 'public, s-maxage=31536000, max-age=86400',
     'Expires' => "#{1.day.from_now.httpdate}"
 }
-
-  # precompiling assets prior to deploying to Heroku to ensure that assets compile properly
-  # (if not, Heroku will enable runtime compilation which will slow your app down tremendously).
-  RAILS_ENV=production rake assets:precompile
 end
