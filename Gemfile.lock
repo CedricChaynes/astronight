@@ -117,6 +117,8 @@ GEM
     geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    heroku-deflater (0.6.3)
+      rack (>= 1.4.5)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.6.0)
@@ -322,6 +324,7 @@ DEPENDENCIES
   faker
   font-awesome-sass (~> 5.6.1)
   geocoder
+  heroku-deflater
   jbuilder (~> 2.0)
   launchy
   letter_opener
