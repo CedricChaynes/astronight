@@ -34,9 +34,6 @@ Rails.application.configure do
   # config.assets.compile = false
 
   config.serve_static_assets = true
-  config.assets.compress = true
-  config.assets.compile = true
-  config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 

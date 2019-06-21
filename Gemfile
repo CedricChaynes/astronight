@@ -31,7 +31,6 @@ gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem "sentry-raven"
 gem 'postmark-rails'
-gem 'heroku_rails_deflate', group: :production
 
 group :development do
   gem 'web-console', '>= 3.3.0'
