@@ -1,23 +1,27 @@
-<div class="flex-item">
-  <% @events.take(10).each do |event| %>
-    <ul class="ul-cards">
+<div class="flex-item" id="first-ten-items">
+  <% @events.each_with_index do |event, index| %>
+    <div class="ul-cards">
       <%= link_to event_path(event) do %>
-      <div class="card-trip" data-id="<%= event.id %>">
-        <%= image_tag "#{event.site.photo}", class: 'img-radius', style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
-        <div class="card-trip-infos">
-          <div>
-            <h4 class="h4-cards"><%= I18n.localize(event.date, format: :custom) %></h4>
-            <p><%= event.site.address %></p>
-          </div>
-          <div>
-            <div><p style="text-align: center; font-size: 16px">Note du soir</p></div>
-            <!-- Gauge chart -->
-            <div id="mygauge" class="cpuSpeed gauge-container" data-score=<%= event.score["total_score"] %>></div>
-            <!-- End of gauge chart -->
+        <div class="card-trip" data-id="<%= event.id %>" id="event-<%= index + 1 %>" style="<%= 'display:none' if index > 9 %>">
+          <%= image_tag "#{event.site.photo}", class: 'img-radius', style: "background-image: url(#{image_url('image-placeholder-225x225.png')})" %>
+          <div class="card-trip-infos">
+            <div>
+              <h4 class="h4-cards"><%= I18n.localize(event.date, format: :custom) %></h4>
+              <p><%= event.site.address %></p>
+            </div>
+            <div>
+              <div><p style="text-align: center; font-size: 16px">Note du soir</p></div>
+              <!-- Gauge chart -->
+              <div id="mygauge" class="cpuSpeed gauge-container" data-score=<%= event.score["total_score"] %>></div>
+              <!-- End of gauge chart -->
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
-    </ul>
+    </div>
   <% end %>
 </div>
+
+<button id="show-more" style="float:right; margin-right:64px" data-count="0" data-max="<%= @events.count %>">Plus de résultats</button>
+
+

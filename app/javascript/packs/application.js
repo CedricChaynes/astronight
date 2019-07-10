@@ -34,3 +34,16 @@ cards.forEach(card => {
    cleanSelected(id)
  });
 });
+
+const showMoreButton = document.querySelector('#show-more');
+showMoreButton.addEventListener('click', () => {
+  const clickCount = parseInt(showMoreButton.dataset.count);
+  const max = parseInt(showMoreButton.dataset.max);
+  showMoreButton.dataset.count = clickCount + 1;
+  let id = 10 * (clickCount + 1) + 1;
+  const limit = 10 * (clickCount + 2)
+  while ((id <= limit) && (id <= max)) {
+    document.querySelector(`#event-${id}`).style.removeProperty('display');
+    id += 1;
+  }
+})
