@@ -1,0 +1,60 @@
+{
+  "addons": [
+    "heroku-postgresql",
+    "rediscloud",
+    "scheduler",
+    "sentry"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "env": {
+    "CLOUDINARY_URL": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MAPBOX_API_KEY": {
+      "required": true
+    },
+    "POSTMARK_API_TOKEN": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REDISCLOUD_URL": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "SENTRY_DSN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "astronight",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
