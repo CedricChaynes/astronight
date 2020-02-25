@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/lndl/select2_simple_form.git
+  remote: https://github.com/lndl/select2_simple_form.git
   revision: c3bb030a675a1c5a5fc5ce375564a0ba20381a7f
   tag: 0.7.3
   specs:
@@ -152,7 +152,7 @@ GEM
     multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.3.1)
-    nokogiri (1.10.3)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
