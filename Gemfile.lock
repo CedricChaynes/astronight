@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/lndl/select2_simple_form.git
+  remote: https://github.com/lndl/select2_simple_form.git
   revision: c3bb030a675a1c5a5fc5ce375564a0ba20381a7f
   tag: 0.7.3
   specs:
@@ -173,7 +173,7 @@ GEM
     puma (3.12.1)
     pundit (2.0.1)
       activesupport (>= 3.0.0)
-    rack (2.0.7)
+    rack (2.2.3)
     rack-protection (2.0.5)
       rack
     rack-proxy (0.6.5)
