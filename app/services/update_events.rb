@@ -1,31 +1,31 @@
 # frozen_string_literal: true
 
-class UpdateEvents
+class UpdateEvents < BaseService
   THRESHOLD = 6
 
-  def call(update_weather)
+  attr_reader :update_weather
+
+  def initialize(update_weather = true)
+    @update_weather = update_weather
+  end
+
+  def call
     destroy_old_events
     WeatherCrawler.call if update_weather
     create_and_update_events
-  end
-
-  def self.call(update_weather = true)
-    new.call(update_weather)
   end
 
   private
 
   def destroy_old_events
     Event.where("date < ?", Time.zone.today).destroy_all
-    Event.all.each do |event|
+    Event.find_each do |event|
       event.destroy unless event.participations.any?
     end
   end
 
   def create_and_update_events
-    total = Site.count
-    Site.all.each_with_index do |site, i|
-      ap "#{i} / #{total}"
+    Site.find_each do |site|
       date = Time.zone.today
       limit = Time.zone.today + 5
 
