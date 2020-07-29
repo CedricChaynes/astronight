@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 ruby "2.6.5"
 
@@ -29,8 +31,8 @@ gem "font-awesome-sass", "~> 5.13"
 gem "sassc-rails", "~> 2.1.2"
 
 # Javascript
-gem "webpacker", "~> 5.1.1"
 gem "uglifier", "~> 4.2"
+gem "webpacker", "~> 5.1.1"
 
 # Image storage
 gem "carrierwave", "~> 2.1"
@@ -52,12 +54,14 @@ gem "geocoder", "~> 1.6.3", ">= 1.6.3"
 gem "postmark-rails", "~> 0.20.0"
 
 group :development do
-  gem 'awesome_print', '~> 2.0.0.pre2'
+  gem "awesome_print", "~> 2.0.0.pre2"
   gem "letter_opener", "~> 1.7"
   gem "pry-byebug", "~> 3.9"
   gem "pry-rails", "~> 0.3.9"
+  gem "rubocop", "~> 0.88.0", require: false
+  gem "rubocop-performance", "~> 1.7.1", require: false
+  gem "rubocop-rspec", "~> 1.42", require: false
   gem "web-console", "~> 4.0.4"
-
 end
 
 group :development, :test do
@@ -70,8 +74,8 @@ group :development, :test do
   # Web testing
   gem "capybara", "~> 3.33"
   gem "launchy", "~> 2.5"
-  gem "webdrivers", "~> 4.4.1"
   gem "selenium-webdriver", "~> 4.0.0.alpha6"
+  gem "webdrivers", "~> 4.4.1"
 
   # Environment variable
   gem "dotenv-rails"
