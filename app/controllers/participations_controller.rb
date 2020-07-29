@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ParticipationsController < ApplicationController
   before_action :set_event, only: %i[create]
   before_action :set_participation, only: %i[destroy]

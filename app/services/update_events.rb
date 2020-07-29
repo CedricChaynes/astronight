@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateEvents
   THRESHOLD = 6
 
@@ -14,7 +16,7 @@ class UpdateEvents
   private
 
   def destroy_old_events
-    Event.where("date < ?", Date.today).destroy_all
+    Event.where("date < ?", Time.zone.today).destroy_all
     Event.all.each do |event|
       event.destroy unless event.participations.any?
     end
@@ -24,8 +26,8 @@ class UpdateEvents
     total = Site.count
     Site.all.each_with_index do |site, i|
       ap "#{i} / #{total}"
-      date = Date.today
-      limit = Date.today + 5
+      date = Time.zone.today
+      limit = Time.zone.today + 5
 
       while date < limit
         score = CalcScore.call(site, date)

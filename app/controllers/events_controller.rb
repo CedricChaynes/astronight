@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
-  require 'uri'
+  require "uri"
   skip_before_action :authenticate_user!
-  before_action :set_event, only: %i[show update delete]
+  before_action :set_event, only: :show
 
   def index
     @my_events = current_user.events
@@ -12,9 +14,9 @@ class EventsController < ApplicationController
     @address = @search[:address]
     @date_range = @search[:date_range]
     @radius = @search[:radius].tr("km", "").to_i
-    @start_date = Date.today
+    @start_date = Time.zone.today
     @end_date = case @date_range
-                when "Aujourd'hui" then Date.today
+                when "Aujourd'hui" then Time.zone.today
                 when "7 prochains jours" then @start_date + 7
                 when "14 prochains jours" then @start_date + 14
                 end
@@ -41,8 +43,8 @@ class EventsController < ApplicationController
     end
 
     @icons = {
-      base: helpers.asset_url('pin_base.png'),
-      selected: helpers.asset_url('pin_selected.png')
+      base: helpers.asset_url("pin_base.png"),
+      selected: helpers.asset_url("pin_selected.png")
     }
   end
 
@@ -58,11 +60,11 @@ class EventsController < ApplicationController
       {
         lat: @event.site.lat,
         lng: @event.site.lng,
-        image_url: helpers.asset_url('map-marker.png')
+        image_url: helpers.asset_url("map-marker.png")
       }]
     @icons = {
-      base: helpers.asset_url('pin_base.png'),
-      selected: helpers.asset_url('pin_selected.png')
+      base: helpers.asset_url("pin_base.png"),
+      selected: helpers.asset_url("pin_selected.png")
     }
   end
 

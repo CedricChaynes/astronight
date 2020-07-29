@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PhotoUploader < CarrierWave::Uploader::Base
-   include Cloudinary::CarrierWave
+  include Cloudinary::CarrierWave
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -31,7 +33,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #
   # def scale(width, height)
   #
-   # do something
+  # do something
   # end
 
   # Create different versions of your uploaded files:

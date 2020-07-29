@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Site < ApplicationRecord
   has_many :events, dependent: :destroy
   geocoded_by :address, latitude: :lat, longitude: :lng
@@ -8,7 +10,7 @@ class Site < ApplicationRecord
   end
 
   def photo
-    read_attribute(:photo) || ActionController::Base.helpers.asset_path("pre.png")
+    photo || ActionController::Base.helpers.asset_path("pre.png")
   end
 
   def need_geocode?
