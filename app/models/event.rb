@@ -21,4 +21,8 @@ class Event < ApplicationRecord
   def score_lune
     rand(70..100)
   end
+
+  scope :order_by_total_score, -> {
+    order("score ->>'total_score' DESC")
+  }
 end
