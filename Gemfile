@@ -39,7 +39,7 @@ gem "carrierwave", "~> 2.1"
 gem "cloudinary", "~> 1.16.1"
 
 # API
-gem "nokogiri", "~> 1.11.0.rc2"
+gem "nokogiri", "~> 1.12.5"
 
 # Weather
 gem "lunartic", "~> 0.2.1"
