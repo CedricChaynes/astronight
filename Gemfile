@@ -18,7 +18,7 @@ gem "select2_simple_form", github: "lndl/select2_simple_form", tag: "0.7.3"
 gem "simple_form", "~> 5.0.2"
 
 # Background jobs
-gem "sidekiq", "~> 6.1.1"
+gem "sidekiq", "~> 6.2.1"
 gem "sidekiq-failures", "~> 1.0"
 
 # Model validation
