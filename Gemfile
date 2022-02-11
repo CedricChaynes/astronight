@@ -8,7 +8,7 @@ gem "bootsnap", "~> 1.4.7", require: false
 gem "devise", "~> 4.7.2"
 gem "jbuilder", "~> 2.10"
 gem "pg", "~> 1.2.3"
-gem "puma", "~> 4.3.5"
+gem "puma", "~> 4.3.11"
 gem "pundit", "~> 2.1"
 gem "rails", "~> 6.0.3.2"
 gem "redis", "~> 4.2.1"
